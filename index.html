@@ -345,11 +345,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const timeFormatter = (row, column, cellValue, index) =&gt; &#123;</span><br><span class="line">        let format = &quot;YYYY-mm-dd HH:MM:SS&quot;</span><br><span class="line">        let date = new Date(cellValue)</span><br><span class="line">        const dataItem = &#123;</span><br><span class="line">            &quot;Y+&quot;: date.getFullYear().toString(),</span><br><span class="line">            &quot;m+&quot;: (date.getMonth() + 1).toString(),</span><br><span class="line">            &quot;d+&quot;: date.getDate().toString(),</span><br><span class="line">            &quot;H+&quot;: date.getHours().toString(),</span><br><span class="line">            &quot;M+&quot;: date.getMinutes().toString(),</span><br><span class="line">            &quot;S+&quot;: date.getSeconds().toString()</span><br><span class="line">        &#125;</span><br><span class="line">        Object.keys(dataItem).forEach((item) =&gt; &#123;</span><br><span class="line">            const ret = new RegExp(`($&#123;item&#125;)`).exec(format);</span><br><span class="line">            if(ret)&#123;</span><br><span class="line">                format = format.replace(ret[1], ret[1].length === 1? dataItem[item]: dataItem[item].padStart(ret[1].length, &quot;0&quot;))</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        return format</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p><code>:formatter=&quot;timeFormatter&quot;</code></p>
-
+    <h3 id="el-table格式化日期"><a href="#el-table格式化日期" class="headerlink" title="el-table格式化日期"></a>el-table格式化日期</h3>
+    
+    <a class="article-more-a" href="/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/#more">more >></a>
+    
     
 
     
