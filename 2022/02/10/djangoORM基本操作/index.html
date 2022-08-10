@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>vue-table格式化日期 | 不想</title>
+  <title>djangoORM基本操作 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="对于vue中表格日期格式化 el-table格式化日期">
+  <meta name="description" content="ORM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-table格式化日期">
-<meta property="og:url" content="https://evacat.top/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/index.html">
+<meta property="og:title" content="djangoORM基本操作">
+<meta property="og:url" content="https://evacat.top/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="不想">
-<meta property="og:description" content="对于vue中表格日期格式化 el-table格式化日期">
+<meta property="og:description" content="ORM">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-08T12:21:28.000Z">
-<meta property="article:modified_time" content="2022-08-09T07:16:21.017Z">
+<meta property="article:published_time" content="2022-02-10T08:16:53.000Z">
+<meta property="article:modified_time" content="2022-08-10T08:21:25.077Z">
 <meta property="article:author" content="不想">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="django">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
@@ -234,14 +235,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-table格式化日期" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-djangoORM基本操作" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      vue-table格式化日期
+      djangoORM基本操作
     </h1>
   
 
@@ -253,8 +254,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/" class="archive-article-date">
-        <time datetime="2022-08-08T12:21:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
+<a href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+        <time datetime="2022-02-10T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
 </a>
 
   
@@ -267,7 +268,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">130字</span>
+      <span class="post-count">5.5k字</span>
     </span>
   </span>
 
@@ -276,7 +277,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">23分</span>
     </span>
   </span>
 </div>
@@ -287,12 +288,259 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>对于vue中表格日期格式化</p>
-<h3 id="el-table格式化日期"><a href="#el-table格式化日期" class="headerlink" title="el-table格式化日期"></a>el-table格式化日期</h3><span id="more"></span>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const timeFormatter = (row, column, cellValue, index) =&gt; &#123;</span><br><span class="line">        let format = &quot;YYYY-mm-dd HH:MM:SS&quot;</span><br><span class="line">        let date = new Date(cellValue)</span><br><span class="line">        const dataItem = &#123;</span><br><span class="line">            &quot;Y+&quot;: date.getFullYear().toString(),</span><br><span class="line">            &quot;m+&quot;: (date.getMonth() + 1).toString(),</span><br><span class="line">            &quot;d+&quot;: date.getDate().toString(),</span><br><span class="line">            &quot;H+&quot;: date.getHours().toString(),</span><br><span class="line">            &quot;M+&quot;: date.getMinutes().toString(),</span><br><span class="line">            &quot;S+&quot;: date.getSeconds().toString()</span><br><span class="line">        &#125;</span><br><span class="line">        Object.keys(dataItem).forEach((item) =&gt; &#123;</span><br><span class="line">            const ret = new RegExp(`($&#123;item&#125;)`).exec(format);</span><br><span class="line">            if(ret)&#123;</span><br><span class="line">                format = format.replace(ret[1], ret[1].length === 1? dataItem[item]: dataItem[item].padStart(ret[1].length, &quot;0&quot;))</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        return format</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p><code>:formatter=&quot;timeFormatter&quot;</code></p>
+    <h2 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h2><span id="more"></span>
+<p>然后在项目或app下面的__init__.py文件中指明要用pymysql连接数据库</p>
+<p>一、 常用字段和参数<br>1.1、常用字段<br>AutoField：<br>int自增列，必须填入参数 primary_key&#x3D;True。当models中如果没有自增列，则会自动创建一个列名为id的列。</p>
+<p>IntegerField：<br>一个整数类型,范围在 -2147483648 to 2147483647。(一般不用它来存手机号(位数也不够)，直接用字符串存，)</p>
+<p>CharField：<br>字符类型，必须提供max_length参数， max_length表示字符长度。这个CharField对应mysql中的varchar类型。</p>
+<p>DateField：<br>日期字段，年月日，日期格式  YYYY-MM-DD，相当于Python中的datetime.date()实例。</p>
+<p>DateTimeField：<br>日期时间字段，年月日时分秒，格式 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]，相当于Python中的datetime.datetime()实例</p>
+<p>EmailField：<br>相当于varchar类型，</p>
+<p>DecimalField：<br>十进制小数。有两个参数：①max_digits，小数总长度  ②decimal_places，有几个小数位</p>
+<p>字段合集：<br>AutoField(Field)<br>        - int自增列，必须填入参数 primary_key&#x3D;True</p>
+<pre><code>BigAutoField(AutoField)
+    - bigint自增列，必须填入参数 primary_key=True
+ 
+    注：当model中如果没有自增列，则自动会创建一个列名为id的列
+    from django.db import models
+ 
+    class UserInfo(models.Model):
+        # 自动创建一个列名为id的且为自增的整数列
+        username = models.CharField(max_length=32)
+ 
+    class Group(models.Model):
+        # 自定义自增列
+        nid = models.AutoField(primary_key=True)
+        name = models.CharField(max_length=32)
+ 
+SmallIntegerField(IntegerField):
+    - 小整数 -32768 ～ 32767
+ 
+PositiveSmallIntegerField(PositiveIntegerRelDbTypeMixin, IntegerField)
+    - 正小整数 0 ～ 32767
+IntegerField(Field)
+    - 整数列(有符号的) -2147483648 ～ 2147483647
+ 
+PositiveIntegerField(PositiveIntegerRelDbTypeMixin, IntegerField)
+    - 正整数 0 ～ 2147483647
+ 
+BigIntegerField(IntegerField):
+    - 长整型(有符号的) -9223372036854775808 ～ 9223372036854775807
+ 
+BooleanField(Field)
+    - 布尔值类型
+ 
+NullBooleanField(Field):
+    - 可以为空的布尔值
+ 
+CharField(Field)
+    - 字符类型
+    - 必须提供max_length参数， max_length表示字符长度
+ 
+TextField(Field)
+    - 文本类型
+ 
+EmailField(CharField)：
+    - 字符串类型，Django Admin以及ModelForm中提供验证机制
+ 
+IPAddressField(Field)
+    - 字符串类型，Django Admin以及ModelForm中提供验证 IPV4 机制
+ 
+GenericIPAddressField(Field)
+    - 字符串类型，Django Admin以及ModelForm中提供验证 Ipv4和Ipv6
+    - 参数：
+        protocol，用于指定Ipv4或Ipv6， &#39;both&#39;,&quot;ipv4&quot;,&quot;ipv6&quot;
+        unpack_ipv4， 如果指定为True，则输入::ffff:192.0.2.1时候，可解析为192.0.2.1，开启此功能，需要protocol=&quot;both&quot;
+ 
+URLField(CharField)
+    - 字符串类型，Django Admin以及ModelForm中提供验证 URL
+ 
+SlugField(CharField)
+    - 字符串类型，Django Admin以及ModelForm中提供验证支持 字母、数字、下划线、连接符（减号）
+ 
+CommaSeparatedIntegerField(CharField)
+    - 字符串类型，格式必须为逗号分割的数字
+ 
+UUIDField(Field)
+    - 字符串类型，Django Admin以及ModelForm中提供对UUID格式的验证
+ 
+FilePathField(Field)
+    - 字符串，Django Admin以及ModelForm中提供读取文件夹下文件的功能
+    - 参数：
+            path,                      文件夹路径
+            match=None,                正则匹配
+            recursive=False,           递归下面的文件夹
+            allow_files=True,          允许文件
+            allow_folders=False,       允许文件夹
+ 
+FileField(Field)
+    - 字符串，路径保存在数据库，文件上传到指定目录
+    - 参数：
+        upload_to = &quot;&quot;      上传文件的保存路径
+        storage = None      存储组件，默认django.core.files.storage.FileSystemStorage
+ 
+ImageField(FileField)
+    - 字符串，路径保存在数据库，文件上传到指定目录
+    - 参数：
+        upload_to = &quot;&quot;      上传文件的保存路径
+        storage = None      存储组件，默认django.core.files.storage.FileSystemStorage
+        width_field=None,   上传图片的高度保存的数据库字段名（字符串）
+        height_field=None   上传图片的宽度保存的数据库字段名（字符串）
+ 
+DateTimeField(DateField)
+    - 日期+时间格式 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]
+ 
+DateField(DateTimeCheckMixin, Field)
+    - 日期格式      YYYY-MM-DD
+ 
+TimeField(DateTimeCheckMixin, Field)
+    - 时间格式      HH:MM[:ss[.uuuuuu]]
+ 
+DurationField(Field)
+    - 长整数，时间间隔，数据库中按照bigint存储，ORM中获取的值为datetime.timedelta类型
+ 
+FloatField(Field)
+    - 浮点型
+ 
+DecimalField(Field)
+    - 10进制小数
+    - 参数：
+        max_digits，小数总长度
+        decimal_places，小数位长度
+ 
+BinaryField(Field)
+    - 二进制类型
+</code></pre>
+<p>mysql与orm字段对应关系<br>‘’’<br>对应关系：<br>    ‘AutoField’: ‘integer AUTO_INCREMENT’,<br>    ‘BigAutoField’: ‘bigint AUTO_INCREMENT’,<br>    ‘BinaryField’: ‘longblob’,<br>    ‘BooleanField’: ‘bool’,<br>    ‘CharField’: ‘varchar(%(max_length)s)’,<br>    ‘CommaSeparatedIntegerField’: ‘varchar(%(max_length)s)’,<br>    ‘DateField’: ‘date’,<br>    ‘DateTimeField’: ‘datetime’,<br>    ‘DecimalField’: ‘numeric(%(max_digits)s, %(decimal_places)s)’,<br>    ‘DurationField’: ‘bigint’,<br>    ‘FileField’: ‘varchar(%(max_length)s)’,<br>    ‘FilePathField’: ‘varchar(%(max_length)s)’,<br>    ‘FloatField’: ‘double precision’,<br>    ‘IntegerField’: ‘integer’,<br>    ‘BigIntegerField’: ‘bigint’,<br>    ‘IPAddressField’: ‘char(15)’,<br>    ‘GenericIPAddressField’: ‘char(39)’,<br>    ‘NullBooleanField’: ‘bool’,<br>    ‘OneToOneField’: ‘integer’,<br>    ‘PositiveIntegerField’: ‘integer UNSIGNED’,<br>    ‘PositiveSmallIntegerField’: ‘smallint UNSIGNED’,<br>    ‘SlugField’: ‘varchar(%(max_length)s)’,<br>    ‘SmallIntegerField’: ‘smallint’,<br>    ‘TextField’: ‘longtext’,<br>    ‘TimeField’: ‘time’,<br>    ‘UUIDField’: ‘char(32)’,<br>‘’’<br>1.2、字段参数<br>null：<br>用于指定某个字段可以为空（null&#x3D;True）</p>
+<p>unique：<br>如果设置为unique&#x3D;True 则该字段在此表中必须是唯一的 。</p>
+<p>db_index：<br>如果设置db_index&#x3D;True，那么该字段会创建索引。</p>
+<p>default：<br>为字段指定默认值</p>
+<p>auto_now_add（针对DateTimeField和DateField）：<br>配置auto_now_add&#x3D;True，创建数据记录的时候会自动把当前时间添加到数据库，后续的修改该字段不会自动更新。</p>
+<p>auto_now（针对DateTimeField和DateField）：<br>配置上auto_now&#x3D;True，每次更新数据记录的时候会更新该字段。</p>
+<p>1.3、关系字段（外键关联—一对一、一对多、多对多）<br>ForeignKey：<br>外键类型在ORM中用来表示外键关联关系，一般把ForeignKey字段设置在 ‘一对多’中’多’的一方。</p>
+<p>ManyToManyField：<br>外键关联中的多对多关系</p>
+<p>OneToOneField：<br>外键关联中的一对一关系。一对一其实就是把一张数据很多的表按照数据的使用频率分为两张表</p>
+<p>关系字段中的参数：<br> to：设置要关联的表</p>
+<p>to_field：设置要关联的表的字段</p>
+<p>on_delete：当删除关联表中的数据时，当前表与其关联的字段的行为。</p>
+<p>on_delete&#x3D;None, #当关联的email数据被删除时候，该数据也会被删除，不存在<br>on_delete&#x3D;models.CASCADE, #性质和None一样是默认删除<br>on_delete&#x3D;models.DO_NOTHING,   #当关联的数据被删除时，自己不受影响，什么事都不做,不会报错<br>on_delete&#x3D;models.PROTECT,   #关联保护，关联的数据不允许被删除，并且触发ProtectError<br>on_delete&#x3D;models.SET_NULL, #删除关联数据，自己被设置为null（前提字段需要设置为可空null&#x3D;True）<br>db_constraint：是否在数据库中创建外键约束，默认为True。</p>
+<p>二、单表查询<br>在表查询之前，先做一些准备工作。我在tests.py文件中做测试。那么首先要写以下类似于manage.py的代码。</p>
+<p>import os</p>
+<p>if <strong>name</strong> &#x3D;&#x3D; ‘<strong>main</strong>‘:<br>    os.environ.setdefault(“DJANGO_SETTINGS_MODULE”, “day59.settings”)<br>    import django<br>    django.setup()<br>    from app01 import models  # 导入要测试的应用的models文件<br>如果想在测试时，查看内部的sql语句，可以在配置文件中加入一下配置。</p>
+<p>LOGGING &#x3D; {<br>    ‘version’: 1,<br>    ‘disable_existing_loggers’: False,<br>    ‘handlers’: {<br>        ‘console’:{<br>            ‘level’:’DEBUG’,<br>            ‘class’:’logging.StreamHandler’,<br>        },<br>    },<br>    ‘loggers’: {<br>        ‘django.db.backends’: {<br>            ‘handlers’: [‘console’],<br>            ‘propagate’: True,<br>            ‘level’:’DEBUG’,<br>        },<br>    }<br>}<br>常用的查询方法：<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>查询方法</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>********<br>    &lt;1&gt; all():                  查询所有结果<br>    &lt;2&gt; filter(**kwargs):       它包含了与所给筛选条件相匹配的对象<br>    &lt;3&gt; get(**kwargs):          返回与所给筛选条件相匹配的对象，返回结果有且只有一个，如果符合筛选条件的对象超过一个或者没有都会抛出错误。<br>    &lt;4&gt; exclude(**kwargs):      它包含了与所给筛选条件不匹配的对象<br>    &lt;5&gt; order_by(*field):       对查询结果排序(‘-id’)&#x2F;(‘price’)<br>    &lt;6&gt; reverse():              对查询结果反向排序 	&gt;&gt;&gt;前面要先有排序才能反向<br>    &lt;7&gt; count():                返回数据库中匹配查询(QuerySet)的对象数量。<br>    &lt;8&gt; first():                返回第一条记录<br>    &lt;9&gt; last():                返回最后一条记录<br>    &lt;10&gt; exists():              如果QuerySet包含数据，就返回True，否则返回False<br>    &lt;11&gt; values(*field):        返回一个ValueQuerySet——一个特殊的QuerySet，运行后得到的并不是一系列model的实例化对象，而是一个可迭代的字典序列<br>    &lt;12&gt; values_list(*field):   它与values()非常相似，它返回的是一个元组序列，values返回的是一个字典序列<br>    &lt;13&gt; distinct():            从返回结果中剔除重复纪录<br>返回queryset对象的方法：<br>all()</p>
+<p>filter()</p>
+<p>exclude()</p>
+<p>order_by()</p>
+<p>reverse()</p>
+<p>distinct()</p>
+<p>values()       返回一个可迭代的字典序列</p>
+<p>values_list() 返回一个可迭代的元祖序列<br>返回具体对象的：<br>get()</p>
+<p>first()</p>
+<p>last()<br>返回布尔值的：<br>exists()<br>返回数字的：<br>count()</p>
+<p>2.1、先准备好单表查询操作的表：<br>class User(models.Model):<br>    name &#x3D; models.CharField(max_length&#x3D;32)<br>    age &#x3D; models.IntegerField()<br>    register_time &#x3D; models.DateField()</p>
+<pre><code># 为了方便打印查看，定义一下打印的格式
+def __str__(self):
+    return &#39;对象的名字%s&#39; % self.name
+</code></pre>
+<p>开始单表操作（测试都写在前面说的__main__方法内部）：<br>新增数据：<br>1、基于create新增，通过此方法新增得到的是一个数据对象，可以通过点语法取值</p>
+<p>models.User.objects.create(name&#x3D;’shj’, age&#x3D;18, register_time&#x3D;’2019-1-1’)<br>在create的内部，参数也可以是时间类型：</p>
+<p>from datetime import datetime<br>ctime &#x3D; datetime.now()<br>models.User.objects.create(name&#x3D;’sr’, age&#x3D;12, register_time&#x3D;ctime)<br>2、基于对象的绑定方法新增</p>
+<p>user_obj &#x3D; models.User(name&#x3D;’cr’, age&#x3D;16, register_time&#x3D;’2019-1-2’)<br>user_obj.save()<br>修改数据：<br>1、基于对象修改</p>
+<p>user_obj &#x3D; models.User.objects.filter(name&#x3D;’shj’).first()<br>user_obj.age &#x3D; 20<br>user_obj.save()<br>2、基于queryset修改</p>
+<p>models.User.objects.filter(name&#x3D;’shj’).update(age&#x3D;18)<br>删除数据：<br>1、基于queryset</p>
+<p>models.User.objects.filter(name&#x3D;’sr’).delete()<br>2、基于对象</p>
+<p>user_obj &#x3D; models.User.objects.filter(name&#x3D;’cr’).first()<br>user_obj.delete()<br>查询数据：<br>1、all()：拿到所有结果</p>
+<p>res &#x3D; models.User.objects.all()<br>2、filter(**kwargs): 它包含了与所给筛选条件相匹配的对象。filter内可以传多个条件，但要注意这些条件之间是and的关系</p>
+<p>res &#x3D; models.User.objects.filter(name&#x3D;’shj’, age&#x3D;18)<br>3、get：返回与所给筛选条件相匹配的对象，返回结果有且只有一个，如果符合筛选条件的对象超过一个或者没有都会抛出错误（不推荐使用）</p>
+<p>res &#x3D; models.User.objects.get(name&#x3D;’cr’)<br>4、exclude(**kwargs): 它包含了与所给筛选条件不匹配的对象</p>
+<p>res &#x3D; models.User.objects.exclude(name&#x3D;’shj’)<br>5、order_by(*field): 对查询结果排序，默认是升序。可以在排序的字段前面加一个减号就是降序</p>
+<p>res &#x3D; models.User.objects.order_by(‘age’)<br>res &#x3D; models.User.objects.order_by(‘-age’)<br>6、reverse(): 对查询结果反向排序 &gt;&gt; &gt; 前面要先有排序才能反向</p>
+<p>res &#x3D; models.User.objects.order_by(‘age’).reverse()<br>7、count(): 返回数据库中匹配查询(QuerySet) 的对象数量。</p>
+<p>res &#x3D; models.User.objects.count()<br>res &#x3D; models.User.objects.all().count()<br>8、first(): 返回第一条记录</p>
+<p>res &#x3D; models.User.objects.all().first()<br>res &#x3D; models.User.objects.all()[0]  # 不支持负数的索引取值<br>9、last(): 返回最后一条记录</p>
+<p>res &#x3D; models.User.objects.all().last()<br>10、exists(): 如果QuerySet包含数据，就返回True，否则返回False</p>
+<p>res &#x3D; models.User.objects.all().exists()<br>res &#x3D; models.User.objects.filter(name&#x3D;’shj’, age&#x3D;3).exists()<br>11、values(*field): 返回一个ValueQuerySet——一个特殊的QuerySet，运行后得到的并不是一系列 model的实例化对象，而是一个可迭代的字典序列</p>
+<p>res &#x3D; models.User.objects.values(‘name’)  # 列表套字典<br>res1 &#x3D; models.User.objects.values(‘name’, ‘age’)  # 列表套字典</p>
+<p>‘’’<br>&lt;QuerySet [{‘name’: ‘shj’}, {‘name’: ‘cr’}, {‘name’: ‘zw’}, {‘name’: ‘pj’}]&gt;<br>&lt;QuerySet [{‘name’: ‘shj’, ‘age’: 18}, {‘name’: ‘cr’, ‘age’: 16}, {‘name’: ‘zw’, ‘age’: 20}, {‘name’: ‘pj’, ‘age’: 20}]&gt;<br>‘’’<br>12、values_list(*field): 它与values()非常相似，它返回的是一个元组序列，values返回的是一个字典序列</p>
+<p>res &#x3D; models.User.objects.values_list(‘name’, ‘age’)  # 列表套元组</p>
+<p>‘’’<br>&lt;QuerySet [(‘shj’, 18), (‘cr’, 16), (‘zw’, 20), (‘pj’, 20)]&gt;<br>‘’’<br>13、distinct(): 从返回结果中剔除重复纪录  去重的对象必须是完全相同的数据才能去重</p>
+<p>res &#x3D; models.User.objects.values(‘name’,’age’).distinct()</p>
+<p> 神奇的双下划线查询：<br>1、大于：__gt</p>
+<h1 id="查询年纪大于16岁的用户"><a href="#查询年纪大于16岁的用户" class="headerlink" title="查询年纪大于16岁的用户"></a>查询年纪大于16岁的用户</h1><p>res &#x3D; models.User.objects.filter(age__gt&#x3D;16)<br>2、小于：__lt</p>
+<h1 id="查询年纪小于18岁的用户"><a href="#查询年纪小于18岁的用户" class="headerlink" title="查询年纪小于18岁的用户"></a>查询年纪小于18岁的用户</h1><p>res &#x3D; models.User.objects.filter(age__lt&#x3D;18)<br>3、大于等于：__gte</p>
+<h1 id="查询年纪大于等于16岁的用户"><a href="#查询年纪大于等于16岁的用户" class="headerlink" title="查询年纪大于等于16岁的用户"></a>查询年纪大于等于16岁的用户</h1><p>res &#x3D; models.User.objects.filter(age__gte&#x3D;16)<br>4、小于等于：__lte</p>
+<h1 id="查询年纪小于等于16岁的用户"><a href="#查询年纪小于等于16岁的用户" class="headerlink" title="查询年纪小于等于16岁的用户"></a>查询年纪小于等于16岁的用户</h1><p>res &#x3D; models.User.objects.filter(age__lte&#x3D;16)<br>5、或：__in</p>
+<h1 id="查询年龄是16或18或20的用户"><a href="#查询年龄是16或18或20的用户" class="headerlink" title="查询年龄是16或18或20的用户"></a>查询年龄是16或18或20的用户</h1><p>res &#x3D; models.User.objects.filter(age__in&#x3D;[16,18,20])<br>6、范围：__range</p>
+<h1 id="查询年龄在10-16岁之间的用户"><a href="#查询年龄在10-16岁之间的用户" class="headerlink" title="查询年龄在10-16岁之间的用户"></a>查询年龄在10-16岁之间的用户</h1><p>res &#x3D; models.User.objects.filter(age__range&#x3D;[10,16])<br>7、年份：__year</p>
+<h1 id="查询注册是在2019年的用户"><a href="#查询注册是在2019年的用户" class="headerlink" title="查询注册是在2019年的用户"></a>查询注册是在2019年的用户</h1><p>res &#x3D; models.User.objects.filter(register_time__year&#x3D;2019)<br>8、包含：__contains</p>
+<h1 id="查询名字中包含字母r的用户"><a href="#查询名字中包含字母r的用户" class="headerlink" title="查询名字中包含字母r的用户"></a>查询名字中包含字母r的用户</h1><p>res &#x3D; models.User.objects.filter(name__contains&#x3D;’r’)<br>9、包含并忽略大小写：__icontains</p>
+<h1 id="忽略r大小写"><a href="#忽略r大小写" class="headerlink" title="忽略r大小写"></a>忽略r大小写</h1><p>res &#x3D; models.User.objects.filter(name__icontains&#x3D;’r’)<br>10、以什么开头：__startswith</p>
+<h1 id="查询名字以s开头的用户"><a href="#查询名字以s开头的用户" class="headerlink" title="查询名字以s开头的用户"></a>查询名字以s开头的用户</h1><p>res &#x3D; models.User.objects.filter(name__startswith&#x3D;’s’)<br>print(res)<br>11、以什么结尾：__endswith</p>
+<h1 id="查询名字以j结尾的用户"><a href="#查询名字以j结尾的用户" class="headerlink" title="查询名字以j结尾的用户"></a>查询名字以j结尾的用户</h1><p>res &#x3D; models.User.objects.filter(name__endswith&#x3D;’j’)<br>print(res)</p>
+<p>三、多表查询<br>表与表之间的关系：<br>一对一(OneToOneField):一对一字段无论建在哪张关系表里面都可以，但是推荐建在查询频率比较高的那张表里面<br>一对多(ForeignKey):一对多字段建在多的那一方<br>多对多(ManyToManyField):多对多字段无论建在哪张关系表里面都可以，但是推荐建在查询频率比较高的那张表里面<br>正向与反向的概念（跨表查询）：<br>两个有外键关联的表，表a要拿到表b内的字段，如果表a内有关联表b的外键字段，那么就是正向查询，反之就是反向查询。正向查询按字段，反向查询按表名小写。</p>
+<p>正向查找有两种方式：<br>对象查找：对象.关联字段.字段<br>字段查找：关联字段__字段<br>反向查找有两种方式：<br>对象查找：obj.表名_set，一对一关系的可以不加_set<br>字段查找：表名__字段<br>多表查询表分析<br>一共五张表：author    authordetail    book    publish    book_authors</p>
+<p>其中author与authordetail  为一对一的关系，其实一对一可以用ForeignKey来做，但是需要设唯一性约束并且会报警告信息，不建议使用，建议用OneToOneField。用了OneToOneField和用ForeignKey会自动在字段后面加_id<br>book与author是多对多的关系，用ManyToMany，自动创建关联的表<br>book与publish是一对多的关系，直接用ForeignKey创建即可<br> 表的准备：<br>class Book(models.Model):<br>    title &#x3D; models.CharField(max_length&#x3D;32)<br>    price &#x3D; models.DecimalField(max_digits&#x3D;8, decimal_places&#x3D;2)<br>    publish_date &#x3D; models.DateField(auto_now_add&#x3D;True)  # 插入数据时自动插入时间<br>    # 一对多外键<br>    publish &#x3D; models.ForeignKey(to&#x3D;’Publish’)<br>    # 多对多外键<br>    authors &#x3D; models.ManyToManyField(to&#x3D;’Author’)  # 虚拟字段， 信号字段</p>
+<pre><code>def __str__(self):
+    return &#39;书籍对象的名字：%s&#39; % self.title
+</code></pre>
+<p>class Publish(models.Model):<br>    name &#x3D; models.CharField(max_length&#x3D;32)<br>    addr &#x3D; models.CharField(max_length&#x3D;32)<br>    email &#x3D; models.EmailField(max_length&#x3D;32)</p>
+<pre><code>def __str__(self):
+    return &#39;出版社对象的名字：%s&#39; % self.name
+</code></pre>
+<p>class Author(models.Model):<br>    name &#x3D; models.CharField(max_length&#x3D;32)<br>    age &#x3D; models.IntegerField()<br>    # 建立到AuthorDetail的一对一的外键<br>    authordetail &#x3D; models.OneToOneField(to&#x3D;’AuthorDetail’)</p>
+<pre><code>def __str__(self):
+    return &#39;作者对象的名字：%s&#39; % self.name
+</code></pre>
+<p>class AuthorDetail(models.Model):<br>    phone &#x3D; models.CharField(max_length&#x3D;32)<br>    addr &#x3D; models.CharField(max_length&#x3D;32)<br>开始操作：<br>新增数据：<br>创建一个关联对象，并自动写入数据库，且在第三张双方的关联表中自动新建上双方对应关系。</p>
+<p>1、直接写id（出版社表提前插入数据）</p>
+<p>models.Book.objects.create(title&#x3D;’红楼梦’, price&#x3D;66.6, publish_id&#x3D;1)<br>2、传数据对象</p>
+<p>publish_obj &#x3D; models.Publish.objects.filter(pk&#x3D;2).first()<br>models.Book.objects.create(title&#x3D;’西游记’,price&#x3D;99.99,publish&#x3D;publish_obj)<br>修改数据：<br>1、queryset修改</p>
+<h1 id="直接根据publish-id更改出版社绑定关系"><a href="#直接根据publish-id更改出版社绑定关系" class="headerlink" title="直接根据publish_id更改出版社绑定关系"></a>直接根据publish_id更改出版社绑定关系</h1><p>models.Book.objects.filter(pk&#x3D;2).update(publish_id&#x3D;3)</p>
+<h1 id="先获取出版社主键值为2的对象"><a href="#先获取出版社主键值为2的对象" class="headerlink" title="先获取出版社主键值为2的对象"></a>先获取出版社主键值为2的对象</h1><p>publish_obj &#x3D; models.Publish.objects.filter(pk&#x3D;2).first()</p>
+<h1 id="再更新"><a href="#再更新" class="headerlink" title="再更新"></a>再更新</h1><p>models.Book.objects.filter(pk&#x3D;2).update(publish&#x3D;publish_obj)<br> 2、对象修改</p>
+<h1 id="先获取到书籍主键值为2的数据对象"><a href="#先获取到书籍主键值为2的数据对象" class="headerlink" title="先获取到书籍主键值为2的数据对象"></a>先获取到书籍主键值为2的数据对象</h1><p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;2).first()</p>
+<h1 id="通过-语法修改属性值"><a href="#通过-语法修改属性值" class="headerlink" title="通过.语法修改属性值"></a>通过.语法修改属性值</h1><p>book_obj.publish_id &#x3D; 3</p>
+<h1 id="调用save方法保存"><a href="#调用save方法保存" class="headerlink" title="调用save方法保存"></a>调用save方法保存</h1><p>book_obj.save()<br>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;2).first()</p>
+<h1 id="拿到出版社表中主键值为3的对象"><a href="#拿到出版社表中主键值为3的对象" class="headerlink" title="拿到出版社表中主键值为3的对象"></a>拿到出版社表中主键值为3的对象</h1><p>publish_obj &#x3D; models.Publish.objects.filter(pk&#x3D;3).first()</p>
+<h1 id="点orm中字段名-传该字段对应的表的数据对象"><a href="#点orm中字段名-传该字段对应的表的数据对象" class="headerlink" title="点orm中字段名 传该字段对应的表的数据对象"></a>点orm中字段名 传该字段对应的表的数据对象</h1><p>book_obj.publish &#x3D; publish_obj<br>book_obj.save()<br>删除数据：<br>1、queryset删除</p>
+<p>models.Book.objects.filter(pk&#x3D;2).delete()<br>2、对象删除</p>
+<p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;3).first()<br>book_obj.delete()<br>给书籍绑定与作者之间的关系<br>添加关系：add，支持传数字或对象，并且都可以传多个</p>
+<p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;3).first()</p>
+<h1 id="book表通过authors表做外键关联"><a href="#book表通过authors表做外键关联" class="headerlink" title="book表通过authors表做外键关联"></a>book表通过authors表做外键关联</h1><p>book_obj.authors.add(2)  # 传一个<br>book_obj.authors.add(1,3)  # 传多个<br>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;3).first()<br>author_obj &#x3D; models.Author.objects.filter(pk&#x3D;1).first()<br>book_obj.authors.add(author_obj)  # 可以传一个对象，同样也可以传多个对象<br>修改书籍与作者的关系：  set()，  set传的必须是可迭代对象！！！</p>
+<p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;7).first()</p>
+<h1 id="可以传数字和对象，并且支持传多个"><a href="#可以传数字和对象，并且支持传多个" class="headerlink" title="可以传数字和对象，并且支持传多个"></a>可以传数字和对象，并且支持传多个</h1><p>book_obj.authors.set((1,))<br>book_obj.authors.set((1,2,3))<br>author_list &#x3D; models.Author.objects.all()<br>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;3).first()<br>book_obj.authors.set(author_list)<br>删除书籍与作者的绑定关系：remove</p>
+<p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;3).first()<br>book_obj.authors.remove(1)<br>book_obj.authors.remove(2,3)<br>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;7).first()<br>author_obj &#x3D; models.Author.objects.all().first()<br>book_obj.authors.remove(author_obj)<br>author_obj1 &#x3D; models.Author.objects.all()  # 得到queryset对象<br>book_obj.authors.remove(*author_obj1)  # 需要将queryset打散<br>清空当前这个表记录对应的绑定关系：clear</p>
+<p>book_obj &#x3D; models.Book.objects.filter(pk&#x3D;8).first()<br>book_obj.authors.clear()<br>基于对象的表查询：<br>1、正向（从关联字段所在的表到其关联的表）—点的是关联字段</p>
+<h1 id="查询书籍是三国演义的出版社邮箱"><a href="#查询书籍是三国演义的出版社邮箱" class="headerlink" title="查询书籍是三国演义的出版社邮箱"></a>查询书籍是三国演义的出版社邮箱</h1><p>book_obj &#x3D; models.Book.objects.filter(title&#x3D;’三国演义’).first()<br>print(book_obj.publish.email)  # 直接通过关联字段publish点就行</p>
+<h1 id="查询书籍是西游记的作者的姓名"><a href="#查询书籍是西游记的作者的姓名" class="headerlink" title="查询书籍是西游记的作者的姓名"></a>查询书籍是西游记的作者的姓名</h1><p>book_obj &#x3D; models.Book.objects.filter(title&#x3D;’西游记’).first()<br>print(book_obj.authors)  # app01.Author.None<br>print(book_obj.authors.all())  # &lt;QuerySet [&lt;Author: 作者对象的名字：吴承恩&gt;]&gt;</p>
+<h1 id="查询作者为吴承恩的电话号码"><a href="#查询作者为吴承恩的电话号码" class="headerlink" title="查询作者为吴承恩的电话号码"></a>查询作者为吴承恩的电话号码</h1><p>user_obj &#x3D; models.Author.objects.filter(name&#x3D;’吴承恩’).first()<br>print(user_obj.authordetail.phone)<br>2、反向（从被关联的表到关联它的表）—点的是表名小写_set.all()，一对一没有all()，直接点表名即可</p>
+<h1 id="查询出版社是东方出版社出版的书籍-一对多字段的反向查询-关联表名-set-all"><a href="#查询出版社是东方出版社出版的书籍-一对多字段的反向查询-关联表名-set-all" class="headerlink" title="查询出版社是东方出版社出版的书籍 :一对多字段的反向查询,关联表名_set.all()"></a>查询出版社是东方出版社出版的书籍 :一对多字段的反向查询,关联表名_set.all()</h1><p>publish_obj &#x3D; models.Publish.objects.filter(name&#x3D;’东方出版社’).first()<br>print(publish_obj.book_set)  # app01.Book.None<br>print(publish_obj.book_set.all())  # &lt;QuerySet [&lt;Book: 书籍对象的名字：水浒传&gt;]&gt;</p>
+<h1 id="查询作者佚名写过的所有的书：多对多字段的反向查询，关联表名-set-all"><a href="#查询作者佚名写过的所有的书：多对多字段的反向查询，关联表名-set-all" class="headerlink" title="查询作者佚名写过的所有的书：多对多字段的反向查询，关联表名_set.all()"></a>查询作者佚名写过的所有的书：多对多字段的反向查询，关联表名_set.all()</h1><p>author_obj &#x3D; models.Author.objects.filter(name&#x3D;’佚名’).first()<br>print(author_obj.book_set.all())  # &lt;QuerySet [&lt;Book: 书籍对象的名字：水浒传&gt;, &lt;Book: 书籍对象的名字：红楼梦&gt;]&gt;</p>
+<h1 id="查询作者电话号码是110的作者姓名-：一对一字段的反向查询"><a href="#查询作者电话号码是110的作者姓名-：一对一字段的反向查询" class="headerlink" title="查询作者电话号码是110的作者姓名 ：一对一字段的反向查询"></a>查询作者电话号码是110的作者姓名 ：一对一字段的反向查询</h1><p>authordetail_obj &#x3D; models.AuthorDetail.objects.filter(phone&#x3D;110).first()<br>print(authordetail_obj.author.name)  # 一对一的没有all()方法，直接点即可<br>基于双下滑线的查询<br>1、正向：直接在values里以  关联字段开头__属性</p>
+<h1 id="查询书籍为三国演义的出版社地址"><a href="#查询书籍为三国演义的出版社地址" class="headerlink" title="查询书籍为三国演义的出版社地址"></a>查询书籍为三国演义的出版社地址</h1><p>res &#x3D; models.Book.objects.filter(title&#x3D;’三国演义’).values(‘publish__addr’)<br>print(res)</p>
+<h1 id="查询书籍为红楼梦的作者的姓名"><a href="#查询书籍为红楼梦的作者的姓名" class="headerlink" title="查询书籍为红楼梦的作者的姓名"></a>查询书籍为红楼梦的作者的姓名</h1><p>res &#x3D; models.Book.objects.filter(title&#x3D;’红楼梦’).values(‘authors__name’)<br>print(res)</p>
+<h1 id="查询作者施耐庵的家乡"><a href="#查询作者施耐庵的家乡" class="headerlink" title="查询作者施耐庵的家乡"></a>查询作者施耐庵的家乡</h1><p>res &#x3D; models.Author.objects.filter(name&#x3D;’施耐庵’).values(‘authordetail__addr’)<br>print(res)<br>2、反向：关联字段不在，values里通过   表名小写__属性</p>
+<h1 id="查询南方出版社出版的书名"><a href="#查询南方出版社出版的书名" class="headerlink" title="查询南方出版社出版的书名"></a>查询南方出版社出版的书名</h1><p>res &#x3D; models.Publish.objects.filter(name&#x3D;’南方出版社’).values(‘book__title’)<br>print(res)</p>
+<h1 id="查询电话号码为120的作者姓名"><a href="#查询电话号码为120的作者姓名" class="headerlink" title="查询电话号码为120的作者姓名"></a>查询电话号码为120的作者姓名</h1><p>res &#x3D; models.AuthorDetail.objects.filter(phone&#x3D;120).values(‘author__name’)<br>print(res)</p>
+<h1 id="查询作者曹雪芹的写的书的名字"><a href="#查询作者曹雪芹的写的书的名字" class="headerlink" title="查询作者曹雪芹的写的书的名字"></a>查询作者曹雪芹的写的书的名字</h1><p>res &#x3D; models.Author.objects.filter(name&#x3D;’曹雪芹’).values(‘book__title’)<br>print(res)</p>
+<h1 id="查询书籍为三国演义的作者的电话号码"><a href="#查询书籍为三国演义的作者的电话号码" class="headerlink" title="查询书籍为三国演义的作者的电话号码"></a>查询书籍为三国演义的作者的电话号码</h1><p>res &#x3D; models.Book.objects.filter(title&#x3D;’三国演义’).values(‘authors__ authordetail __ phone’)<br>print(res)<br>再看一些查询：（可以在filter过滤的时候就    表名__属性  ，这个不用加引号）</p>
+<h1 id="查询曹雪芹作者的手机号"><a href="#查询曹雪芹作者的手机号" class="headerlink" title="查询曹雪芹作者的手机号"></a>查询曹雪芹作者的手机号</h1><h1 id="正向"><a href="#正向" class="headerlink" title="正向"></a>正向</h1><p>res &#x3D; models.Author.objects.filter(name&#x3D;’曹雪芹’).values(‘authordetail__phone’)</p>
+<h1 id="反向"><a href="#反向" class="headerlink" title="反向"></a>反向</h1><p>res &#x3D; models.AuthorDetail.objects.filter(author__name&#x3D;’曹雪芹’).values(‘phone’)</p>
+<h1 id="查询出版社为东方出版社的所有图书的名字和价格"><a href="#查询出版社为东方出版社的所有图书的名字和价格" class="headerlink" title="查询出版社为东方出版社的所有图书的名字和价格"></a>查询出版社为东方出版社的所有图书的名字和价格</h1><h1 id="正向-1"><a href="#正向-1" class="headerlink" title="正向"></a>正向</h1><p>res &#x3D; models.Publish.objects.filter(name&#x3D;’东方出版社’).values(‘book__title’,’book__price’)<br>print(res)</p>
+<h1 id="反向-1"><a href="#反向-1" class="headerlink" title="反向"></a>反向</h1><p>res &#x3D; models.Book.objects.filter(publish__name&#x3D;’东方出版社’).values(‘title’,’price’)<br>print(res)</p>
+<h1 id="查询东方出版社出版的价格大于400的书"><a href="#查询东方出版社出版的价格大于400的书" class="headerlink" title="查询东方出版社出版的价格大于400的书"></a>查询东方出版社出版的价格大于400的书</h1><h1 id="正向-2"><a href="#正向-2" class="headerlink" title="正向"></a>正向</h1><p>res &#x3D; models.Publish.objects.filter(name&#x3D;’东方出版社’, book__price__gt&#x3D;400).values(‘book__title’)<br>print(res)</p>
+<h1 id="反向-2"><a href="#反向-2" class="headerlink" title="反向"></a>反向</h1><p>res &#x3D; models.Book.objects.filter(publish__name&#x3D;’东方出版社’,price__gt&#x3D;400).values(‘title’)<br>print(res)<br>聚合查询：<br>aggregate()是QuerySet 的一个终止子句，它返回一个包含一些键值对的字典。</p>
+<p>键的名称是聚合值的标识符，值是计算出来的聚合值。键的名称是按照字段和聚合函数的名称自动生成出来的。</p>
+<p>用到的内置函数：</p>
+<p>from django.db.models import Avg, Sum, Max, Min, Count<br>举例：</p>
+<p>from django.db.models import Max,Min,Count,Sum,Avg</p>
+<h1 id="查询主键值为3的书籍的作者个数"><a href="#查询主键值为3的书籍的作者个数" class="headerlink" title="查询主键值为3的书籍的作者个数"></a>查询主键值为3的书籍的作者个数</h1><p>res &#x3D; models.Book.objects.filter(pk&#x3D;3).aggregate(count_num&#x3D;Count(‘authors’))<br>print(res)</p>
+<h1 id="查询所有出版社出版的书的平均价格"><a href="#查询所有出版社出版的书的平均价格" class="headerlink" title="查询所有出版社出版的书的平均价格"></a>查询所有出版社出版的书的平均价格</h1><p>res &#x3D; models.Publish.objects.aggregate(avg_price&#x3D;Avg(‘book__price’))<br>print(res)</p>
+<h1 id="统计东方出版社出版的书籍的个数"><a href="#统计东方出版社出版的书籍的个数" class="headerlink" title="统计东方出版社出版的书籍的个数"></a>统计东方出版社出版的书籍的个数</h1><p>res &#x3D; models.Publish.objects.filter(name&#x3D;’东方出版社’).aggregate(count_num&#x3D;Count(‘book__id’))<br>print(res)<br> 分组查询（annotate）：类似group by</p>
+<h1 id="分组查询-group-by-annotate"><a href="#分组查询-group-by-annotate" class="headerlink" title="分组查询(group_by)   annotate"></a>分组查询(group_by)   annotate</h1><h1 id="统计每个出版社出版的书的平均价格"><a href="#统计每个出版社出版的书的平均价格" class="headerlink" title="统计每个出版社出版的书的平均价格"></a>统计每个出版社出版的书的平均价格</h1><p>res &#x3D; models.Publish.objects.annotate(avg_price&#x3D;Avg(‘book__price’)).values(‘name’,’avg_price’)<br>print(res)</p>
+<h1 id="统计每一本书的作者个数"><a href="#统计每一本书的作者个数" class="headerlink" title="统计每一本书的作者个数"></a>统计每一本书的作者个数</h1><p>res &#x3D; models.Book.objects.annotate(count_num&#x3D;Count(‘authors’)).values(‘title’,’count_num’)<br>print(res)</p>
+<h1 id="统计出每个出版社卖的最便宜的书的价格"><a href="#统计出每个出版社卖的最便宜的书的价格" class="headerlink" title="统计出每个出版社卖的最便宜的书的价格"></a>统计出每个出版社卖的最便宜的书的价格</h1><p>res &#x3D; models.Publish.objects.annotate(min_price&#x3D;Min(‘book__price’)).values(‘name’,’min_price’)<br>print(res)</p>
+<h1 id="查询每个作者出的书的总价格"><a href="#查询每个作者出的书的总价格" class="headerlink" title="查询每个作者出的书的总价格"></a>查询每个作者出的书的总价格</h1><p>res &#x3D; models.Author.objects.annotate(sum_price&#x3D;Sum(‘book__price’)).values(‘name’,’sum_price’)<br>print(res)<br>————————————————<br>版权声明：本文为CSDN博主「BigMasterSun」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40406241/article/details/91564707">https://blog.csdn.net/weixin_40406241/article/details/91564707</a></p>
 
     
 
@@ -339,7 +587,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://evacat.top/2022/08/08/vue-table格式化日期/" title="vue-table格式化日期" target="_blank">https://evacat.top/2022/08/08/vue-table格式化日期/</a>
+          <a href="https://evacat.top/2022/02/10/djangoORM基本操作/" title="djangoORM基本操作" target="_blank">https://evacat.top/2022/02/10/djangoORM基本操作/</a>
         </li>
         
         <li>
@@ -362,8 +610,15 @@
 			
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color4">
-						vue
+						class="js-tag article-tag-list-link color3">
+						技术
+					</a>
+				</li>
+				
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color2">
+						django
 					</a>
 				</li>
 				
@@ -420,7 +675,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/" alt="微信分享二维码"> -->
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" alt="微信分享二维码"> -->
     </div>
   </div>
 
@@ -434,11 +689,15 @@
 
 <nav id="article-nav">
   
-  
-    <a href="/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基本面试题</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2022/08/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -463,7 +722,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#el-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="toc-number">1.</span> <span class="toc-text">el-table格式化日期</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ORM"><span class="toc-number">1.</span> <span class="toc-text">ORM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E7%BA%AA%E5%A4%A7%E4%BA%8E16%E5%B2%81%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年纪大于16岁的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E7%BA%AA%E5%B0%8F%E4%BA%8E18%E5%B2%81%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年纪小于18岁的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E7%BA%AA%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E16%E5%B2%81%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年纪大于等于16岁的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E7%BA%AA%E5%B0%8F%E4%BA%8E%E7%AD%89%E4%BA%8E16%E5%B2%81%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年纪小于等于16岁的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E9%BE%84%E6%98%AF16%E6%88%9618%E6%88%9620%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年龄是16或18或20的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%B9%B4%E9%BE%84%E5%9C%A810-16%E5%B2%81%E4%B9%8B%E9%97%B4%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询年龄在10-16岁之间的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%86%8C%E6%98%AF%E5%9C%A82019%E5%B9%B4%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询注册是在2019年的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%90%8D%E5%AD%97%E4%B8%AD%E5%8C%85%E5%90%AB%E5%AD%97%E6%AF%8Dr%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询名字中包含字母r的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%BD%E7%95%A5r%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-number"></span> <span class="toc-text">忽略r大小写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%90%8D%E5%AD%97%E4%BB%A5s%E5%BC%80%E5%A4%B4%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询名字以s开头的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%90%8D%E5%AD%97%E4%BB%A5j%E7%BB%93%E5%B0%BE%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">查询名字以j结尾的用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%A0%B9%E6%8D%AEpublish-id%E6%9B%B4%E6%94%B9%E5%87%BA%E7%89%88%E7%A4%BE%E7%BB%91%E5%AE%9A%E5%85%B3%E7%B3%BB"><span class="toc-number"></span> <span class="toc-text">直接根据publish_id更改出版社绑定关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%88%E8%8E%B7%E5%8F%96%E5%87%BA%E7%89%88%E7%A4%BE%E4%B8%BB%E9%94%AE%E5%80%BC%E4%B8%BA2%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">先获取出版社主键值为2的对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%8D%E6%9B%B4%E6%96%B0"><span class="toc-number"></span> <span class="toc-text">再更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%88%E8%8E%B7%E5%8F%96%E5%88%B0%E4%B9%A6%E7%B1%8D%E4%B8%BB%E9%94%AE%E5%80%BC%E4%B8%BA2%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">先获取到书籍主键值为2的数据对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-%E8%AF%AD%E6%B3%95%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-number"></span> <span class="toc-text">通过.语法修改属性值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E7%94%A8save%E6%96%B9%E6%B3%95%E4%BF%9D%E5%AD%98"><span class="toc-number"></span> <span class="toc-text">调用save方法保存</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0%E5%87%BA%E7%89%88%E7%A4%BE%E8%A1%A8%E4%B8%AD%E4%B8%BB%E9%94%AE%E5%80%BC%E4%B8%BA3%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">拿到出版社表中主键值为3的对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%82%B9orm%E4%B8%AD%E5%AD%97%E6%AE%B5%E5%90%8D-%E4%BC%A0%E8%AF%A5%E5%AD%97%E6%AE%B5%E5%AF%B9%E5%BA%94%E7%9A%84%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">点orm中字段名 传该字段对应的表的数据对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#book%E8%A1%A8%E9%80%9A%E8%BF%87authors%E8%A1%A8%E5%81%9A%E5%A4%96%E9%94%AE%E5%85%B3%E8%81%94"><span class="toc-number"></span> <span class="toc-text">book表通过authors表做外键关联</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E4%BC%A0%E6%95%B0%E5%AD%97%E5%92%8C%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%94%AF%E6%8C%81%E4%BC%A0%E5%A4%9A%E4%B8%AA"><span class="toc-number"></span> <span class="toc-text">可以传数字和对象，并且支持传多个</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E6%98%AF%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89%E7%9A%84%E5%87%BA%E7%89%88%E7%A4%BE%E9%82%AE%E7%AE%B1"><span class="toc-number"></span> <span class="toc-text">查询书籍是三国演义的出版社邮箱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E6%98%AF%E8%A5%BF%E6%B8%B8%E8%AE%B0%E7%9A%84%E4%BD%9C%E8%80%85%E7%9A%84%E5%A7%93%E5%90%8D"><span class="toc-number"></span> <span class="toc-text">查询书籍是西游记的作者的姓名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BD%9C%E8%80%85%E4%B8%BA%E5%90%B4%E6%89%BF%E6%81%A9%E7%9A%84%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">查询作者为吴承恩的电话号码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%87%BA%E7%89%88%E7%A4%BE%E6%98%AF%E4%B8%9C%E6%96%B9%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%B9%A6%E7%B1%8D-%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E5%8F%8D%E5%90%91%E6%9F%A5%E8%AF%A2-%E5%85%B3%E8%81%94%E8%A1%A8%E5%90%8D-set-all"><span class="toc-number"></span> <span class="toc-text">查询出版社是东方出版社出版的书籍 :一对多字段的反向查询,关联表名_set.all()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BD%9C%E8%80%85%E4%BD%9A%E5%90%8D%E5%86%99%E8%BF%87%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E4%B9%A6%EF%BC%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E5%8F%8D%E5%90%91%E6%9F%A5%E8%AF%A2%EF%BC%8C%E5%85%B3%E8%81%94%E8%A1%A8%E5%90%8D-set-all"><span class="toc-number"></span> <span class="toc-text">查询作者佚名写过的所有的书：多对多字段的反向查询，关联表名_set.all()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BD%9C%E8%80%85%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E6%98%AF110%E7%9A%84%E4%BD%9C%E8%80%85%E5%A7%93%E5%90%8D-%EF%BC%9A%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AD%97%E6%AE%B5%E7%9A%84%E5%8F%8D%E5%90%91%E6%9F%A5%E8%AF%A2"><span class="toc-number"></span> <span class="toc-text">查询作者电话号码是110的作者姓名 ：一对一字段的反向查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E4%B8%BA%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89%E7%9A%84%E5%87%BA%E7%89%88%E7%A4%BE%E5%9C%B0%E5%9D%80"><span class="toc-number"></span> <span class="toc-text">查询书籍为三国演义的出版社地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E4%B8%BA%E7%BA%A2%E6%A5%BC%E6%A2%A6%E7%9A%84%E4%BD%9C%E8%80%85%E7%9A%84%E5%A7%93%E5%90%8D"><span class="toc-number"></span> <span class="toc-text">查询书籍为红楼梦的作者的姓名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BD%9C%E8%80%85%E6%96%BD%E8%80%90%E5%BA%B5%E7%9A%84%E5%AE%B6%E4%B9%A1"><span class="toc-number"></span> <span class="toc-text">查询作者施耐庵的家乡</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%8D%97%E6%96%B9%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%B9%A6%E5%90%8D"><span class="toc-number"></span> <span class="toc-text">查询南方出版社出版的书名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E4%B8%BA120%E7%9A%84%E4%BD%9C%E8%80%85%E5%A7%93%E5%90%8D"><span class="toc-number"></span> <span class="toc-text">查询电话号码为120的作者姓名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BD%9C%E8%80%85%E6%9B%B9%E9%9B%AA%E8%8A%B9%E7%9A%84%E5%86%99%E7%9A%84%E4%B9%A6%E7%9A%84%E5%90%8D%E5%AD%97"><span class="toc-number"></span> <span class="toc-text">查询作者曹雪芹的写的书的名字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B9%A6%E7%B1%8D%E4%B8%BA%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89%E7%9A%84%E4%BD%9C%E8%80%85%E7%9A%84%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">查询书籍为三国演义的作者的电话号码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9B%B9%E9%9B%AA%E8%8A%B9%E4%BD%9C%E8%80%85%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7"><span class="toc-number"></span> <span class="toc-text">查询曹雪芹作者的手机号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%90%91"><span class="toc-number"></span> <span class="toc-text">正向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91"><span class="toc-number"></span> <span class="toc-text">反向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%87%BA%E7%89%88%E7%A4%BE%E4%B8%BA%E4%B8%9C%E6%96%B9%E5%87%BA%E7%89%88%E7%A4%BE%E7%9A%84%E6%89%80%E6%9C%89%E5%9B%BE%E4%B9%A6%E7%9A%84%E5%90%8D%E5%AD%97%E5%92%8C%E4%BB%B7%E6%A0%BC"><span class="toc-number"></span> <span class="toc-text">查询出版社为东方出版社的所有图书的名字和价格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%90%91-1"><span class="toc-number"></span> <span class="toc-text">正向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91-1"><span class="toc-number"></span> <span class="toc-text">反向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%9C%E6%96%B9%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%BB%B7%E6%A0%BC%E5%A4%A7%E4%BA%8E400%E7%9A%84%E4%B9%A6"><span class="toc-number"></span> <span class="toc-text">查询东方出版社出版的价格大于400的书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%90%91-2"><span class="toc-number"></span> <span class="toc-text">正向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91-2"><span class="toc-number"></span> <span class="toc-text">反向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%BB%E9%94%AE%E5%80%BC%E4%B8%BA3%E7%9A%84%E4%B9%A6%E7%B1%8D%E7%9A%84%E4%BD%9C%E8%80%85%E4%B8%AA%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">查询主键值为3的书籍的作者个数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%B9%A6%E7%9A%84%E5%B9%B3%E5%9D%87%E4%BB%B7%E6%A0%BC"><span class="toc-number"></span> <span class="toc-text">查询所有出版社出版的书的平均价格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E4%B8%9C%E6%96%B9%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%B9%A6%E7%B1%8D%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">统计东方出版社出版的书籍的个数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2-group-by-annotate"><span class="toc-number"></span> <span class="toc-text">分组查询(group_by)   annotate</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%AF%8F%E4%B8%AA%E5%87%BA%E7%89%88%E7%A4%BE%E5%87%BA%E7%89%88%E7%9A%84%E4%B9%A6%E7%9A%84%E5%B9%B3%E5%9D%87%E4%BB%B7%E6%A0%BC"><span class="toc-number"></span> <span class="toc-text">统计每个出版社出版的书的平均价格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%AF%8F%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%9A%84%E4%BD%9C%E8%80%85%E4%B8%AA%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">统计每一本书的作者个数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%87%BA%E6%AF%8F%E4%B8%AA%E5%87%BA%E7%89%88%E7%A4%BE%E5%8D%96%E7%9A%84%E6%9C%80%E4%BE%BF%E5%AE%9C%E7%9A%84%E4%B9%A6%E7%9A%84%E4%BB%B7%E6%A0%BC"><span class="toc-number"></span> <span class="toc-text">统计出每个出版社卖的最便宜的书的价格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%AF%8F%E4%B8%AA%E4%BD%9C%E8%80%85%E5%87%BA%E7%9A%84%E4%B9%A6%E7%9A%84%E6%80%BB%E4%BB%B7%E6%A0%BC"><span class="toc-number"></span> <span class="toc-text">查询每个作者出的书的总价格</span></a>
                     </div>
                 </span>
             </div>
@@ -487,9 +746,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "vue-table格式化日期" -->
+  <!-- id: "djangoORM基本操作" -->
   var giteement = new Giteement({
-    id: '20220808202128',
+    id: '20220210161653',
     owner: '',
     repo: '',
     backcall_uri: '',
