@@ -110,7 +110,7 @@
 								</ul>
 							</nav>
 							<nav>
-								总文章数 7
+								总文章数 8
 							</nav>
 							<nav class="header-smart-menu">
 								
@@ -436,7 +436,7 @@
 <p>在js当中，所有的任务分为异步，和同步，</p>
 <p>同步：立即执行，直接进入主线程中执行，</p>
 <p>异步，异步执行，比如ajax请求，定时器</p>
-<img src="https://static.vue-js.com/61efbc20-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;" />
+<img src="https://static.vue-js.com/61efbc20-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;">
 
 <p>同步任务进入主线程执行，异步任务进入任务队列，当主线程的任务执行完毕为空，会去任务队列读取任务，推入主线程，不断重复这个过程</p>
 <p>异步任务又分为 微任务，宏任务，</p>
@@ -447,7 +447,7 @@
 <p>常见宏任务</p>
 <ul>
 <li>定时器，等</li>
-<li><img src="https://static.vue-js.com/6e80e5e0-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;" /></li>
+<li><img src="https://static.vue-js.com/6e80e5e0-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;"></li>
 </ul>
 <p>执行机制为：</p>
 <p>执行一个宏任务，如果遇到微任务就将它放到微任务事件队列，宏任务执行完，查看微任务队列，将里面的微任务队列执行完</p>
@@ -1238,7 +1238,7 @@
 <p>手动解决冲突，告诉我们冲突的文件，或者通过 git status 同样可以看到冲突文件</p>
 <p>接着使用 git add 命令标记冲突已解决，再使用 git commit进行提交</p>
 <h4 id="73-Vue路由实现原理"><a href="#73-Vue路由实现原理" class="headerlink" title="73.Vue路由实现原理"></a>73.Vue路由实现原理</h4><p>vue中路由的实现原理？<br>1、首先需要了解一下Vue路由分为两种，一种是哈希路由，其最明显的特征是URL地址带‘#’号的，其实对地址栏也就不怎么美观一点。其次是history路由也就是URL不带‘#’号的地址，也就是我们比较常见的地址。<br>2、为什么要了解Vue路由的实现原理呢？其实我们都知道Vue 构建的单页面应用，其实根据路由地址的不同渲染不同的组件，在无刷新的前提下进行组件切换，根据路由地址切换不同的组件<br>下面介绍一下简单的例子来了解Vue路由的实现原理<br>3、在介绍vue实现原理之前<br>首先来了解一下Vue中的哈希路由的实现原理，其实根本原理涉及到了BOM中的location对象，其中对象中的location.hash储存的是路由的地址、可以赋值改变其URL的地址。而这会触发hashchange事件，而通过window.addEventListener监听hash值然后去匹配对应的路由、从而渲染页面的组件</p>
-
+</script></p></blockquote>
     
 
     
@@ -1602,15 +1602,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1623,10 +1631,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">当然</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
             
             <div class="clearfix"></div>
