@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>Archives: 2022 | 不想</title>
+  <title>var、let、const 区别 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="不想">
-<meta property="og:url" content="https://evacat.top/archives/2022/index.html">
+  <meta name="description" content="一、var在ES5中，顶层对象的属性和全局变量是等价的，用var声明的变量既是全局变量，也是顶层变量 注意：顶层对象，在浏览器环境指的是window对象，在 Node 指的是global对象 123var a &#x3D; 10;console.log(window.a) &#x2F;&#x2F; 10 使用var声明的变量存在变量提升的情况 &#x2F;&#x2F; undefined1var a &#x3D; 20 在编译阶段，编译器会将其变成以下执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="var、let、const 区别">
+<meta property="og:url" content="https://evacat.top/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="不想">
+<meta property="og:description" content="一、var在ES5中，顶层对象的属性和全局变量是等价的，用var声明的变量既是全局变量，也是顶层变量 注意：顶层对象，在浏览器环境指的是window对象，在 Node 指的是global对象 123var a &#x3D; 10;console.log(window.a) &#x2F;&#x2F; 10 使用var声明的变量存在变量提升的情况 &#x2F;&#x2F; undefined1var a &#x3D; 20 在编译阶段，编译器会将其变成以下执行">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-23T08:43:37.000Z">
+<meta property="article:modified_time" content="2022-08-11T08:11:46.970Z">
 <meta property="article:author" content="不想">
+<meta property="article:tag" content="es6">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
@@ -229,41 +234,177 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-var、let、const 区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/" class="archive-article-date">
-        <time datetime="2022-08-08T12:21:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/" target="_blank">vue-table格式化日期</a>
   
+    <h1 class="article-title" itemprop="name">
+      var、let、const 区别
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+        <time datetime="2021-06-23T08:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-23</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="一、var"><a href="#一、var" class="headerlink" title="一、var"></a>一、var</h1><p>在ES5中，顶层对象的属性和全局变量是等价的，用var声明的变量既是全局变量，也是顶层变量</p>
+<p>注意：顶层对象，在浏览器环境指的是window对象，在 Node 指的是global对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var a = 10;</span><br><span class="line">console.log(window.a) // 10</span><br></pre></td></tr></table></figure>
+<p>使用var声明的变量存在变量提升的情况</p>
+<figure class="highlight plaintext"><figcaption><span>// undefined</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 20</span><br></pre></td></tr></table></figure>
+<p>在编译阶段，编译器会将其变成以下执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a</span><br><span class="line">console.log(a)</span><br><span class="line">a = 20</span><br></pre></td></tr></table></figure>
+<p>使用var，我们能够对一个变量进行多次声明，后面声明的变量会覆盖前面的变量声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 20 </span><br><span class="line">var a = 30</span><br><span class="line">console.log(a) // 30</span><br></pre></td></tr></table></figure>
+<p>在函数中使用使用var声明变量时候，该变量是局部的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = 20</span><br><span class="line">function change()&#123;</span><br><span class="line">    var a = 30</span><br><span class="line">&#125;</span><br><span class="line">change()</span><br><span class="line">console.log(a) // 20 </span><br></pre></td></tr></table></figure>
+<p>而如果在函数内不使用var，该变量是全局的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = 20</span><br><span class="line">function change()&#123;</span><br><span class="line">   a = 30</span><br><span class="line">&#125;</span><br><span class="line">change()</span><br><span class="line">console.log(a) // 30 </span><br></pre></td></tr></table></figure>
+<h1 id="二、let"><a href="#二、let" class="headerlink" title="二、let"></a>二、let</h1><p>let是ES6新增的命令，用来声明变量</p>
+<p>用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    let a = 20</span><br><span class="line">&#125;</span><br><span class="line">console.log(a) // ReferenceError: a is not defined.</span><br></pre></td></tr></table></figure>
+<p>不存在变量提升</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(a) // 报错ReferenceError</span><br><span class="line">let a = 2</span><br></pre></td></tr></table></figure>
+<p>这表示在声明它之前，变量a是不存在的，这时如果用到它，就会抛出一个错误</p>
+<p>只要块级作用域内存在let命令，这个区域就不再受外部影响</p>
+<figure class="highlight plaintext"><figcaption><span>a </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">    a = &#x27;abc&#x27; // ReferenceError</span><br><span class="line">    let a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用let声明变量前，该变量都不可用，也就是大家常说的“暂时性死区”</p>
+<p>最后，let不允许在相同作用域中重复声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = 20</span><br><span class="line">let a = 30</span><br><span class="line">// Uncaught SyntaxError: Identifier &#x27;a&#x27; has already been declared</span><br></pre></td></tr></table></figure>
+<p>注意的是相同作用域，下面这种情况是不会报错的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = 20</span><br><span class="line">&#123;</span><br><span class="line">    let a = 30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因此，我们不能在函数内部重新声明参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function func(arg) &#123;</span><br><span class="line">  let arg;</span><br><span class="line">&#125;</span><br><span class="line">func()</span><br><span class="line">// Uncaught SyntaxError: Identifier &#x27;arg&#x27; has already been declared</span><br></pre></td></tr></table></figure>
+<h1 id="三、const"><a href="#三、const" class="headerlink" title="三、const"></a>三、const</h1><p>const声明一个只读的常量，一旦声明，常量的值就不能改变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = 1</span><br><span class="line">a = 3</span><br><span class="line">// TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure>
+<p>这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const a;</span><br><span class="line">// SyntaxError: Missing initializer in const declaration</span><br></pre></td></tr></table></figure>
+<p>如果之前用var或let声明过变量，再用const声明同样会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 20</span><br><span class="line">let b = 20</span><br><span class="line">const a = 30</span><br><span class="line">const b = 30</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F; 都会报错<br>const实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动</p>
+<p>对于简单类型的数据，值就保存在变量指向的那个内存地址，因此等同于常量</p>
+<p>对于复杂类型的数据，变量指向的内存地址，保存的只是一个指向实际数据的指针，const只能保证这个指针是固定的，并不能确保改变量的结构不变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// 为 foo 添加一个属性，可以成功</span><br><span class="line">foo.prop = 123;</span><br><span class="line">foo.prop // 123</span><br><span class="line"></span><br><span class="line">// 将 foo 指向另一个对象，就会报错</span><br><span class="line">foo = &#123;&#125;; // TypeError: &quot;foo&quot; is read-only</span><br><span class="line">其它情况，const与let一致</span><br></pre></td></tr></table></figure>
+<h1 id="四、区别"><a href="#四、区别" class="headerlink" title="四、区别"></a>四、区别</h1><p>var、let、const三者区别可以围绕下面五点展开：</p>
+<p>变量提升<br>暂时性死区<br>块级作用域<br>重复声明<br>修改声明的变量<br>使用<br>#变量提升<br>var声明的变量存在变量提升，即变量可以在声明之前调用，值为undefined</p>
+<p>let和const不存在变量提升，即它们所声明的变量一定要在声明后使用，否则报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// var</span><br><span class="line">console.log(a)  // undefined</span><br><span class="line">var a = 10</span><br><span class="line"></span><br><span class="line">// let </span><br><span class="line">console.log(b)  // Cannot access &#x27;b&#x27; before initialization</span><br><span class="line">let b = 10</span><br><span class="line"></span><br><span class="line">// const</span><br><span class="line">console.log(c)  // Cannot access &#x27;c&#x27; before initialization</span><br><span class="line">const c = 10</span><br></pre></td></tr></table></figure>
+<h1 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h1><p>var不存在暂时性死区</p>
+<p>let和const存在暂时性死区，只有等到声明变量的那一行代码出现，才可以获取和使用该变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// var</span><br><span class="line">console.log(a)  // undefined</span><br><span class="line">var a = 10</span><br><span class="line"></span><br><span class="line">// let</span><br><span class="line">console.log(b)  // Cannot access &#x27;b&#x27; before initialization</span><br><span class="line">let b = 10</span><br><span class="line"></span><br><span class="line">// const</span><br><span class="line">console.log(c)  // Cannot access &#x27;c&#x27; before initialization</span><br><span class="line">const c = 10</span><br></pre></td></tr></table></figure>
+<h1 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h1><p>var不存在块级作用域</p>
+<p>let和const存在块级作用域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// var</span><br><span class="line">&#123;</span><br><span class="line">    var a = 20</span><br><span class="line">&#125;</span><br><span class="line">console.log(a)  // 20</span><br><span class="line"></span><br><span class="line">// let</span><br><span class="line">&#123;</span><br><span class="line">    let b = 20</span><br><span class="line">&#125;</span><br><span class="line">console.log(b)  // Uncaught ReferenceError: b is not defined</span><br><span class="line"></span><br><span class="line">// const</span><br><span class="line">&#123;</span><br><span class="line">    const c = 20</span><br><span class="line">&#125;</span><br><span class="line">console.log(c)  // Uncaught ReferenceError: c is not defined</span><br></pre></td></tr></table></figure>
+<h1 id="重复声明"><a href="#重复声明" class="headerlink" title="重复声明"></a>重复声明</h1><p>var允许重复声明变量</p>
+<p>let和const在同一作用域不允许重复声明变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// var</span><br><span class="line">var a = 10</span><br><span class="line">var a = 20 // 20</span><br><span class="line"></span><br><span class="line">// let</span><br><span class="line">let b = 10</span><br><span class="line">let b = 20 // Identifier &#x27;b&#x27; has already been declared</span><br><span class="line"></span><br><span class="line">// const</span><br><span class="line">const c = 10</span><br><span class="line">const c = 20 // Identifier &#x27;c&#x27; has already been declared</span><br></pre></td></tr></table></figure>
+<h1 id="修改声明的变量"><a href="#修改声明的变量" class="headerlink" title="修改声明的变量"></a>修改声明的变量</h1><p>var和let可以</p>
+<p>const声明一个只读的常量。一旦声明，常量的值就不能改变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// var</span><br><span class="line">var a = 10</span><br><span class="line">a = 20</span><br><span class="line">console.log(a)  // 20</span><br><span class="line"></span><br><span class="line">//let</span><br><span class="line">let b = 10</span><br><span class="line">b = 20</span><br><span class="line">console.log(b)  // 20</span><br><span class="line"></span><br><span class="line">// const</span><br><span class="line">const c = 10</span><br><span class="line">c = 20</span><br><span class="line">console.log(c) // Uncaught TypeError: Assignment to constant variable</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>能用const的情况尽量使用const，其他情况下大多数使用let，避免使用var</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/zhifubao.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          不想
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://evacat.top/2021/06/23/var、let、const 区别/" title="var、let、const 区别" target="_blank">https://evacat.top/2021/06/23/var、let、const 区别/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -271,249 +412,154 @@
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
 						class="js-tag article-tag-list-link color4">
-						vue
+						es6
 					</a>
 				</li>
 				
 		</ul>
 	</div>
 	
-          
+    
 
+    
+
+    
+    
+  <div class="share-btn share-icons tooltip-left">
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item">
+        <a href="javascript:;" class="share-sns share-outer">
+          <i class="icon icon-share"></i>
+        </a>
+      </span>
+      <span class="tooltip-content">
+        <div class="share-wrap">
+          <div class="share-icons">
+            <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+              <i class="icon icon-weibo"></i>
+            </a>
+            <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+            <a class="qq share-sns" href="javascript:;" data-type="qq">
+              <i class="icon icon-qq"></i>
+            </a>
+            <a class="douban share-sns" href="javascript:;" data-type="douban">
+              <i class="icon icon-douban"></i>
+            </a>
+            <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+              <i class="icon icon-qzone"></i>
+            </a>
+            <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+              <i class="icon icon-facebook"></i>
+            </a>
+            <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+              <i class="icon icon-twitter"></i>
+            </a>
+            <a class="google share-sns" href="javascript:;" data-type="google">
+              <i class="icon icon-google"></i>
+            </a>
+          </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </span>
+    </div>
+  </div>
+
+  <div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" alt="微信分享二维码"> -->
+    </div>
+  </div>
+
+  <div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/" class="archive-article-date">
-        <time datetime="2022-08-01T09:22:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          djangoORM基本操作
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/" target="_blank">基本面试题</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color4">
-						面试题
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81var"><span class="toc-number">1.</span> <span class="toc-text">一、var</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81let"><span class="toc-number">2.</span> <span class="toc-text">二、let</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81const"><span class="toc-number">3.</span> <span class="toc-text">三、const</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">四、区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA"><span class="toc-number">5.</span> <span class="toc-text">暂时性死区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">6.</span> <span class="toc-text">块级作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%A3%B0%E6%98%8E"><span class="toc-number">7.</span> <span class="toc-text">重复声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">8.</span> <span class="toc-text">修改声明的变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">9.</span> <span class="toc-text">使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/01/%E5%BA%94%E8%AF%A5%E7%BD%AE%E9%A1%B6%E7%9A%84%E6%96%87%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2022-08-01T08:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/01/%E5%BA%94%E8%AF%A5%E7%BD%AE%E9%A1%B6%E7%9A%84%E6%96%87%E7%AB%A0/" target="_blank">应该置顶的文章</a>
-  
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color3">
-						随笔
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/01/%E5%BD%93%E7%84%B6/" class="archive-article-date">
-        <time datetime="2022-08-01T08:24:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/01/%E5%BD%93%E7%84%B6/" target="_blank">当然</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color3">
-						当然
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/01/hello-world/" class="archive-article-date">
-        <time datetime="2022-08-01T08:20:40.713Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/01/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-page">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-        <time datetime="2022-02-10T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" target="_blank">djangoORM基本操作</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color3">
-						技术
-					</a>
-				</li>
-				
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color2">
-						django
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "var、let、const 区别" -->
+  var giteement = new Giteement({
+    id: '20210623164337',
+    owner: '',
+    repo: '',
+    backcall_uri: '',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '',
+      client_secret: ''
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
+
+
 
 
           </div>
@@ -554,8 +600,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
