@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>Tag: es6 | 不想</title>
+  <title>登录逻辑 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="不想">
-<meta property="og:url" content="https://evacat.top/tags/es6/index.html">
+  <meta name="description" content="1.http无协议因为HTTP是无状态的协议，也就是说，这个协议是无法记录用户访问状态的，其每次请求都是独立的无关联的，一笔是一笔。而我们的网站都是设计成多个页面的，所在页面跳转过程中我们需要知道用户的状态，尤其是用户登录的状态，这样我们在页面跳转后我们才知道是否可以让用户有权限来操作一些功能或是查看一些数据。 所以，我们每个页面都需要对用户的身份进行认证。为了实现这一功能，用得最多的技术就是浏览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="登录逻辑">
+<meta property="og:url" content="https://evacat.top/2021/03/13/%E7%99%BB%E5%BD%95%E9%80%BB%E8%BE%91/index.html">
 <meta property="og:site_name" content="不想">
+<meta property="og:description" content="1.http无协议因为HTTP是无状态的协议，也就是说，这个协议是无法记录用户访问状态的，其每次请求都是独立的无关联的，一笔是一笔。而我们的网站都是设计成多个页面的，所在页面跳转过程中我们需要知道用户的状态，尤其是用户登录的状态，这样我们在页面跳转后我们才知道是否可以让用户有权限来操作一些功能或是查看一些数据。 所以，我们每个页面都需要对用户的身份进行认证。为了实现这一功能，用得最多的技术就是浏览">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-13T01:15:03.000Z">
+<meta property="article:modified_time" content="2022-08-13T01:17:26.080Z">
 <meta property="article:author" content="不想">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
@@ -229,68 +234,295 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-登录逻辑" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-        <time datetime="2021-06-23T08:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-23</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" target="_blank">var、let、const 区别</a>
   
+    <h1 class="article-title" itemprop="name">
+      登录逻辑
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2021/03/13/%E7%99%BB%E5%BD%95%E9%80%BB%E8%BE%91/" class="archive-article-date">
+        <time datetime="2021-03-13T01:15:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.7k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-http无协议"><a href="#1-http无协议" class="headerlink" title="1.http无协议"></a>1.http无协议</h3><p>因为HTTP是无状态的协议，也就是说，这个协议是无法记录用户访问状态的，其每次请求都是独立的无关联的，一笔是一笔。而我们的网站都是设计成多个页面的，所在页面跳转过程中我们需要知道用户的状态，尤其是用户登录的状态，这样我们在页面跳转后我们才知道是否可以让用户有权限来操作一些功能或是查看一些数据。</p>
+<p>所以，我们每个页面都需要对用户的身份进行认证。为了实现这一功能，用得最多的技术就是浏览器的cookie，我们会把用户登录的信息存放在客户端的cookie里，这样，我们每个页面都从这个cookie里获得用户是否登录的信息，从而达到记录状态，验证用户的目的。下面是使用cookie的一些原则。</p>
+<p>千万不要在cookie中存放用户的密码。加密的密码都不行。因为这个密码可以被人获取并尝试离线穷举。所以，一定不能把用户的密码保存在cookie中。<br>关于设计“记住密码”。一般的设计是当用户勾选了这个功能，系统会生成一个cookie，cookie包括用户名和一个固定的散列值，这个固定的散列值一直使用。这样，你就可以在所有的设备和客户上都可以登录，而且可以有多个用户同时登录。</p>
+<h3 id="2-常见的几种登录方式"><a href="#2-常见的几种登录方式" class="headerlink" title="2.常见的几种登录方式"></a>2.常见的几种登录方式</h3><h4 id="2-1-Cookie-Session-登录"><a href="#2-1-Cookie-Session-登录" class="headerlink" title="2.1 Cookie + Session 登录"></a>2.1 Cookie + Session 登录</h4><p>在cookie中，保存三个东西——用户名，登录序列，登录token。<br>用户名：明文存放。<br>登录序列：一个被MD5散列过的随机数，仅当强制用户输入口令时更新（如：用户修改了口令）。<br>登录token：一个被MD5散列过的随机数，仅一个登录session内有效，新的登录session会更新它。<br>上述三个东西会存在服务器上，服务器的验证用户需要验证客户端cookie里的这三个事。<br>流程</p>
+<p>1.用户访问 a.com&#x2F;pageA，并输入密码登录。<br>2.服务器验证密码无误后，会创建 SessionId，并将它保存起来。<br>3.服务器端响应这个 HTTP 请求，并通过 Set-Cookie 头信息，将 SessionId 写入 Cookie 中。<br>二次访问时</p>
+<p>用户访问 a.com&#x2F;pageB 页面时，会自动带上第一次登录时写入的 Cookie。<br>服务器端比对 Cookie 中的 SessionId 和保存在服务器端的 SessionId是否一致。<br>如果一致，则身份验证成功。<br>缺点</p>
+<p>由于服务器端需要对接大量的客户端，也就需要存放大量的 SessionId，这样会导致服务器压力过大。如果服务器端是一个集群，<br>为了同步登录态，需要将 SessionId 同步到每一台机器上，无形中增加了服务器端维护成本。<br>由于 SessionId 存放在 Cookie 中，所以无法避免 CSRF 攻击。</p>
+<h4 id="2-2-Token-登录"><a href="#2-2-Token-登录" class="headerlink" title="2.2 Token 登录"></a>2.2 Token 登录</h4><p>Token 是服务端生成的一串字符串，以作为客户端请求的一个令牌。当第一次登录后，服务器会生成一个 Token 并返回给客户端，客户端后续访问时，只需带上这个 Token 即可完成身份认证。<br>token生成方式:<br>最常见的 Token 生成方式是使用 JWT（Json Web Token，它是一种简洁的，自包含的方法用于通信双方之间以 JSON 对象的形式安全的传递信息。<br>JWT 算法主要分为 3 个部分：header（头信息），playload（消息体），signature（签名）。<br>登录流程</p>
+<p>1.首次登录时，后端服务器判断用户账号密码正确之后，根据用户id、用户名、定义好的秘钥、过期时间生成 token ，返回给前端；<br>2.前端拿到后端返回的 token ,存储在 localStorage 和 Vuex 里；<br>3.前端每次路由跳转，判断 localStorage 有无 token ，没有则跳转到登录页，有则请求获取用户信息，改变登录状态；<br>4.每次请求接口，在 Axios 请求头里携带 token;<br>5.后端接口判断请求头有无 token，没有或者 token 过期，返回401；前端得到 401 状态码，重定向到登录页面。</p>
+<h4 id="2-3-SSO-单点登录"><a href="#2-3-SSO-单点登录" class="headerlink" title="2.3 SSO 单点登录"></a>2.3 SSO 单点登录</h4><p>单点登录指的是在公司内部搭建一个公共的认证中心，公司下的所有产品的登录都可以在认证中心里完成，一个产品在认证中心登录后，再去访问另一个产品，可以不用再次登录，即可获取登录状态。</p>
+<p>1.用户访问网站 a.com 下的 pageA 页面。<br>2.由于没有登录，则会重定向到认证中心，并带上回调地址 <a target="_blank" rel="noopener" href="http://www.sso.com/?return_uri=a.com/pageA%EF%BC%8C%E4%BB%A5%E4%BE%BF%E7%99%BB%E5%BD%95%E5%90%8E%E7%9B%B4%E6%8E%A5%E8%BF%9B%E5%85%A5%E5%AF%B9%E5%BA%94%E9%A1%B5%E9%9D%A2%E3%80%82">www.sso.com?return_uri=a.com/pageA，以便登录后直接进入对应页面。</a><br>3.用户在认证中心输入账号密码，提交登录。<br>4.认证中心验证账号密码有效，然后重定向 a.com?ticket&#x3D;123 带上授权码 ticket，并将认证中心sso.com 的登录态写入 Cookie。<br>5.在 a.com 服务器中，拿着 ticket 向认证中心确认，授权码 ticket 真实有效。<br>6.验证成功后，服务器将登录信息写入 Cookie（此时客户端有 2 个 Cookie 分别存有 a.com 和 sso.com 的登录态）。<br>当某个产品 c.com 退出登录时：</p>
+<p>清空 c.com 中的登录态 Cookie。<br>请求认证中心 sso.com 中的退出 api。<br>认证中心遍历下发过 ticket 的所有产品，并调用对应的退出 api，完成退出。</p>
+<h4 id="2-4-OAuth-第三方登录"><a href="#2-4-OAuth-第三方登录" class="headerlink" title="2.4 OAuth 第三方登录"></a>2.4 OAuth 第三方登录</h4><p>1.首先，a.com 的运营者需要在微信开放平台注册账号，并向微信申请使用微信登录功能。<br>2.申请成功后，得到申请的 appid、appsecret。<br>3.用户在 a.com 上选择使用微信登录。这时会跳转微信的 OAuth 授权登录，并带上 a.com 的回调地址。<br>4.用户输入微信账号和密码，登录成功后，需要选择具体的授权范围，如：授权用户的头像、昵称等。<br>5.授权之后，微信会根据拉起 a.com?code&#x3D;123 ，这时带上了一个临时票据code。<br>6.获取 code 之后， a.com 会拿着 code 、appid、appsecret，向微信服务器申请 token，验证成功后，微信会下发一个 token。<br>7.有了 token 之后， a.com 就可以凭借 token 拿到对应的微信用户头像，用户昵称等信息了。<br>8.a.com 提示用户登录成功，并将登录状态写入 Cooke，以作为后续访问的凭证。</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/zhifubao.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          不想
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://evacat.top/2021/03/13/登录逻辑/" title="登录逻辑" target="_blank">https://evacat.top/2021/03/13/登录逻辑/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color4">
-						es6
+						class="js-tag article-tag-list-link color3">
+						前端
 					</a>
 				</li>
 				
 		</ul>
 	</div>
 	
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+  <div class="share-btn share-icons tooltip-left">
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item">
+        <a href="javascript:;" class="share-sns share-outer">
+          <i class="icon icon-share"></i>
+        </a>
+      </span>
+      <span class="tooltip-content">
+        <div class="share-wrap">
+          <div class="share-icons">
+            <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+              <i class="icon icon-weibo"></i>
+            </a>
+            <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+            <a class="qq share-sns" href="javascript:;" data-type="qq">
+              <i class="icon icon-qq"></i>
+            </a>
+            <a class="douban share-sns" href="javascript:;" data-type="douban">
+              <i class="icon icon-douban"></i>
+            </a>
+            <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+              <i class="icon icon-qzone"></i>
+            </a>
+            <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+              <i class="icon icon-facebook"></i>
+            </a>
+            <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+              <i class="icon icon-twitter"></i>
+            </a>
+            <a class="google share-sns" href="javascript:;" data-type="google">
+              <i class="icon icon-google"></i>
+            </a>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2021/03/13/%E7%99%BB%E5%BD%95%E9%80%BB%E8%BE%91/" alt="微信分享二维码"> -->
+    </div>
+  </div>
+
+  <div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          var、let、const 区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/17/OpenCV%E8%BF%9B%E9%98%B6%E7%AF%8701/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenCV进阶篇01</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-http%E6%97%A0%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">1.http无协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">2.常见的几种登录方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Cookie-Session-%E7%99%BB%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Cookie + Session 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Token-%E7%99%BB%E5%BD%95"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Token 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-SSO-%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 SSO 单点登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-OAuth-%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 OAuth 第三方登录</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "登录逻辑" -->
+  var giteement = new Giteement({
+    id: '20210313091503',
+    owner: '',
+    repo: '',
+    backcall_uri: '',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '',
+      client_secret: ''
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
+
+
 
 
           </div>
@@ -331,9 +563,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
