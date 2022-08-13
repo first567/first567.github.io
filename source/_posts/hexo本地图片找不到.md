@@ -39,5 +39,5 @@ hexo new [layout] <title>
 
 ```
 
-<img src="hexo本地图片找不到/bing.jpg" alt="img" style="zoom:33%;" />
-
+<!-- <img src="hexo本地图片找不到/bing.jpg" alt="img" style="zoom:33%;" /> -->
+![a](hexo本地图片找不到/bing.jpg)
