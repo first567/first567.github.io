@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不想">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-13T01:15:03.000Z">
-<meta property="article:modified_time" content="2022-08-14T13:35:06.605Z">
+<meta property="article:modified_time" content="2022-08-14T23:34:04.888Z">
 <meta property="article:author" content="不想">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,7 @@
 								</ul>
 							</nav>
 							<nav>
-								总文章数 19
+								总文章数 20
 							</nav>
 							<nav class="header-smart-menu">
 								
@@ -287,9 +287,8 @@
     
     <br>
 <span id="more"></span>
-### 1.http无协议
-因为HTTP是无状态的协议，也就是说，这个协议是无法记录用户访问状态的，其每次请求都是独立的无关联的，一笔是一笔。而我们的网站都是设计成多个页面的，所在页面跳转过程中我们需要知道用户的状态，尤其是用户登录的状态，这样我们在页面跳转后我们才知道是否可以让用户有权限来操作一些功能或是查看一些数据。
 
+<h3 id="1-http无协议"><a href="#1-http无协议" class="headerlink" title="1.http无协议"></a>1.http无协议</h3><p>因为HTTP是无状态的协议，也就是说，这个协议是无法记录用户访问状态的，其每次请求都是独立的无关联的，一笔是一笔。而我们的网站都是设计成多个页面的，所在页面跳转过程中我们需要知道用户的状态，尤其是用户登录的状态，这样我们在页面跳转后我们才知道是否可以让用户有权限来操作一些功能或是查看一些数据。</p>
 <p>所以，我们每个页面都需要对用户的身份进行认证。为了实现这一功能，用得最多的技术就是浏览器的cookie，我们会把用户登录的信息存放在客户端的cookie里，这样，我们每个页面都从这个cookie里获得用户是否登录的信息，从而达到记录状态，验证用户的目的。下面是使用cookie的一些原则。</p>
 <p>千万不要在cookie中存放用户的密码。加密的密码都不行。因为这个密码可以被人获取并尝试离线穷举。所以，一定不能把用户的密码保存在cookie中。<br>关于设计“记住密码”。一般的设计是当用户勾选了这个功能，系统会生成一个cookie，cookie包括用户名和一个固定的散列值，这个固定的散列值一直使用。这样，你就可以在所有的设备和客户上都可以登录，而且可以有多个用户同时登录。</p>
 <h3 id="2-常见的几种登录方式"><a href="#2-常见的几种登录方式" class="headerlink" title="2.常见的几种登录方式"></a>2.常见的几种登录方式</h3><h4 id="2-1-Cookie-Session-登录"><a href="#2-1-Cookie-Session-登录" class="headerlink" title="2.1 Cookie + Session 登录"></a>2.1 Cookie + Session 登录</h4><p>在cookie中，保存三个东西——用户名，登录序列，登录token。<br>用户名：明文存放。<br>登录序列：一个被MD5散列过的随机数，仅当强制用户输入口令时更新（如：用户修改了口令）。<br>登录token：一个被MD5散列过的随机数，仅一个登录session内有效，新的登录session会更新它。<br>上述三个东西会存在服务器上，服务器的验证用户需要验证客户端cookie里的这三个事。<br>流程</p>
@@ -481,7 +480,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">2.常见的几种登录方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Cookie-Session-%E7%99%BB%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 Cookie + Session 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Token-%E7%99%BB%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 Token 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-SSO-%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95"><span class="toc-number">1.3.</span> <span class="toc-text">2.3 SSO 单点登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-OAuth-%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95"><span class="toc-number">1.4.</span> <span class="toc-text">2.4 OAuth 第三方登录</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-http%E6%97%A0%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">1.http无协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">2.常见的几种登录方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Cookie-Session-%E7%99%BB%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Cookie + Session 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Token-%E7%99%BB%E5%BD%95"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Token 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-SSO-%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 SSO 单点登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-OAuth-%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 OAuth 第三方登录</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
