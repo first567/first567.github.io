@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>Tag: django | 不想</title>
+  <title>vue优化 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="不想">
-<meta property="og:url" content="https://evacat.top/tags/django/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="vue优化">
+<meta property="og:url" content="https://evacat.top/2021/06/13/Vue3.0%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87,%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="不想">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-13T01:15:03.000Z">
+<meta property="article:modified_time" content="2022-08-14T12:43:19.141Z">
 <meta property="article:author" content="不想">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
@@ -229,41 +232,198 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue3.0的设计目标,做了哪些优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-page">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-        <time datetime="2022-02-10T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" target="_blank">djangoORM基本操作</a>
   
+    <h1 class="article-title" itemprop="name">
+      vue优化
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2021/06/13/Vue3.0%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87,%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96/" class="archive-article-date">
+        <time datetime="2021-06-13T01:15:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.3k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <br>
+<span id="more"></span>
+
+<h1 id="一、设计目标"><a href="#一、设计目标" class="headerlink" title="一、设计目标"></a>一、设计目标</h1><p>不以解决实际业务痛点的更新都是耍流氓，下面我们来列举一下Vue3之前我们或许会面临的问题</p>
+<ul>
+<li><p>随着功能的增长，复杂组件的代码变得越来越难以维护</p>
+</li>
+<li><p>缺少一种比较「干净」的在多个组件之间提取和复用逻辑的机制</p>
+</li>
+<li><p>类型推断不够友好</p>
+</li>
+<li><p>bundle的时间太久了</p>
+</li>
+</ul>
+<p>而 <code>Vue3</code> 经过长达两三年时间的筹备，做了哪些事情？</p>
+<p>我们从结果反推</p>
+<ul>
+<li>更小</li>
+<li>更快</li>
+<li>TypeScript支持</li>
+<li>API设计一致性</li>
+<li>提高自身可维护性</li>
+<li>开放更多底层功能</li>
+</ul>
+<p>一句话概述，就是更小更快更友好了</p>
+<h1 id="更小"><a href="#更小" class="headerlink" title="更小"></a>更小</h1><p><code>Vue3</code>移除一些不常用的 API</p>
+<p>引入<code>tree-shaking</code>，可以将无用模块“剪辑”，仅打包需要的，使打包的整体体积变小了</p>
+<h1 id="更快"><a href="#更快" class="headerlink" title="更快"></a>更快</h1><p>主要体现在编译方面：</p>
+<ul>
+<li>diff算法优化</li>
+<li>静态提升</li>
+<li>事件监听缓存</li>
+<li>SSR优化<br>下篇文章我们会进一步介绍</li>
+</ul>
+<h2 id="更友好"><a href="#更友好" class="headerlink" title="更友好"></a>更友好</h2><p>vue3在兼顾vue2的options API的同时还推出了composition API，大大增加了代码的逻辑组织和代码复用能力</p>
+<p>这里代码简单演示下：</p>
+<p>存在一个获取鼠标位置的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; toRefs, reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">useMouse</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> state = <span class="title function_">reactive</span>(&#123;<span class="attr">x</span>:<span class="number">0</span>,<span class="attr">y</span>:<span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">update</span> = e=&gt;&#123;</span><br><span class="line">        state.<span class="property">x</span> = e.<span class="property">pageX</span>;</span><br><span class="line">        state.<span class="property">y</span> = e.<span class="property">pageY</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">onMounted</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>,update);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="title function_">onUnmounted</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>,update);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">toRefs</span>(state);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们只需要调用这个函数，即可获取x、y的坐标，完全不用关注实现过程</p>
+<p>试想一下，如果很多类似的第三方库，我们只需要调用即可，不必关注实现过程，开发效率大大提高</p>
+<p>同时，VUE3是基于typescipt编写的，可以享受到自动的类型定义提示</p>
+<h1 id="三、优化方案"><a href="#三、优化方案" class="headerlink" title="三、优化方案"></a>三、优化方案</h1><p>vue3从很多层面都做了优化，可以分成三个方面：</p>
+<ul>
+<li>源码</li>
+<li>性能</li>
+<li>语法 API</li>
+</ul>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>源码可以从两个层面展开：</p>
+<p>源码管理<br>TypeScript<br>#源码管理<br>vue3整个源码是通过 monorepo的方式维护的，根据功能将不同的模块拆分到packages目录下面不同的子目录中</p>
+<p>这样使得模块拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性</p>
+<p>另外一些 package（比如 reactivity 响应式库）是可以独立于 Vue 使用的，这样用户如果只想使用 Vue3的响应式能力，可以单独依赖这个响应式库而不用去依赖整个 Vue</p>
+<p>#TypeScript<br>Vue3是基于typeScript编写的，提供了更好的类型检查，能支持复杂的类型推导</p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>vue3是从什么哪些方面对性能进行进一步优化呢？</p>
+<p>体积优化<br>编译优化<br>数据劫持优化<br>这里讲述数据劫持：</p>
+<p>在vue2中，数据劫持是通过Object.defineProperty，这个 API 有一些缺陷，并不能检测对象属性的添加和删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(data, <span class="string">&#x27;a&#x27;</span>,&#123;</span><br><span class="line">  <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// track</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">set</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// trigger</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>尽管<code>Vue</code>为了解决这个问题提供了 set和delete实例方法，但是对于用户来说，还是增加了一定的心智负担</p>
+<p>同时在面对嵌套层级比较深的情况下，就存在性能问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">a</span>: &#123;</span><br><span class="line">      <span class="attr">b</span>: &#123;</span><br><span class="line">          <span class="attr">c</span>: &#123;</span><br><span class="line">          <span class="attr">d</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相比之下，vue3是通过proxy监听整个对象，那么对于删除还是监听当然也能监听到</p>
+<p>同时Proxy 并不能监听到内部深层次的对象变化，而 Vue3 的处理方式是在getter 中去递归响应式，这样的好处是真正访问到的内部对象才会变成响应式，而不是无脑递归</p>
+<h2 id="语法-API"><a href="#语法-API" class="headerlink" title="语法 API"></a>语法 API</h2><p>这里当然说的就是composition API，其两大显著的优化：</p>
+<ul>
+<li>优化逻辑组织</li>
+<li>优化逻辑复用</li>
+</ul>
+<p>#逻辑组织<br>一张图，我们可以很直观地感受到 Composition API在逻辑组织方面的优势</p>
+<p>相同功能的代码编写在一块，而不像options API那样，各个功能的代码混成一块</p>
+<h2 id="逻辑复用"><a href="#逻辑复用" class="headerlink" title="逻辑复用"></a>逻辑复用</h2><p>在vue2中，我们是通过mixin实现功能混合，如果多个mixin混合，会存在两个非常明显的问题：命名冲突和数据来源不清晰</p>
+<p>而通过composition这种形式，可以将一些复用的代码抽离出来作为一个函数，只要的使用的地方直接进行调用即可</p>
+<p>同样是上文的获取鼠标位置的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; toRefs, reactive, onUnmounted, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">useMouse</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> state = <span class="title function_">reactive</span>(&#123;<span class="attr">x</span>:<span class="number">0</span>,<span class="attr">y</span>:<span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">update</span> = e=&gt;&#123;</span><br><span class="line">        state.<span class="property">x</span> = e.<span class="property">pageX</span>;</span><br><span class="line">        state.<span class="property">y</span> = e.<span class="property">pageY</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">onMounted</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>,update);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="title function_">onUnmounted</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>,update);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">toRefs</span>(state);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> useMousePosition <span class="keyword">from</span> <span class="string">&#x27;./mouse&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; x, y &#125; = <span class="title function_">useMousePosition</span>()</span><br><span class="line">        <span class="keyword">return</span> &#123; x, y &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，整个数据来源清晰了，即使去编写更多的hook函数，也不会出现命名冲突的问题</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/zhifubao.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          不想
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://evacat.top/2021/06/13/Vue3.0的设计目标,做了哪些优化/" title="vue优化" target="_blank">https://evacat.top/2021/06/13/Vue3.0的设计目标,做了哪些优化/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -271,33 +431,159 @@
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
 						class="js-tag article-tag-list-link color3">
-						技术
-					</a>
-				</li>
-				
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color2">
-						django
+						前端
 					</a>
 				</li>
 				
 		</ul>
 	</div>
 	
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+  <div class="share-btn share-icons tooltip-left">
+    <div class="tooltip tooltip-east">
+      <span class="tooltip-item">
+        <a href="javascript:;" class="share-sns share-outer">
+          <i class="icon icon-share"></i>
+        </a>
+      </span>
+      <span class="tooltip-content">
+        <div class="share-wrap">
+          <div class="share-icons">
+            <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+              <i class="icon icon-weibo"></i>
+            </a>
+            <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+            <a class="qq share-sns" href="javascript:;" data-type="qq">
+              <i class="icon icon-qq"></i>
+            </a>
+            <a class="douban share-sns" href="javascript:;" data-type="douban">
+              <i class="icon icon-douban"></i>
+            </a>
+            <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+              <i class="icon icon-qzone"></i>
+            </a>
+            <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+              <i class="icon icon-facebook"></i>
+            </a>
+            <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+              <i class="icon icon-twitter"></i>
+            </a>
+            <a class="google share-sns" href="javascript:;" data-type="google">
+              <i class="icon icon-google"></i>
+            </a>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2021/06/13/Vue3.0%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87,%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96/" alt="微信分享二维码"> -->
+    </div>
+  </div>
+
+  <div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          var、let、const 区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/13/%E7%99%BB%E5%BD%95%E9%80%BB%E8%BE%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">登录逻辑</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">1.</span> <span class="toc-text">一、设计目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E5%B0%8F"><span class="toc-number">2.</span> <span class="toc-text">更小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E5%BF%AB"><span class="toc-number">3.</span> <span class="toc-text">更快</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%8F%8B%E5%A5%BD"><span class="toc-number">3.1.</span> <span class="toc-text">更友好</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">三、优化方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-number">4.1.</span> <span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD"><span class="toc-number">4.2.</span> <span class="toc-text">性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-API"><span class="toc-number">4.3.</span> <span class="toc-text">语法 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%A4%8D%E7%94%A8"><span class="toc-number">4.4.</span> <span class="toc-text">逻辑复用</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "vue优化" -->
+  var giteement = new Giteement({
+    id: '20210613091503',
+    owner: '',
+    repo: '',
+    backcall_uri: '',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '',
+      client_secret: ''
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
+
+
 
 
           </div>
@@ -338,9 +624,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
