@@ -6,30 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>基本面试题 | 不想</title>
+  <title>Promise.all和Promise.race的区别和使用 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="基础面试题72">
-<meta property="og:type" content="article">
-<meta property="og:title" content="基本面试题">
-<meta property="og:url" content="https://evacat.top/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Promise.all和Promise.race的区别和使用">
+<meta property="og:url" content="https://evacat.top/2021/10/19/Promise.all%E5%92%8CPromise.race%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="不想">
-<meta property="og:description" content="基础面试题72">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ade63360331d0f4db342881ec54cf054.png">
-<meta property="og:image" content="https://static.vue-js.com/61efbc20-7cb8-11eb-85f6-6fac77c0c9b3.png">
-<meta property="og:image" content="https://static.vue-js.com/6e80e5e0-7cb8-11eb-85f6-6fac77c0c9b3.png">
-<meta property="og:image" content="c:/Users/23589/Desktop/文档/a7vEBcbPMoUzuTQ.gif">
-<meta property="og:image" content="https://img2.baidu.com/it/u=3392908126,1298104137&fm=253&fmt=auto&app=138&f=JPEG?w=508&h=500?w=500&h=500">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/b848a07c9579497880daf9c5b30870a0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6Ziz5bqa,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/324a0c7f7edf47d987b98b1a5d2f4c7b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQUxLRU4gIEFCQlk=,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="article:published_time" content="2022-08-01T09:22:01.000Z">
-<meta property="article:modified_time" content="2022-08-16T11:13:24.228Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14796064-e349fddd89796ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp">
+<meta property="article:published_time" content="2021-10-19T08:16:53.000Z">
+<meta property="article:modified_time" content="2022-08-16T23:39:58.422Z">
 <meta property="article:author" content="不想">
-<meta property="article:tag" content="面试题">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/ade63360331d0f4db342881ec54cf054.png">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14796064-e349fddd89796ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
   
@@ -242,14 +235,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-基础面试题72" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-Promise.all和Promise.race的区别和使用" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      基本面试题
+      Promise.all和Promise.race的区别和使用
     </h1>
   
 
@@ -261,8 +254,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/" class="archive-article-date">
-        <time datetime="2022-08-01T09:22:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-01</time>
+<a href="/2021/10/19/Promise.all%E5%92%8CPromise.race%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        <time datetime="2021-10-19T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-19</time>
 </a>
 
   
@@ -275,7 +268,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">16.1k字</span>
+      <span class="post-count">295字</span>
     </span>
   </span>
 
@@ -284,7 +277,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">57分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -295,950 +288,23 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="基础面试题72"><a href="#基础面试题72" class="headerlink" title="基础面试题72"></a>基础面试题72</h2><span id="more"></span>
+    <br>
+<span id="more"></span>
 
-
-<h4 id="1-说说你对盒子模型的理解"><a href="#1-说说你对盒子模型的理解" class="headerlink" title="1. 说说你对盒子模型的理解"></a>1. 说说你对盒子模型的理解</h4><p>是一个浏览器渲染引擎的规范，css基础盒模型，每个元素都是一个矩形盒子，   </p>
-<p>目前常用的两种规范是 </p>
-<p>w3c标准的 标准盒子模型</p>
-<p>content padding border margin 四部分构成</p>
-<p>ie的怪异盒子模型 </p>
-<p>width，height包括content padding borer 另一部分是margin</p>
-<p>box-sizing 语法 可以定义该盒子的属性</p>
-<p>content-box 标准盒子模型</p>
-<p>border-box 怪异盒子模型 </p>
-<p>inherit （继承） 从父元素继承</p>
-<h4 id="2-css选择器有哪些？优先级？哪些属性可以继承？"><a href="#2-css选择器有哪些？优先级？哪些属性可以继承？" class="headerlink" title="2. css选择器有哪些？优先级？哪些属性可以继承？"></a>2. css选择器有哪些？优先级？哪些属性可以继承？</h4><p>常用选择器有 </p>
-<blockquote>
-<p>class类选择器 </p>
-<p>id选择器</p>
-<p>div标签选择器 </p>
-<p>伪类选择器 :hover 等等</p>
-<p>#box div后代选择器   选择id为box 下内部所有</p>
-<p>#box &gt;div子代选择器  选择父元素id为box下的所有div</p>
-<p>p,span 群组选择器 选择所有p，span标签</p>
-</blockquote>
-<p>!important &gt; 行内样式&gt;id&gt;class &gt;标签选择器&gt; </p>
-<p>可继承属性：</p>
-<ul>
-<li><p>字体系列属性</p>
-</li>
-<li><p>文本系列属性</p>
-</li>
-<li><p>元素可见性</p>
-</li>
-<li><p>表格布局属性</p>
-</li>
-<li><p>列表属性</p>
-</li>
-<li><p>光标属性</p>
-</li>
-</ul>
-<h4 id="3-元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"><a href="#3-元素水平垂直居中的方法有哪些？如果元素不定宽高呢？" class="headerlink" title="3.元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"></a>3.元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</h4><p>实现元素水平垂直居中的方式：</p>
-<ul>
-<li>利用定位+margin:auto</li>
-</ul>
-<p>父级使用relative相对定位，子级使用 position绝对定位</p>
-<p>子级 left:0;top:0;right:0;botton:0;如果子级没有定宽高，就会被拉伸到跟父级一样的宽高，</p>
-<p>这时候定号宽高，给margin:auto; 实现垂直居中，虚拟定位已经占满整个父级</p>
-<ul>
-<li>利用定位+margin:负值</li>
-</ul>
-<p>同样，利用父相子绝，子级设置top:50%,left:50, margin-left: 自身宽度的一半，margin-top:自身宽度的一半；</p>
-<ul>
-<li>利用定位+transform</li>
-</ul>
-<p>将 上面的方法使用 transform代替，不需要知道自身宽高</p>
-<ul>
-<li>table布局</li>
-</ul>
-<p>将父级变为display: table-cell 使用  </p>
-<p>vertical-align:middle; text-align:center;</p>
-<p>子级变为 display :inline-block;行内样式	</p>
-<ul>
-<li>flex布局  （暴力）</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>:flex;</span><br><span class="line">align-item:center;</span><br><span class="line"><span class="attribute">justify-content</span>:center;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>grid布局</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>:grid;</span><br><span class="line">align-item:center;</span><br><span class="line"><span class="attribute">justify-content</span>:center;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="4-怎么理解回流跟重绘？什么场景下会触发？"><a href="#4-怎么理解回流跟重绘？什么场景下会触发？" class="headerlink" title="4.怎么理解回流跟重绘？什么场景下会触发？"></a>4.怎么理解回流跟重绘？什么场景下会触发？</h4><p>在html，我们可以把每个标签理解为一个个盒子</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/ade63360331d0f4db342881ec54cf054.png" alt="img"></p>
-<ul>
-<li>解析HTML，生成DOM树，解析CSS，生成CSSDOM树</li>
-</ul>
-<ul>
-<li>将DOM树和CSSOM树结合，生成渲染树(Render Tree)</li>
-</ul>
-<ul>
-<li>Layout(回流):根据生成的渲染树，进行回流(Layout)，得到节点的几何信息（位置，大小）</li>
-</ul>
-<ul>
-<li><p>Painting(重绘):根据渲染树以及回流得到的几何信息，得到节点的绝对像素</p>
-</li>
-<li><p>Display:将像素发送给GPU，展示在页面上</p>
-</li>
-</ul>
-<p>回流：布局引擎会根据各种样式来计算每个盒子在页面上的大小和位置.</p>
-<p>重绘：计算好盒模型大小，位置后，根据每个盒子的特性进行绘制</p>
-<p>当我们对 <code>DOM</code>的修改导致了样式的变化（<code>color</code>或<code>background-color</code>），却并未影响其几何属性时，浏览器不需重新计算元素的几何属性、直接为该元素绘制新的样式，</p>
-<p>回流这一阶段主要是计算节点的位置和几何信息，那么当页面布局和几何信息发生变化的时候，就需要回流</p>
-<p>触发回流一定会触发重绘</p>
-<ul>
-<li>颜色的修改</li>
-<li>文本方向的修改</li>
-<li>阴影的修改</li>
-</ul>
-<h4 id="5-什么是响应式设计？响应式设计的基本原理是什么？如何做？"><a href="#5-什么是响应式设计？响应式设计的基本原理是什么？如何做？" class="headerlink" title="5.什么是响应式设计？响应式设计的基本原理是什么？如何做？"></a>5.什么是响应式设计？响应式设计的基本原理是什么？如何做？</h4><p>响应式设计就是网站可以兼容多个终端，而不是为某一个终端设置特定的版本</p>
-<p>基本原理是通过媒体查询检测不同设备的尺寸做处理，</p>
-<p>通过media标签媒体查询 百分比 vm&#x2F;vh  %  创建流式布局的弹性UI</p>
-<h4 id="6-如果要做优化，CSS提高性能的方法有哪些？"><a href="#6-如果要做优化，CSS提高性能的方法有哪些？" class="headerlink" title="6.如果要做优化，CSS提高性能的方法有哪些？"></a>6.如果要做优化，CSS提高性能的方法有哪些？</h4><p>可以使用内联样式加载首屏css</p>
-<p>异步加载css</p>
-<p>压缩css文件</p>
-<p>合理使用选择器</p>
-<p>少使用css表达式	</p>
-<p>最好使用link标签 不要使用@import</p>
-<h4 id="7-对前端工程师这个职位是怎么样理解的？它的前景会怎么样"><a href="#7-对前端工程师这个职位是怎么样理解的？它的前景会怎么样" class="headerlink" title="7.对前端工程师这个职位是怎么样理解的？它的前景会怎么样"></a>7.对前端工程师这个职位是怎么样理解的？它的前景会怎么样</h4><h4 id="8-说说JavaScript中的数据类型？存储上的差别？"><a href="#8-说说JavaScript中的数据类型？存储上的差别？" class="headerlink" title="8.说说JavaScript中的数据类型？存储上的差别？"></a>8.说说JavaScript中的数据类型？存储上的差别？</h4><p>基本数据类型，引用数据类型，</p>
-<p>String number bool symbol undefined null 存储在栈 </p>
-<p>声明 a&#x3D;赋值  创建b&#x3D;a 修改b 打印a a不会改变</p>
-<p>虽然变量值相等，但是保存到了不同的内存地址</p>
-<p>Array object function  存储到堆  </p>
-<p>同样  声明 obj1&#x3D;{} 创建 obj2&#x3D;obj1 修改obj2 obj1的值会改变</p>
-<p>因为实际上是栈内存的引用地址在堆内存地址赋值了一份obj2，实际两个obj共同指向一个堆内存对象，</p>
-<h4 id="9-typeof-与-instanceof-区别"><a href="#9-typeof-与-instanceof-区别" class="headerlink" title="9.typeof 与 instanceof 区别"></a>9.typeof 与 instanceof 区别</h4><p> typeof返回类型字符串，对null，object，array类型返回 object  </p>
-<p>那么instanceof 就可以判断 一个变量是否是某个对象的实例 </p>
-<p>判断左边的对象的原型链里是否存在右边对象的原型对象</p>
-<h4 id="10-说说你对闭包的理解？闭包使用场景"><a href="#10-说说你对闭包的理解？闭包使用场景" class="headerlink" title="10.说说你对闭包的理解？闭包使用场景"></a>10.说说你对闭包的理解？闭包使用场景</h4><p>闭包可以在内层函数访问到外部函数的作用域</p>
-<p>\1.   创建私有函数，</p>
-<p>\2.   延长变量生命周期</p>
-<p>一般函数在函数的词法环境返回就会被销毁，但是闭包会保存创建时存在的词法环境，</p>
-<p>在创建时上下文被销毁，但创建的词法环境依然存在</p>
-<p>使用计数器，延迟调用</p>
-<h4 id="11-bind、call、apply-区别？如何实现一个bind"><a href="#11-bind、call、apply-区别？如何实现一个bind" class="headerlink" title="11.bind、call、apply 区别？如何实现一个bind?"></a>11.bind、call、apply 区别？如何实现一个bind?</h4><p>都可以改变this指向，</p>
-<p>apply第一个参数传递要指向的对象，如果为null或者undefined，默认指向全局window</p>
-<p>都可以传参，apply传递的是数组，call传递的是参数列表 ，这两个都是一次性传参，bind可以多次传参，</p>
-<p>bind返回的改变指向后的函数，apply和call是立即执行</p>
-<p>实现<code>bind</code>的步骤，我们可以分解成为三部分：</p>
-<ul>
-<li>修改<code>this</code>指向</li>
-<li>动态传递参数</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式一：只在bind中传递函数参数</span></span><br><span class="line">fn.<span class="title function_">bind</span>(obj,<span class="number">1</span>,<span class="number">2</span>)()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二：在bind中传递函数参数，也在返回函数中传递参数</span></span><br><span class="line">fn.<span class="title function_">bind</span>(obj,<span class="number">1</span>)(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="12-说说你对事件循环的理解"><a href="#12-说说你对事件循环的理解" class="headerlink" title="12.说说你对事件循环的理解"></a>12.说说你对事件循环的理解</h4><p>事件循环用来实现单线程的非阻塞</p>
-<p>在js当中，所有的任务分为异步，和同步，</p>
-<p>同步：立即执行，直接进入主线程中执行，</p>
-<p>异步，异步执行，比如ajax请求，定时器</p>
-<img src="https://static.vue-js.com/61efbc20-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;">
-
-<p>同步任务进入主线程执行，异步任务进入任务队列，当主线程的任务执行完毕为空，会去任务队列读取任务，推入主线程，不断重复这个过程</p>
-<p>异步任务又分为 微任务，宏任务，</p>
-<p>常见的微任务</p>
-<ul>
-<li>promise.then等</li>
-</ul>
-<p>常见宏任务</p>
-<ul>
-<li>定时器，等</li>
-<li><img src="https://static.vue-js.com/6e80e5e0-7cb8-11eb-85f6-6fac77c0c9b3.png" alt="img" style="zoom:50%;"></li>
-</ul>
-<p>执行机制为：</p>
-<p>执行一个宏任务，如果遇到微任务就将它放到微任务事件队列，宏任务执行完，查看微任务队列，将里面的微任务队列执行完</p>
-<p>async相当于声明异步方法，await用来等待异步方法执行，</p>
-<p> 正常情况下 <code>await</code>后面是一个promise对象， 返回该对象的结果，如果不是promise对象，直接返回对应值</p>
-<p>当不管后面是什么，都会阻塞后面代码 （加入微服务队列）</p>
-<p>先执行async外面的同步代码，同步代码执行完，再回到async函数中，执行之前阻塞的代码</p>
-<h4 id="13-DOM常见的操作有哪些"><a href="#13-DOM常见的操作有哪些" class="headerlink" title="13.DOM常见的操作有哪些"></a>13.DOM常见的操作有哪些</h4><p>为html和xml提供API，定义了一种方式可以访问该dom树，</p>
-<p>来改变文档结构，样式，内容</p>
-<h4 id="14-说说你对BOM的理解，常见的BOM对象你了解哪些？"><a href="#14-说说你对BOM的理解，常见的BOM对象你了解哪些？" class="headerlink" title="14.说说你对BOM的理解，常见的BOM对象你了解哪些？"></a>14.说说你对BOM的理解，常见的BOM对象你了解哪些？</h4><p>BOM  Browser object model 浏览器对象模型，能够与浏览器进行交互的对象，</p>
-<p>比如window 是浏览器的接口，也是全局对象， 可以对窗口进行控制，大小，</p>
-<p>或者使用window.open(url)打开一个新页面，</p>
-<p>location用来获取url上的信息，location.reload()可以重新刷新当前页面，如果页面在上一次请求中没有改变过，就会从浏览器缓存中加载，强制从服务器加载需要加上true</p>
-<p>navigator可以获取浏览器属性，</p>
-<p>screen获取用户屏幕信息</p>
-<p>history可以对浏览器url历史进行操作 forward back go length</p>
-<h4 id="15-Javascript本地存储的方式有哪些？区别及应用场景？"><a href="#15-Javascript本地存储的方式有哪些？区别及应用场景？" class="headerlink" title="15.Javascript本地存储的方式有哪些？区别及应用场景？"></a>15.Javascript本地存储的方式有哪些？区别及应用场景？</h4><ul>
-<li>cookie</li>
-<li>sessionStorage</li>
-<li>localStorage</li>
-<li>indexedDB</li>
-</ul>
-<blockquote>
-<p>存储大小：cookie 数据大小不超过4k ，sessionStorage,localStorage 存储大小比cookie更大，可以达到5m，暴怒同浏览器会有不同</p>
-</blockquote>
-<blockquote>
-<p>有效时间：localstorage 存储持久数据，浏览器关闭后数据不丢失，除非主动删除，sessionstorage在浏览器窗口关闭后自动删除，cooike 会设置过期事件，无论是浏览器或是窗口关闭</p>
-</blockquote>
-<blockquote>
-<p>交互方式，cookie 的数据会⾃动的传递到服务器，服务器端也可以写 cookie 到客户端；sessionStorage 和 localStorage 不会⾃动把数据发给服务器，仅在本地保存</p>
-</blockquote>
-<h4 id="16-什么是防抖和节流？有什么区别？如何实现？"><a href="#16-什么是防抖和节流？有什么区别？如何实现？" class="headerlink" title="16.什么是防抖和节流？有什么区别？如何实现？"></a>16.什么是防抖和节流？有什么区别？如何实现？</h4><p>防抖和节流都是用来优化前端资源，提高性能的方式，</p>
-<p>节流：n秒内只运行一次，若在n秒内重复触发，也只执行一次</p>
-<p>防抖：n秒后执行该事件，若在n秒内重新触发，重新计时</p>
-<p>防抖是一定时间连续触发的事件，只执行一次</p>
-<p>节流是一段时间内只执行一次</p>
-<p>可以采用定时器，时间戳的写法</p>
-<h4 id="17-如何通过JS判断一个数组"><a href="#17-如何通过JS判断一个数组" class="headerlink" title="17.如何通过JS判断一个数组"></a>17.如何通过JS判断一个数组</h4><blockquote>
-<p>isArray()数组自带的判断方法</p>
-<p>a instanceof Array 通过instanceof 判断</p>
-<p>object.prototype.toString.apply(a).Indexof(‘Array’)</p>
-</blockquote>
-<h4 id="18-说说你对作用域链的理解"><a href="#18-说说你对作用域链的理解" class="headerlink" title="18.说说你对作用域链的理解"></a>18.说说你对作用域链的理解</h4><p>变量起作用的范围</p>
-<ul>
-<li>全局作用域</li>
-<li>函数作用域</li>
-<li>块级作用域</li>
-</ul>
-<h5 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h5><p>任何不在函数中或是大括号中声明的变量，都是在全局作用域下，全局作用域下声明的变量可以在程序的任意位置访问</p>
-<h5 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h5><p>函数作用域也叫局部作用域，如果一个变量是在函数内部声明的它就在一个函数作用域下面。这些变量只能在函数内部访问，不能在函数以外去访问</p>
-<h5 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h5><p>ES6引入了<code>let</code>和<code>const</code>关键字,和<code>var</code>关键字不同，在大括号中使用<code>let</code>和<code>const</code>声明的变量存在于块级作用域中。在大括号之外不能访问这些变量</p>
-<blockquote>
-<p>当在<code>Javascript</code>中使用一个变量的时候，首先<code>Javascript</code>引擎会尝试在当前作用域下去寻找该变量，如果没找到，再到它的上层作用域寻找，以此类推直到找到该变量或是已经到了全局作用域</p>
-</blockquote>
-<h4 id="19-JavaScript原型，原型链-有什么特点？"><a href="#19-JavaScript原型，原型链-有什么特点？" class="headerlink" title="19.JavaScript原型，原型链 ? 有什么特点？"></a>19.JavaScript原型，原型链 ? 有什么特点？</h4><ul>
-<li><p>每个对象都会在其内部初始化一个属性，就是prototype（原型）<br>当我们去访问一个对象的属性时，如果这个对象内部不存在这个属性，那么他就会去prototype里面找这个属性，这个属性prototype就会有自己的prototype。<br>就这样一层一层的寻找，也就是我们平时所说的原型链的概念。</p>
-</li>
-<li><p>JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承改变后的属性。<br>当我们需要一个属性时，JavaScript引擎会先去找当前对象中是否有这个属性，如果没有的话，就会查找他的prototype对象中是否有这个属性，这样递推下去，一直找到Object内键对象。<br>函数可以有属性。 每个函数都有一个特殊的属性叫作原型<code>prototype</code></p>
-</li>
-</ul>
-<p>&#x2F;*代码基本架构<br>1.每个函数function都有一个prototype，即显示原型（属性）<br>2.每个通过函数实例出来的对象都有一个__proto__，可称为隐式原型（属性）<br>3.对象的隐式原型的值为其对应构造函数的显示原型的值<br>*&#x2F;</p>
-<p>&#x2F;&#x2F;显示原型与隐式原型<br>function Fn(){  &#x2F;&#x2F; 内部语句：this.prototype &#x3D; {}</p>
-<p>}<br>&#x2F;&#x2F;1.每个函数function 都有一个prototype 即显式原型（属性）,默认指向一个空的object对象<br>console.log(Fn.prototype	)<br>&#x2F;&#x2F;2. 每个实例对象都有一个__proto__，可称为隐式原型（属性）<br>var fn &#x3D; new Fn() &#x2F;&#x2F;内部语句: this.<strong>proto</strong> &#x3D; Fn.prototype<br>console.log(fn.<strong>proto</strong>)<br>&#x2F;&#x2F;3.对象的隐式原型的值为其对应构造函数的显示原型的值<br>console.log(Fn.prototype &#x3D;&#x3D;&#x3D; fn.<strong>proto</strong>)</p>
-<p>原型的作用：<br>1.数据共享 节约<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%86%85%E5%AD%98&spm=1001.2101.3001.7020">内存</a>内存空间<br>2.实现继承</p>
-<h4 id="20-请解释什么是事件代理"><a href="#20-请解释什么是事件代理" class="headerlink" title="20.请解释什么是事件代理"></a>20.请解释什么是事件代理</h4><p>又叫事件委托，可以把需要绑定的事件委托给父元素，父元素担当事件监听事务，</p>
-<p>事件代理的原理时dom元素的事件冒泡，可以提高性能，节省内存</p>
-<p>适合事件委托的事件 click,mousedown mouseup keydown 等等</p>
-<p>focus、blur没有事件冒泡机制，无法进行委托绑定事件</p>
-<h4 id="21-谈谈This对象的理解"><a href="#21-谈谈This对象的理解" class="headerlink" title="21.谈谈This对象的理解"></a>21.谈谈This对象的理解</h4><p>this关键字是函数运行时自动生成的内部对象，</p>
 <ol>
-<li><p>普通函数的this指向 全局 window；</p>
-</li>
-<li><p>事件处理函数的this指向事件源；</p>
-</li>
-<li><p>对象的成员方法 this指向 宿主对象；</p>
-</li>
-<li><p>构造函数的this 指向new 实例化对象；</p>
-</li>
-<li><p>回调函数的this 指向 全局 window；</p>
-<h4 id="22-new操作符具体干了什么"><a href="#22-new操作符具体干了什么" class="headerlink" title="22.new操作符具体干了什么"></a>22.new操作符具体干了什么</h4></li>
+<li>Promise.all</li>
 </ol>
-<p>new操作符用于创建一个给定构造函数的实例对象</p>
-<p>通过出来的实例可以访问到构造函数的属性，</p>
-<p>new操作符用来创建一个实例对象，这个对象是给定的构造函数</p>
-<p>通过创造出来的实例可以访问到构造函数的属性</p>
-<ul>
-<li>创建一个新的对象<code>obj</code></li>
-<li>将对象与构建函数通过原型链连接起来</li>
-<li>将构建函数中的<code>this</code>绑定到新建的对象<code>obj</code>上</li>
-<li>根据构建函数返回类型作判断，如果是原始值则被忽略，如果是返回对象，需要正常处理</li>
-</ul>
-<h4 id="23-null，undefined-的区别"><a href="#23-null，undefined-的区别" class="headerlink" title="23.null，undefined 的区别"></a>23.null，undefined 的区别</h4><p>数据类型不一样</p>
-<p>undefined表示不存在这个值，或者说变量未被定义，但是没有赋值，某个地方应该又</p>
-<p>null表示该对象被定义，值为null  是一个空对象，没有任何属性和方法</p>
-<p>null&#x3D;&#x3D;undefind 返回 true   &#x3D;&#x3D;&#x3D;返回false</p>
-<h4 id="24-javascript-代码中的”use-strict”-是什么意思"><a href="#24-javascript-代码中的”use-strict”-是什么意思" class="headerlink" title="24.javascript 代码中的”use strict”;是什么意思"></a>24.javascript 代码中的”use strict”;是什么意思</h4><p>是一个字面量， 指定代码运行在严格模式下， 有很多限制：</p>
-<p>变量在使用前必须声明，防止无意使用了未声明的变量	</p>
-<p>函数的中的this 不再引用全局对象 而是 undefined 让代码变得更严谨</p>
-<h4 id="25-同步和异步的区别"><a href="#25-同步和异步的区别" class="headerlink" title="25.  同步和异步的区别"></a>25.  同步和异步的区别</h4><p>同步：所有操作都做完，才返回给用户，用户可以看到界面在刷新，等刷新完成，再进行下一步</p>
-<p>异步，当客服端发送给服务端请求时，在等待服务端响应，客户端可以做其他事情，节约时间，提高效率</p>
-<h4 id="26-谈一谈箭头函数与普通函数的区别"><a href="#26-谈一谈箭头函数与普通函数的区别" class="headerlink" title="26.谈一谈箭头函数与普通函数的区别"></a>26.谈一谈箭头函数与普通函数的区别</h4><p>箭头函数是匿名函数，不能作为构造函数，不能使用new ，因为箭头函数没有prototype,而construct在prototype里面</p>
-<p>也可以说箭头函数本身没有this，但是它在声明时可以捕获其所在上下文的this供自己使用。</p>
-<p>不能使用yield命令</p>
-<p>箭头函数不绑定arguments，取而代之用rest参数…解决</p>
-<h4 id="27-JS-数组和对象的遍历方式，以及几种方式的比较"><a href="#27-JS-数组和对象的遍历方式，以及几种方式的比较" class="headerlink" title="27.JS 数组和对象的遍历方式，以及几种方式的比较"></a>27.JS 数组和对象的遍历方式，以及几种方式的比较</h4><p>数组：for 循环 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[i])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a b c</span></span><br></pre></td></tr></table></figure>
-
-<p>还有while循环 do&#x2F;while循环</p>
-<p>for循环预先知道循环次数， while 不知道循环次数  do&#x2F;while 至少循环次数</p>
-<p>for of  它直接遍历值，而不是数组下标（或对象属性）。</p>
-<p>for-of 语句不仅可以循环遍历数组对象。 还可以迭代 Array、Map、Set、String 等对象。</p>
-<p>for-of 的工作原理是，向循环对象请求一个迭代器对象，然后通过迭代器对象的next()方法来获得返回值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>数组方法 forEach() map some() every() filter() reduce()</p>
-<p>对象的遍历，一种是直接使用 for-in 循环；另一方式，是将对象转换成数组，再进行遍历</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">b</span>: <span class="number">4</span>, <span class="attr">c</span>: <span class="number">6</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a b c</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">b</span>: <span class="number">4</span>, <span class="attr">c</span>: <span class="number">6</span> &#125;;</span><br><span class="line"><span class="comment">// Object.keys()</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(obj).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// a b c</span></span><br><span class="line">getOwnpropertyNames</span><br></pre></td></tr></table></figure>
-
-
-
-<p> Object.keys() 和 Object.getOwnPropertyNames()</p>
-<h4 id="28-如何解决跨域问题"><a href="#28-如何解决跨域问题" class="headerlink" title="28.如何解决跨域问题"></a>28.如何解决跨域问题</h4><p>跨域指浏览器不能执行其他网站的脚本，因为浏览器的同源策略，浏览器的安全策略</p>
-<p>浏览器执行js脚本时，会检查这个页面属于哪个脚本，如果不是同源页面，不会执行</p>
-<blockquote>
-<p>cors ：服务端在响应头中加入字段：Access-control-allow-origion:Origion</p>
-<p>jsonp: 动态创建script使用 <script> 引入，拥有scr标签的都有跨域的能力</p>
-<p>那么如果通过纯web端实现web跨域，可以让服务器把数据放到js格式的文件，</p>
-<p>让客户端调用和处理</p>
-<p>vue_cli:设置代理服务器，只有浏览器才会出现跨域问题，服务器之间不会</p>
-<p>nginx :代理跨域</p>
-</blockquote>
-<h4 id="29-XML和JSON的区别"><a href="#29-XML和JSON的区别" class="headerlink" title="29.  XML和JSON的区别"></a>29.  XML和JSON的区别</h4><ul>
-<li>数据大小<ul>
-<li>JSON相对XML，数据体积更小，传递的速度更快</li>
-</ul>
-</li>
-<li>数据交互：<ul>
-<li>JSON与js交互更方便，容易解析，有更好的数据交互</li>
-</ul>
-</li>
-<li>数据描述：<ul>
-<li>JSON对数据的描述比XML差</li>
-</ul>
-</li>
-<li>传输速度<ul>
-<li>JSON的速度远远块于XML</li>
-</ul>
-</li>
-</ul>
-<h4 id="30-谈谈你对webpack的看法"><a href="#30-谈谈你对webpack的看法" class="headerlink" title="30.  谈谈你对webpack的看法"></a>30.  谈谈你对webpack的看法</h4><p>webpack是一个模块打包工具 ，通过webPack管理模块，分析模块间的依赖关系，编译模块并输出为JS，CSS，HTML，等各种静态文件，</p>
-<p>对于不同类型的资源，webpack有对应模块加载器loader，</p>
-<h4 id="31-webpack的打包原理"><a href="#31-webpack的打包原理" class="headerlink" title="31.  webpack的打包原理"></a>31.  webpack的打包原理</h4><h4 id="32-如何优化webpack打包速度"><a href="#32-如何优化webpack打包速度" class="headerlink" title="32.  如何优化webpack打包速度"></a>32.  如何优化webpack打包速度</h4><h4 id="33-说说webpack中常见的Loader？解决了什么问题？"><a href="#33-说说webpack中常见的Loader？解决了什么问题？" class="headerlink" title="33.  说说webpack中常见的Loader？解决了什么问题？"></a>33.  说说webpack中常见的Loader？解决了什么问题？</h4><h4 id="34-说说webpack中常见的Plugin？解决了什么问题？"><a href="#34-说说webpack中常见的Plugin？解决了什么问题？" class="headerlink" title="34.  说说webpack中常见的Plugin？解决了什么问题？"></a>34.  说说webpack中常见的Plugin？解决了什么问题？</h4><h4 id="35-说说你对promise的了解"><a href="#35-说说你对promise的了解" class="headerlink" title="35.说说你对promise的了解"></a>35.说说你对promise的了解</h4><p>是异步编程的一种解决方案，降低编码难度，提高代码可读性，有三种状态：pending（进行中），fulfilled（已成功），rejected（已失败）</p>
-<p>构建出三种实例：</p>
-<p>.then():返回新的Promise实例</p>
-<p> .catch()  	指定发生错误时的回调函数</p>
-<p>.finally()    无论状态如何，都会执行</p>
-<p>Promise是异步编程的一种解决方案，他是一个对象，可以获取异步操作的消息，避免了回调地狱</p>
-<p>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p>
-<p>Promise的实例有三个状态 ： Pending（进行中）  </p>
-<p>Resolved（已完成）</p>
-<p> Rejected（已拒绝）</p>
-<p>把一件事情交给promise时，它的状态就是Pending，任务完成了状态就变成了Resolved、没有完成失败了就变成了Rejected</p>
-<p>Promise的实例有两个过程 ：</p>
-<p>pending -> fulfilled : Resolved（已完成）</p>
-<p>pending -> rejected：Rejected（已拒绝）</p>
-<p>Promise的特点:</p>
-<p>(1) 对象的状态不受外界影响。promise对象代表一个异步操作，有三种状态，pending（进行中）、fulfilled（已成功）、rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也是promise这个名字的由来——“承诺”</p>
-<p>(2) 一旦状态改变就不会再变，任何时候都可以得到这个结果。promise对象的状态改变，只有两种可能：从pending变为fulfilled，从pending变为rejected。这时就称为resolved（已定型）。如果改变已经发生了，你再对promise对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点是：如果你错过了它，再去监听是得不到结果的</p>
-<p> 总结: 状态的改变是通过 resolve() 和 reject() 函数来实现的,它的原型上定义了一个 then 方法，使用这个 then 方法可以为两个状态的改变注册回调函数</p>
-<h4 id="36-async函数是什么，有什么作用"><a href="#36-async函数是什么，有什么作用" class="headerlink" title="36.async函数是什么，有什么作用"></a>36.async函数是什么，有什么作用</h4><p>async 将promise和生成器的效果融合起来，promise主要解决回调 地狱，异步代码同步封装，</p>
-<p>作</p>
-<h4 id="37-有使用过vue吗？说说你对vue的理解"><a href="#37-有使用过vue吗？说说你对vue的理解" class="headerlink" title="37.有使用过vue吗？说说你对vue的理解"></a>37.有使用过vue吗？说说你对vue的理解</h4><p>一款构建用户界面的Javascript框架，也是用来创建单页面应用的web应用框架</p>
-<p>数据驱动视图构建页面结构，</p>
-<p>核心特性：数据驱动  MVVM</p>
-<p>组件化：把页面分为几个部分，降低系统耦合度，提高可维护性，</p>
-<p>一套特别的指令系统  </p>
-<p>跟传统开发项目：不需要操作dom，因为界面的变动都是根据数据自动绑定，</p>
-<p>4.vue和react对比<br>相同点</p>
-<p>都有组件化思想</p>
-<p>都支持服务端渲染</p>
-<p>都有Virtual DOM(虚拟dom)</p>
-<p>数据驱动视图</p>
-<p>都有自己的构建工具</p>
-<p>区别</p>
-<p>数据流向不同。react从诞生开始就推崇单向数据流，而vue是双向数据流</p>
-<p>数据变化的实现原理不同。react使用的是不可变数据，vue使用的是可变数据</p>
-<p>组件化通信不同。react中我们使用的是回调函数来进行通信，而vue中子组件向父组件传递方式有两种：事件和回调函数</p>
-<p>diff算法不同。react主要使用diff队列保存需要更新哪些DOM，得到patch树，再统一操作批量更新DOM。vue使用双向指针，边对比，边更新DOM</p>
-<h4 id="38-你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢"><a href="#38-你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢" class="headerlink" title="38.你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢"></a>38.你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢</h4><p>SPA（single-page application ） 仅在页面初始化时加载对应HTML，JS,CSS,页面加载完成，SPA不会因为用户操作进行页面重新加载或跳转，而是用路由机制实现HTML内容的改变，UI与用户进行交互，避免重新加载</p>
-<p>优点：</p>
-<p>用户体验好、快，内容的改变不需要重新加载整个页面，避免了不必要的跳转和重复渲染；</p>
-<p>基于上面一点，SPA 相对对服务器压力小；</p>
-<p>前后端职责分离，架构清晰，前端进行交互逻辑，后端负责数据处理；</p>
-<p>缺点：</p>
-<p>初次加载耗时多：为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面按需加载；</p>
-<p>前进后退路由管理：由于单页应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理；</p>
-<p>SEO 难度较大：由于所有的内容都在一个页面中动态替换显示，所以在 SEO 上其有着天然的弱势。、</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> <del>我们</del> :palm_tree:</li>
-</ul>
-<p><img src="C:\Users\23589\Desktop\文档\a7vEBcbPMoUzuTQ.gif" alt="aaa"></p>
-<h4 id="39-SPA首屏加载速度慢的怎么解决？"><a href="#39-SPA首屏加载速度慢的怎么解决？" class="headerlink" title="39.  SPA首屏加载速度慢的怎么解决？"></a>39.  SPA首屏加载速度慢的怎么解决？</h4><ul>
-<li><strong>减小入口文件积</strong></li>
-<li><strong>静态资源本地缓存</strong></li>
-<li><strong>UI框架按需加载</strong></li>
-<li><strong>图片资源的压缩</strong></li>
-<li><strong>组件重复打包</strong></li>
-<li><strong>开启Gzip压缩</strong></li>
-<li><strong>使用SSR</strong></li>
-</ul>
-<p>1.减小入口文件体积：</p>
-<p>路由懒加载：1异步组件技术-异步加载 2使用import</p>
-<p>2.静态资源本地缓存</p>
-<p>3.UI框架按需加载</p>
-<p>4.图片资源的压缩</p>
-<p>5.服务端渲染</p>
-<h4 id="40-VUE路由的原理"><a href="#40-VUE路由的原理" class="headerlink" title="40.VUE路由的原理"></a>40.VUE路由的原理</h4><p>前端路由：根据用户不同的事件，显示不同的页面内容，</p>
-<p>本质上是用户事件与事件处理函数之间的对应关系</p>
-<blockquote>
-<p>在vue中实现 监听hash路由的变化 改变路由</p>
-<p>使用HTML5的history路由模式	来修改浏览器地址栏地址不刷新页面</p>
-</blockquote>
-<h4 id="41-Vue中组件和插件有什么区别？"><a href="#41-Vue中组件和插件有什么区别？" class="headerlink" title="41.Vue中组件和插件有什么区别？"></a>41.Vue中组件和插件有什么区别？</h4><p>组件就是把图形、飞图形的各种逻辑抽象为一个统一的概念来实现的开发模式，在vue中每个.vue文件都可作为一个组件，</p>
-<blockquote>
-<p>优势：可以降低整个系统的耦合度，保持接口不变，可以替换不同的组件完成需求，</p>
-<p>调适方便，由于整个系统是由组件组合起来，出现问题可以快速定位组件，</p>
-<p>提高可维护性，因为组件在系统中复用，可以对代码优化提升整个系统性能</p>
-</blockquote>
-<p>插件通常用来给vue添加全局功能，</p>
-<ul>
-<li>添加全局方法</li>
-<li>添加全局资源</li>
-<li>通过全局混入来添加一些组件选项。如<code>vue-router</code></li>
-<li>加 <code>Vue</code> 实例方法，通过把它们添加到 <code>Vue.prototype</code> 上实现。</li>
-<li>一个库，提供自己的 <code>API</code>，同时提供上面提到的一个或多个功能。如<code>vue-router</code></li>
-</ul>
-<p>编写方式：</p>
-<img src="https://img2.baidu.com/it/u=3392908126,1298104137&fm=253&fmt=auto&app=138&f=JPEG?w=508&h=500?w=500&h=500" alt="wsdf" style="zoom:67%;" />
-
-<p>常见的为vue 单文件，每个.vue都是一个组件</p>
-<p>vue插件应该暴露一个install方法，方法第一个参数是vue构造器，第二个参数是一个可选的选项对象</p>
-<p>注册方式：</p>
-<p>vue 组件分为 </p>
-<p>全局注册：Vue.component方法：第一个参数为组件名称,第二个参数为传入配置项</p>
-<p>局部注册，需要在用到的地方哦通过components 属性注册一个组件</p>
-<p>插件注册：</p>
-<p>通过Vue.use()注册安装，同样第一个参数为插件名，第二个参数为可选配置项</p>
-<p>使用场景：</p>
-<p>组件是用来构成app的业务模块，目标是app.vue</p>
-<p>插件用来增强技术栈的功能模块，目标是vue本身</p>
-<h4 id="42-Vue组件之间的通信方式都有哪些"><a href="#42-Vue组件之间的通信方式都有哪些" class="headerlink" title="42.Vue组件之间的通信方式都有哪些"></a>42.Vue组件之间的通信方式都有哪些</h4><p>父传子 父组件中引入子组件，在调用时 传入数据或方法，子组件使用props:[]方法写入接受数据名称，</p>
-<p>​	在vue3中使用defineProps({})</p>
+<p>Promise.all可以将多个实例组装成一个新的实例，成功的时候返回一个成功数组，失败的时候则返回最先被reject失败状态的值</p>
+<p>当一个页面需要在很多个模块的数据都返回过来才正常显示，否则loading</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">wake</span> =(<span class="params">time</span>)=&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(<span class="string">`<span class="subst">$&#123;item/<span class="number">1000</span>&#125;</span>秒`</span>)</span><br><span class="line">        &#125;, time);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1=<span class="title function_">wake</span>(<span class="number">3000</span>)</span><br><span class="line"><span class="keyword">let</span> p2=<span class="title function_">wake</span>(<span class="number">2000</span>)</span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>(p1,p2).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>比如当数组里的P1，P2都执行完成时，页面才显示。<br>返回的数组结果顺序不会改变，即使P2的返回要比P1的返回快，顺序依然是P1，P2</p>
 <ol start="2">
-<li>子传父 使用$emit</li>
+<li>Promise.race</li>
 </ol>
-<p>子组件使用&emit 绑定一个父组件的自定义事件，第二个参数传递数据，在父组件中通过方法接收数据，</p>
-<p>在vue3中 受用defineEmits([])方法接收父组件的方法，通过声明的常量来绑定父组件的自定义事件</p>
-<ol start="3">
-<li>ref  $ref</li>
-</ol>
-<p>父组件中 调用子组件使用refs 绑定变量名</p>
-<p> 接着使用$refs.变量名.子组件的方法或数据</p>
-<ol start="4">
-<li>($emit / $on）</li>
-</ol>
-<p>适合兄弟组件间传值</p>
-<p>先创建一个事件管理组件 new 一个Vue实例</p>
-<p>兄弟组件中要传递的数据使用$emit()第一个参数是和接收共用的标识，第二个是要传递的参数，</p>
-<p>使用$on() 接收数据</p>
-<ol start="5">
-<li>使用vue 依赖 父组件使用注入 provide 钩子 返回要传递的数据</li>
-</ol>
-<p>子组件使用inject=[]接受数据 </p>
-<p>要访问到父组件所有数据可以传入this</p>
-<h4 id="43-你了解vue的diff算法吗？说说看"><a href="#43-你了解vue的diff算法吗？说说看" class="headerlink" title="43.你了解vue的diff算法吗？说说看"></a>43.你了解vue的diff算法吗？说说看</h4><p><code>diff</code> 算法是一种通过同层的树节点进行比较的高效算法</p>
-<p>由于vue中每个组件实例的作用域是相互独立~</p>
-<p>其有两个特点：</p>
-<ul>
-<li>比较只会在同层级进行, 不会跨层级比较</li>
-<li>在diff比较的过程中，循环从两边向中间比较</li>
-</ul>
-<p><code>diff</code> 算法在很多场景下都有应用，在 <code>vue</code> 中，作用于虚拟 <code>dom</code> 渲染成真实 <code>dom</code> 的新旧 <code>VNode</code> 节点比较</p>
-<hr>
-<h4 id="44-为什么需要-Virtual-Dom"><a href="#44-为什么需要-Virtual-Dom" class="headerlink" title="44.为什么需要 Virtual Dom"></a>44.为什么需要 Virtual Dom</h4><p>能够提高开发效率，不需要关心dom操作，如果没有虚拟dom，</p>
-<p>需要在每次数据改变后，不要之前渲染的页面，重新根据新的数据生成一个新的页面，但是这样效率大大降低，</p>
-<p>所以我们可以复用之前渲染出来的页面，于是就有了虚拟dom，</p>
-<p>在render执行 会返回虚拟dom， 当数据发生变化，重新render，拿到新dom，不是直接渲染dom，而是会跟之前返回的虚拟dom进行比较，找到需要更新的地方，完成视图渲染</p>
-<h4 id="45-Vue3-0的设计目标是什么？做了哪些优化"><a href="#45-Vue3-0的设计目标是什么？做了哪些优化" class="headerlink" title="45.Vue3.0的设计目标是什么？做了哪些优化"></a>45.Vue3.0的设计目标是什么？做了哪些优化</h4><p>vue3之前：</p>
-<p>因为功能的增长，代码越来越难维护</p>
-<p>缺少比较方便在多个组件之间复用和提取的机制</p>
-<p>类型推断不太友好</p>
-<p>做了哪些事情？</p>
-<blockquote>
-<p>更 ：删除了不常用的API，引用tree-shaking ，只打包需要的</p>
-<p>更快：diff算法优化 ，静态提升，事件监听缓存，SSR优化</p>
-<p>更友好：兼容vue option API同时 推出 compositon API ,增强代码逻辑组织能力和复用能力</p>
-<p>vue 使用TS编写 有更好的类型检查，复杂的类型推导</p>
-<p>语法API 优化逻辑组织，优化逻辑复用，</p>
-<p>在vue2中使用mixin实现功能混合</p>
-<p>通过composition方式，将复用代码抽离出来，只在使用的地方进行调用</p>
-</blockquote>
-<p>因为功能的增长，代码越来越难维护，</p>
-<p>缺少比较方便的在不同组件之间复用和提取的机制，</p>
-<p>类型推断不太友好</p>
-<p>优化：</p>
-<p>删除了不常用的api， 引用 tree-shaking  之打包需要的</p>
-<p>diff算法优化，静态提升，事件监听缓存，SSR优化</p>
-<h4 id="46-Vue3-0-所采用的-Composition-Api-与-Vue2-x-使用的-Options-Api-有什么不同？"><a href="#46-Vue3-0-所采用的-Composition-Api-与-Vue2-x-使用的-Options-Api-有什么不同？" class="headerlink" title="46.Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？"></a>46.Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？</h4><p>optionsAPI 通过定义method computed watch data等属性和方法，共同处理页面逻辑，</p>
-<p>compositon 根据逻辑功能来组织，一个功能多定义的所有API会放在一起，更加高内聚，低耦合</p>
-<p>那么即使项目功能越来越多，也可以快速定位到这个功能所使用的所有API，</p>
-<p><strong>区别：</strong></p>
-<p>逻辑组织：</p>
-<p>option在处理某个逻辑点，需要我们不断的跳转相关功能的代码块</p>
-<p>而composition 就可以将逻辑关注点放到一个函数里，当要修改一个功能时，就不需要在文件中到处跳转，</p>
-<p>复用：</p>
-<p> 通过hook引入， vue3中不适用this，减少this指向不明的情况</p>
-<p>几乎是函数、有更好的类型推断</p>
-<p>如果是小型组件，可以继续使用 options API </p>
-<p>vue2中使用mixin 来复用逻辑</p>
-<h4 id="47-说一下Vue数据响应式的原理"><a href="#47-说一下Vue数据响应式的原理" class="headerlink" title="47.说一下Vue数据响应式的原理"></a>47.说一下Vue数据响应式的原理</h4><p>“vue的数据响应式就是当数据发生变化，通知改变的代码。数据响应式原理的核心就是采用了数据劫持结合发布者-订阅者模式的方式来实现数据的响应式,通过Object.defineProperty()对数据进行拦截，把这些属性全部转换成getter/setter，get（）方法可以读取数据、收集依赖，set（）方法可以改写数据，在数据变动时会对数据进行比较，如果数据发生了变化，会发布消息通知订阅者，触发监听回调，更新视图。”<br><img src="https://img-blog.csdnimg.cn/b848a07c9579497880daf9c5b30870a0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6Ziz5bqa,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
-<h4 id="48-说说对-React-的理解？有哪些特性？"><a href="#48-说说对-React-的理解？有哪些特性？" class="headerlink" title="48.说说对 React 的理解？有哪些特性？"></a>48.说说对 React 的理解？有哪些特性？</h4><p>是Facebook 在2013年开源的用于构建用户界面的 JavaScript 库。</p>
-<p>React是MVC一层V，把数据变为DOM显示出来，只关注表现层，</p>
-<p>独立架构的核心是单向数据流，使用虚拟DOM来有效地操作DOM，遵循从高阶组件到低阶组件的单向数据流</p>
-<p>帮助我们将界面成了各个独立的小块，每一个块就是组件，这些组件之间可以组合、嵌套，构成整体页面</p>
-<p>react 类组件使用一个名为 render() 的方法或者函数组件return，接收输入的数据并返回需要展示的内容</p>
-<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><p><code>React</code>特性有很多，如：</p>
-<ul>
-<li>JSX语法</li>
-<li>单向数据绑定</li>
-<li>虚拟DOM</li>
-<li>声明式编程</li>
-<li>Component</li>
-</ul>
-<h4 id="49-说说-Real-DOM-和-Virtual-DOM-的区别？优缺点？"><a href="#49-说说-Real-DOM-和-Virtual-DOM-的区别？优缺点？" class="headerlink" title="49.说说 Real DOM 和 Virtual DOM 的区别？优缺点？"></a>49.说说 Real DOM 和 Virtual DOM 的区别？优缺点？</h4><p>虚拟dom不会进行重绘和回流，而真实dom会频繁重排与重绘</p>
-<p>虚拟dom的总损耗是”虚拟dom的增删改+真实dom的<strong>差异</strong>增删改+重排“；真实dom的消耗是”真实dom全部增删改+重排“</p>
-<p>1.真实dom<br> 优点：</p>
-<ol>
-<li>直接操作HTML，易用</li>
-</ol>
-<p> 缺点：</p>
-<ol>
-<li><p>解析速度慢，效率低，内存占用量高</p>
-</li>
-<li><p>性能差：频繁操作真实DOM，导致重绘、回流</p>
-</li>
-</ol>
-<p>2.虚拟dom<br> 优点：</p>
-<ol>
-<li><p>减少真实dom的频繁更新，减少重绘回流、占用内存少</p>
-</li>
-<li><p>跨平台：一套react代码可以多端运行</p>
-</li>
-</ol>
-<p> 缺点：</p>
-<ol>
-<li>页面首次渲染时，由于多一层虚拟dom的计算，速度比正常慢些</li>
-</ol>
-<hr>
-<p><strong>练习</strong></p>
-<h4 id="50-说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？"><a href="#50-说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？" class="headerlink" title="50.说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？"></a>50.说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？</h4><p>可以分成三个阶段：</p>
-<ul>
-<li>创建阶段</li>
-<li>更新阶段</li>
-<li>卸载阶段</li>
-</ul>
-<h5 id="创建阶段"><a href="#创建阶段" class="headerlink" title="创建阶段"></a>创建阶段</h5><p>创建阶段主要分成了以下几个生命周期方法：</p>
-<ul>
-<li>构造函数（不要问我为什么用中文，因为英文会被吞掉，太难了）</li>
-<li>getDerivedStateFromProps  [[dɪ'raɪvd]]</li>
-<li>render</li>
-<li>componentDidMount</li>
-</ul>
-<p>实例过程中自动调用的方法，在方法内部通过<code>super</code>关键字获取来自父组件的<code>props</code></p>
-<p>在该方法中，通常的操作为初始化<code>state</code>状态或者在<code>this</code>上挂载方法</p>
-<p>render<br>类组件必须实现的方法，用于渲染DOM结构，可以访问组件state与prop属性</p>
-<p>注意：不要在 render 里面 setState, 否则会触发死循环导致内存崩溃</p>
-<p>componentDidMount<br>组件挂载到真实DOM节点后执行，其在render方法之后执行</p>
-<p>此方法多用于执行一些数据获取，事件监听等操作</p>
-<h5 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h5><p>该阶段的函数主要为如下方法：</p>
-<ul>
-<li>getDerivedStateFromProps</li>
-<li>shouldComponentUpdate      </li>
-<li>render</li>
-<li>getSnapshotBeforeUpdate      [ˈsnæpʃɒt]</li>
-<li>componentDidUpdate</li>
-</ul>
-<h5 id="卸载阶段"><a href="#卸载阶段" class="headerlink" title="卸载阶段"></a>卸载阶段</h5><p>componentWillUnmount：</p>
-<p>此方法用于组件卸载前，清理一些注册监听事件，或者取消订阅的网络请求等</p>
-<p>一旦一个组件实例被卸载，其不会被再次挂载，而只可能是被重新创建</p>
-<h4 id="51-说说-React中的setState执行机制"><a href="#51-说说-React中的setState执行机制" class="headerlink" title="51.说说 React中的setState执行机制"></a>51.说说 React中的setState执行机制</h4><p>一个组件的显示形态可以由数据状态和外部参数所决定，而数据状态就是<code>state</code></p>
-<p>当需要修改里面的值的状态需要通过调用<code>setState</code>来改变，从而达到更新组件内部数据的作用，如果直接修改<code>state</code>的状态，我们会发现页面并不会有任何反应，但是<code>state</code>的状态是已经发生了改变</p>
-<p>这是因为<code>React</code>并不像<code>vue2</code>中调用<code>Object.defineProperty</code>数据响应式或者<code>Vue3</code>调用<code>Proxy</code>监听数据的变化，</p>
-<p>setState 是异步执行，第二个参数是一个回调函数，可以实时获取到更新之后的数据，</p>
-<ul>
-<li>在组件生命周期或React合成事件中，setState是异步</li>
-<li>在setTimeout或者原生dom事件中，setState是同步</li>
-</ul>
-<p>对同一个值进行多次 <code>setState</code>， <code>setState</code> 的批量更新策略会对其进行覆盖，取最后一次的执行结果，如果是下一个<code>state</code>依赖前一个<code>state</code>的话，推荐给<code>setState</code>一个参数传入一个<code>function</code>，在同步操作中不会出现覆盖，在render中可以使用setstate 会出现死循环，导致内存崩溃</p>
-<h4 id="52-说说对React中类组件和函数组件的理解？有什么区别？"><a href="#52-说说对React中类组件和函数组件的理解？有什么区别？" class="headerlink" title="52.说说对React中类组件和函数组件的理解？有什么区别？"></a>52.说说对React中类组件和函数组件的理解？有什么区别？</h4><p>类组件：</p>
-<p>也就是通过使用<code>ES6</code>类的编写形式去编写组件，该类必须继承<code>React.Component</code></p>
-<p>如果想要访问父组件传递过来的参数，可通过<code>this.props</code>的方式去访问</p>
-<p>在组件中必须实现<code>render</code>方法，在<code>return</code>中返回<code>React</code>对象</p>
-<p>函数组件：</p>
-<p>函数组件，顾名思义，就是通过函数编写的形式去实现一个<code>React</code>组件，是<code>React</code>中定义组件最简单的方式</p>
-<ul>
-<li>编写形式</li>
-<li>状态管理</li>
-<li>生命周期</li>
-<li>调用方式 函数组件直接调用  类组件 先将组件进行实例化  调用实例化对象的render方法</li>
-<li>获取渲染的值    类组件this总是可变的  函数没有this，方便简单</li>
-</ul>
-<h4 id="53-说说对React-Hooks的理解？解决了什么问题？"><a href="#53-说说对React-Hooks的理解？解决了什么问题？" class="headerlink" title="53.说说对React Hooks的理解？解决了什么问题？"></a>53.说说对React Hooks的理解？解决了什么问题？</h4><p>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性</p>
-<p>至于为什么引入hook，官方给出的动机是解决长时间使用和维护react过程中常遇到的问题，例如：</p>
-<p>难以重用和共享组件中的与状态相关的逻辑<br>逻辑复杂的组件难以开发与维护，当我们的组件需要处理多个互不相关的 local state 时，每个生命周期函数中可能会包含着各种互不相关的逻辑在里面<br>类组件中的this增加学习成本，类组件在基于现有工具的优化上存在些许问题<br>由于业务变动，函数组件不得不改为类组件等等<br>在以前，函数组件也被称为无状态的组件，只负责渲染的一些工作</p>
-<p>因此，现在的函数组件也可以是有状态的组件，内部也可以维护自身的状态以及做一些逻辑方面的处理</p>
-<h5 id="三、解决什么"><a href="#三、解决什么" class="headerlink" title="三、解决什么"></a>三、解决什么</h5><p>通过对上面的初步认识，可以看到<code>hooks</code>能够更容易解决状态相关的重用的问题：</p>
-<ul>
-<li>每调用useHook一次都会生成一份独立的状态</li>
-<li>通过自定义hook能够更好的封装我们的功能</li>
-</ul>
-<p>编写<code>hooks</code>为函数式编程，每个功能都包裹在函数中，整体风格更清爽，更优雅</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hooks`的出现，使函数组件的功能得到了扩充，拥有了类组件相似的功能，在我们日常使用中，使用`hooks`能够解决大多数问题，并且还拥有代码复用机制，因此优先考虑`hooks</span><br></pre></td></tr></table></figure>
+<p>race是赛跑的意思，Promise.race[p1,p2,p3]里面的结果哪个获取的快，就返回哪个结果，不管结果本身是成功还是失败</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14796064-e349fddd89796ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp"></p>
+<p>一般用于和定时器绑定，比如将一个请求和一个三秒的定时器包装成Promise实例，加入到race队列中，请求三秒中还没有回应时，给用户一些提示或一些相应的操作。</p>
 
-
-
-<h4 id="54-说说你对Redux的理解？其工作原理？"><a href="#54-说说你对Redux的理解？其工作原理？" class="headerlink" title="54.说说你对Redux的理解？其工作原理？"></a>54.说说你对Redux的理解？其工作原理？</h4><p><code>React</code>是用于构建用户界面的，帮助我们解决渲染<code>DOM</code>的过程</p>
-<p>而在整个应用中会存在很多个组件，每个组件的<code>state</code>是由自身进行管理，包括组件定义自身的<code>state</code>、组件之间的通信通过<code>props</code>传递、使用<code>Context</code>实现数据共享</p>
-<p>如果让每个组件都存储自身相关的状态，理论上来讲不会影响应用的运行，但在开发及后续维护阶段，我们将花费大量精力去查询状态的变化过程</p>
-<p>这种情况下，如果将所有的状态进行集中管理，当需要更新状态的时候，仅需要对这个管理集中处理，而不用去关心状态是如何分发到每一个组件内部的</p>
-<p><code>redux</code>就是一个实现上述集中管理的容器，遵循三大基本原则：</p>
-<ul>
-<li>单一数据源</li>
-<li>state 是只读的</li>
-<li>使用纯函数来执行修改</li>
-</ul>
-<p>注意的是，<code>redux</code>并不是只应用在<code>react</code>中，还与其他界面库一起使用，如<code>Vue</code></p>
-<h5 id="二、工作原理"><a href="#二、工作原理" class="headerlink" title="二、工作原理"></a>二、工作原理</h5><p><code>redux</code>要求我们把数据都放在 <code>store</code>公共存储空间</p>
-<p>一个组件改变了 <code>store</code> 里的数据内容，其他组件就能感知到 <code>store</code>的变化，再来取数据，从而间接的实现了这些数据传递的功能</p>
-<h5 id="三、如何使用"><a href="#三、如何使用" class="headerlink" title="三、如何使用"></a>三、如何使用</h5><p>创建一个<code>store</code>的公共数据区域 createStore </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>() <span class="comment">// 创建数据的公共存储区域（管理员）</span></span><br></pre></td></tr></table></figure>
-
-<p>还需要创建一个记录本去辅助管理数据，也就是<code>reduecer</code>，本质就是一个函数，接收两个参数<code>state</code>，<code>action</code>，返回<code>state</code>  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">reducer</span> = (<span class="params">state = initialState, action</span>) =&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后就可以将记录本传递给<code>store</code>，两者建立连接。如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducer)</span><br></pre></td></tr></table></figure>
-
-<p>如果想要获取<code>store</code>里面的数据，则通过<code>store.getState()</code>来获取当前<code>state</code></p>
-<p>下面再看看如何更改<code>store</code>里面数据，是通过<code>dispatch</code>来派发<code>action</code>，通常<code>action</code>中都会有<code>type</code>属性，也可以携带其他的数据</p>
-<ul>
-<li>createStore可以帮助创建 store</li>
-<li>store.dispatch 帮助派发 action , action 会传递给 store</li>
-<li>store.getState 这个方法可以帮助获取 store 里边所有的数据内容</li>
-<li>store.subscrible 方法订阅 store 的改变，只要 store 发生改变， store.subscrible 这个函数接收的这个回调函数就会被执行</li>
-</ul>
-<h4 id="55-说说-React-性能优化的手段有哪些"><a href="#55-说说-React-性能优化的手段有哪些" class="headerlink" title="55.说说 React 性能优化的手段有哪些"></a>55.说说 React 性能优化的手段有哪些</h4><p> 三个层面：</p>
-<ul>
-<li><p>代码层面</p>
-</li>
-<li><p>工程层面</p>
-</li>
-<li><p>框架机制层面</p>
-</li>
-<li><p>重写<code>shouldComponentUpdate</code>来避免不必要的dom操作</p>
-</li>
-<li><p>使用 <code>production</code> 版本的<code>react.js</code></p>
-</li>
-<li><p>使用<code>key</code>来帮助<code>React</code>识别列表中所有子组件的最小变化</p>
-</li>
-<li><p>避免使用内联函数</p>
-</li>
-<li><p>使用 React Fragments 避免额外标记</p>
-</li>
-<li><p>使用 Immutable</p>
-</li>
-<li><p>懒加载组件</p>
-</li>
-<li><p>服务端渲染</p>
-</li>
-</ul>
-<p>当我们使用setState 修改某个数据，导致render，理想状态是只对该组件render，但react默认做法是调用所有组件render，再生成虚拟dom进行对比，如果不改变就不更新</p>
-<h5 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h5><p>通过<code>shouldComponentUpdate</code>生命周期函数来比对 <code>state</code>和 <code>props</code>，确定是否要重新渲染</p>
-<p>默认情况下返回<code>true</code>表示重新渲染，如果不希望组件重新渲染，返回 <code>false</code> 即可</p>
-<h4 id="避免使用内联函数"><a href="#避免使用内联函数" class="headerlink" title="避免使用内联函数"></a>避免使用内联函数</h4><p>如果我们使用内联函数，则每次调用<code>render</code>函数时都会创建一个新的函数实例，如下：</p>
-<p>我们应该在组件内部创建一个函数，并将事件绑定到该函数本身。这样每次调用 <code>render</code> 时就不会创建单独的函数实例，</p>
-<h4 id="使用-React-Fragments-避免额外标记"><a href="#使用-React-Fragments-避免额外标记" class="headerlink" title="使用 React Fragments 避免额外标记"></a>使用 React Fragments 避免额外标记</h4><p>用户创建新组件时，每个组件应具有单个父标签。父级不能有两个标签，所以顶部要有一个公共标签，所以我们经常在组件顶部添加额外标签<code>div</code>  </p>
-<p>这个额外标签除了充当父标签之外，并没有其他作用，这时候则可以使用<code>fragement</code></p>
-<p>其不会向组件引入任何额外标记，但它可以作为父级标签的作用，简写 <code>&lt;&gt;&lt;/&gt;</code></p>
-<h5 id="使用-Immutable"><a href="#使用-Immutable" class="headerlink" title="使用 Immutable"></a>使用 Immutable</h5><p>在<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/laYJ_KNa8M5JNBnIolMDAA">理解Immutable中 (opens new window)</a>，我们了解到使用 <code>Immutable</code>可以给 <code>React</code> 应用带来性能的优化，主要体现在减少渲染的次数</p>
-<p>在做<code>react</code>性能优化的时候，为了避免重复渲染，我们会在<code>shouldComponentUpdate()</code>中做对比，当返回<code>true</code>执行<code>render</code>方法</p>
-<p><code>Immutable</code>通过<code>is</code>方法则可以完成对比，而无需像一样通过深度比较的方式比较</p>
-<h5 id="https-vue3js-cn-interview-React-Improve-performance-html-懒加载组件-懒加载组件"><a href="#https-vue3js-cn-interview-React-Improve-performance-html-懒加载组件-懒加载组件" class="headerlink" title="[#](https://vue3js.cn/interview/React/Improve performance.html#懒加载组件)懒加载组件"></a>[#](<a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/Improve">https://vue3js.cn/interview/React/Improve</a> performance.html#懒加载组件)懒加载组件</h5><p>从工程方面考虑，<code>webpack</code>存在代码拆分能力，可以为应用创建多个包，并在运行时动态加载，减少初始包的大小</p>
-<p>而在<code>react</code>中使用到了<code>Suspense</code>和 <code>lazy</code>组件实现代码拆分功能</p>
-<h5 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h5><p>采用服务端渲染端方式，可以使用户更快的看到渲染完成的页面</p>
-<p>服务端渲染，需要起一个<code>node</code>服务，可以使用<code>express</code>、<code>koa</code>等，调用<code>react</code>的<code>renderToString</code>方法，将根组件渲染成字符串，再输出到响应中</p>
-<h4 id="56-vue、react、angular-区别"><a href="#56-vue、react、angular-区别" class="headerlink" title="56.vue、react、angular 区别"></a>56.vue、react、angular 区别</h4><p>1、vue.js更轻量，压缩后大小只有20K+, 但React压缩后大小为44k，Angular压缩后大小有56k，所以对于移动端来说，vue.js更适合；</p>
-<p>2、vue.js更易上手，学习曲线平稳，而Angular入门较难，概念较多(比如依赖注入)，它使用java写的，很多思想沿用了后台的技术；react需学习较多东西，附带react全家桶。</p>
-<p>3、vue.js吸收两家之长，借用了angular的指令(比如v-show,v-hide，对应angular的ng-show,ng-hide)和react的组件化(将一个页面抽成一个组件，组件具有完整的生命周期)</p>
-<p>4、vue.js还有自己的特点，比如计算属性</p>
-<p><strong>Vue与AngularJS的区别</strong></p>
-<ul>
-<li>Angular采用TypeScript开发, 而Vue可以使用javascript也可以使用TypeScript</li>
-<li>AngularJS依赖对数据做脏检查，所以Watcher越多越慢；Vue.js使用基于依赖追踪的观察并且使用异步队列更新，所有的数据都是独立触发的。</li>
-<li>AngularJS社区完善, Vue的学习成本较小</li>
-</ul>
-<p><strong>Vue与React的区别</strong></p>
-<ul>
-<li>vue组件分为全局注册和局部注册，在react中都是通过import相应组件，然后模版中引用；</li>
-<li>props是可以动态变化的，子组件也实时更新，在react中官方建议props要像纯函数那样，输入输出一致对应，而且不太建议通过props来更改视图；</li>
-<li>子组件一般要显示地调用props选项来声明它期待获得的数据。而在react中不必需，另两者都有props校验机制；</li>
-<li>每个Vue实例都实现了事件接口，方便父子组件通信，小型项目中不需要引入状态管理机制，而react必需自己实现；</li>
-<li>使用插槽分发内容，使得可以混合父组件的内容与子组件自己的模板；</li>
-<li>多了指令系统，让模版可以实现更丰富的功能，而React只能使用JSX语法；</li>
-<li>Vue增加的语法糖computed和watch，而在React中需要自己写一套逻辑来实现；</li>
-<li>react的思路是all in js，通过js来生成html，所以设计了jsx，还有通过js来操作css，社区的styled-component、jss等；而 vue是把html，css，js组合到一起，用各自的处理方式，vue有单文件组件，可以把html、css、js写到一个文件中，html提供了模板引擎来处理。</li>
-<li>react做的事情很少，很多都交给社区去做，vue很多东西都是内置的，写起来确实方便一些， 比如 redux的combineReducer就对应vuex的modules， 比如reselect就对应vuex的getter和vue组件的computed， vuex的mutation是直接改变的原始数据，而redux的reducer是返回一个全新的state，所以redux结合immutable来优化性能，vue不需要。</li>
-<li>react是整体的思路的就是函数式，所以推崇纯组件，数据不可变，单向数据流，当然需要双向的地方也可以做到，比如结合redux-form，组件的横向拆分一般是通过高阶组件。而vue是数据可变的，双向绑定，声明式的写法，vue组件的横向拆分很多情况下用mixin</li>
-</ul>
-<hr>
-<h4 id="57-说说你对-TypeScript-的理解？与-JavaScript-的区别"><a href="#57-说说你对-TypeScript-的理解？与-JavaScript-的区别" class="headerlink" title="57.说说你对 TypeScript 的理解？与 JavaScript 的区别"></a>57.说说你对 TypeScript 的理解？与 JavaScript 的区别</h4><p>  <strong>TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</strong></p>
-<p>可以在编译期间发现并纠正错误	作为一种解释型语言，只能在运行时发现错误<br>强类型，支持静态和动态类型	弱类型，没有静态类型选项<br>最终被编译成 JavaScript 代码，使浏览器可以理解	可以直接在浏览器中使用<br>支持模块、泛型和接口	不支持模块、泛型或接口<br>支持 ES3，ES4，ES5 和 ES6+功能	</p>
-<hr>
-<p>不支持编译其他 ES3，ES4，ES5 或 ES6+ 功能</p>
-<p>TypeScript 是 JavaScript 的超集，扩展了 JavaScript 的语法</p>
-<p>TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译</p>
-<p>TypeScript 文件的后缀名 .ts （.ts，.tsx，.dts），JavaScript 文件是 .js</p>
-<p>在编写 TypeScript 的文件的时候就会自动编译成 js 文件</p>
-<table>
-<thead>
-<tr>
-<th>TypeScript</th>
-<th>JavaScript</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>JavaScript 的超集用于解决大型项目的代码复杂性</td>
-<td>一种脚本语言，用于创建动态网页</td>
-</tr>
-<tr>
-<td>可以在编译期间发现并纠正错误</td>
-<td>作为一种解释型语言，只能在运行时发现错误</td>
-</tr>
-<tr>
-<td>强类型，支持静态和动态类型</td>
-<td>弱类型，没有静态类型选项</td>
-</tr>
-<tr>
-<td>最终被编译成 JavaScript 代码，使浏览器可以理解</td>
-<td>可以直接在浏览器中使用</td>
-</tr>
-<tr>
-<td>支持模块、泛型和接口</td>
-<td>不支持模块、泛型或接口</td>
-</tr>
-<tr>
-<td>支持 ES3，ES4，ES5 和 ES6+功能</td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="58-说说你对-TypeScript-中泛型的理解？应用场景？"><a href="#58-说说你对-TypeScript-中泛型的理解？应用场景？" class="headerlink" title="58.说说你对 TypeScript 中泛型的理解？应用场景？"></a>58.说说你对 TypeScript 中泛型的理解？应用场景？</h4><p>是程序设计语言的一种风格或范式</p>
-<p>泛型允许我们在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时作为参数指明这些类型 在<code>typescript</code>中，定义函数，接口或者类的时候，不预先定义好具体的类型，而在使用的时候在指定类型的一种特性</p>
-<p>当代码重复度较高<br>声</p>
-<h4 id="59-说说你对微信小程序的理解？优缺点？"><a href="#59-说说你对微信小程序的理解？优缺点？" class="headerlink" title="59.说说你对微信小程序的理解？优缺点？"></a>59.说说你对微信小程序的理解？优缺点？</h4><p>2017微信正式推出微信小程序，让其他开发者也可以在微信内部运行自己的代码，</p>
-<p>可以不需要下载安装就可以使用的应用，扫一扫或者搜一下就可以使用，极大的方便了用户的使用体验，通过扫一下或者搜索的方式就可以打开应用，无需卸载安装</p>
-<p>优点：</p>
-<ul>
-<li>随搜随用，用完即走：使得小程序可以代替许多APP，或是做APP的整体嫁接，或是作为阉割版功能的承载体</li>
-<li>流量大，易接受：小程序借助自身平台更加容易引入更多的流量</li>
-<li>安全</li>
-<li>开发门槛低</li>
-<li>降低兼容性限制</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>用户留存：及相关数据显示，小程序的平均次日留存在13%左右，但是双周留存骤降到仅有1%</li>
-<li>体积限制：微信小程序只有2M的大小，这样导致无法开发大型一些的小程序</li>
-<li>受控微信：比起APP，尤其是安卓版的高自由度，小程序要面对很多来自微信的限制，从功能接口，甚至到类别内容，都要接受微信的管控</li>
-</ul>
-<h4 id="60-说说你对发布订阅、观察者模式的理解？区别？"><a href="#60-说说你对发布订阅、观察者模式的理解？区别？" class="headerlink" title="60.说说你对发布订阅、观察者模式的理解？区别？"></a>60.说说你对发布订阅、观察者模式的理解？区别？</h4><p>观察者模式:</p>
-<p>定义：当对象之间存在一对多的依赖关系时，其中一个对象的状态发生改变，所有依赖它的对象都会收到通知，这就是观察者模式。观察者 <code>Observer</code> 需要实现 <code>update</code> 方法，供目标对象调用。<code>update</code>方法中可以执行自定义的业务逻辑</p>
-<p>发布订阅:</p>
-<p>定义：基于一个事件（主题）通道，希望接收通知的对象 Subscriber 通过自定义事件订阅主题，被激活事件的对象 Publisher 通过发布主题事件的方式通知各个订阅该主题的 Subscriber 对象。</p>
-<p>因此发布订阅模式与观察者模式相比，发布订阅模式中有三个角色，发布者 Publisher ，事件调度中心 Event Channel ，订阅者 Subscriber 。<br>目标对象 Subject:<br><img src="https://img-blog.csdnimg.cn/324a0c7f7edf47d987b98b1a5d2f4c7b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQUxLRU4gIEFCQlk=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h4 id="61-项目做过哪些性能优化"><a href="#61-项目做过哪些性能优化" class="headerlink" title="61.项目做过哪些性能优化"></a>61.项目做过哪些性能优化</h4><ul>
-<li><p>减少 <code>HTTP</code> 请求数</p>
-</li>
-<li><p>减少 <code>DNS</code> 查询</p>
-</li>
-<li><p>使用 <code>CDN</code></p>
-</li>
-<li><p>避免重定向</p>
-</li>
-<li><p>图片懒加载</p>
-</li>
-<li><p>减少 <code>DOM</code> 元素数量</p>
-</li>
-<li><p>减少<code>DOM</code> 操作</p>
-</li>
-<li><p>使用外部 <code>JavaScript</code> 和 <code>CSS</code></p>
-</li>
-<li><p>压缩 <code>JavaScript</code> 、 <code>CSS</code> 、字体、图片等</p>
-</li>
-<li><p>优化 <code>CSS Sprite</code></p>
-<ul>
-<li>使用 <code>iconfont</code></li>
-</ul>
-</li>
-<li><p>字体裁剪</p>
-</li>
-<li><p>多域名分发划分内容到不同域名</p>
-</li>
-<li><p>尽量减少 <code>iframe</code> 使用</p>
-</li>
-<li><p>避免图片 <code>src</code> 为空</p>
-</li>
-<li><p>把样式表放在<code>link</code> 中</p>
-</li>
-<li><p>把<code>JavaScript</code>放在页面底部</p>
-</li>
-</ul>
-<h4 id="62-描述浏览器的渲染过程，DOM树和渲染树的区别"><a href="#62-描述浏览器的渲染过程，DOM树和渲染树的区别" class="headerlink" title="62.描述浏览器的渲染过程，DOM树和渲染树的区别"></a>62.描述浏览器的渲染过程，DOM树和渲染树的区别</h4><p>解析HTML构建dom树，发出css/js/img资源请求</p>
-<p>计算样式：识别并加载CSS样式信息与DOM树合并，生成render树</p>
-<p>计算图层布局： 获取所有元素相对位置，大小等信息</p>
-<p>绘制图层：根据dom代码，将给每个页面转换为像素，对所有媒体文件斤西瓜解码，</p>
-<p>整合图层：合并各个图层，输出到页面</p>
-<p> DOM树：解析HTML，转换树中的标签到DOM节点，</p>
-<p>渲染树是DOM树和CCS树的结合，</p>
-<h4 id="63-你认为什么样的前端代码是好的"><a href="#63-你认为什么样的前端代码是好的" class="headerlink" title="63.你认为什么样的前端代码是好的"></a>63.你认为什么样的前端代码是好的</h4><p>高复用低耦合，这样文件小，好维护，而且好扩展。</p>
-<p>具有可用性、健壮性、可靠性、宽容性等特点</p>
-<p>遵循设计模式的六大原则</p>
-<h4 id="64-从浏览器地址栏输入url到显示页面的步骤"><a href="#64-从浏览器地址栏输入url到显示页面的步骤" class="headerlink" title="64.从浏览器地址栏输入url到显示页面的步骤"></a>64.从浏览器地址栏输入url到显示页面的步骤</h4><p>1、浏览器的地址栏输入URL并按下回车。</p>
-<p>2、浏览器查找当前URL的DNS缓存记录。</p>
-<p>3、DNS解析URL对应的IP。</p>
-<p>4、根据IP建立TCP连接（<a target="_blank" rel="noopener" href="https://blog.csdn.net/hyg0811/article/details/102366854?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165486288716781667860431%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=165486288716781667860431&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-102366854-null-null.142%5Ev13%5Epc_search_result_control_group,157%5Ev14%5Enew_3&utm_term=%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&spm=1018.2226.3001.4187">三次握手</a>）。</p>
-<p>5、HTTP发起请求。</p>
-<p>6、服务器处理请求，浏览器接收HTTP响应。</p>
-<p>7、渲染页面，构建DOM树。	</p>
-<p>8、关闭TCP连接（四次挥手）。</p>
-<h4 id="65-http-请求报文响应报文的格式"><a href="#65-http-请求报文响应报文的格式" class="headerlink" title="65.http 请求报文响应报文的格式"></a>65.http 请求报文响应报文的格式</h4><p>HTTP请求报文主要由请求行、请求头部、请求正文3部分组成</p>
-<p><strong>1，请求行</strong></p>
-<p>由3部分组成，分别为：请求方法、URL（见备注1）以及协议版本，之间由空格分隔</p>
-<p>请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的</p>
-<p>协议版本的格式为：HTTP/主版本号.次版本号，常用的有HTTP/1.0和HTTP/1.1</p>
-<p><strong>2，请求头部</strong></p>
-<p>请求头部为请求报文添加了一些附加信息，由“名/值”对组成，每行一对，名和值之间使用冒号分隔</p>
-<p>常见请求头如下：</p>
-<table>
-<thead>
-<tr>
-<th><strong>请求头</strong></th>
-<th><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Host</strong></td>
-<td>接受请求的服务器地址，可以是IP:端口号，也可以是域名</td>
-</tr>
-<tr>
-<td><strong>User-Agent</strong></td>
-<td>发送请求的应用程序名称</td>
-</tr>
-<tr>
-<td><strong>Connection</strong></td>
-<td>指定与连接相关的属性，如Connection:Keep-Alive</td>
-</tr>
-<tr>
-<td><strong>Accept-Charset</strong></td>
-<td>通知服务端可以发送的编码格式</td>
-</tr>
-<tr>
-<td><strong>Accept-Encoding</strong></td>
-<td>通知服务端可以发送的数据压缩格式</td>
-</tr>
-<tr>
-<td><strong>Accept-Language</strong></td>
-<td>通知服务端可以发送的语言</td>
-</tr>
-</tbody></table>
-<p><strong>3，请求正文</strong></p>
-<p>可选部分，比如GET请求就没有请求正文</p>
-<h4 id="66-Token-cookie-session-区别"><a href="#66-Token-cookie-session-区别" class="headerlink" title="66.Token cookie session 区别"></a>66.Token cookie session 区别</h4><p>Cookie实际上是一小段的文本信息。 Cookies是由服务器产生的。 当浏览器第一次访问服务端时，服务器此时肯定不知道他的身份，所以创建一个独特的身份标识数据，格式为key=value，放入到Set-Cookie字段里，随着响应报文发给浏览器。浏览器看到有Set-Cookie字段以后就知道这是服务器给的身份标识，于是就保存起来，下次请求时会自动将此key=value值放入到Cookie字段中发给服务端。服务端收到请求报文后，发现Cookie字段中有值，就能根据此值识别用户的身份然后提供数据。</p>
-<p>Session机制是一种服务端的机制 ，服务器使用一种类似散列表的结构来保存信息。当程序需要为某个客户端的请求创建一个session的时候 ，服务器首先检查这个客户端里的请求里是否已包含了一个session标识-session ID ,如果已经包含一个session ID ，则说明已经为此客户端创建过session，服务器就按照session ID把这个session检索出来使用。如果客户端请求不包含session lD，则为此客户端创建一个session并且声称一个与此session相关联的session ID ，session ID的值应该是一个既不会重复 ，又不容易被找到规律以仿造的字符串(服务器会自动创建)，这个session ID将被在本次响应中返回给客户端保存。</p>
-<p>cookie 和session的区别</p>
-<p>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
-<p>2、cookie不是很安全，别人可以分析存放在本地·的cookie并进行cookie欺骗</p>
-<p>   考虑到安全应当使用session。</p>
-<p>3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能</p>
-<p>   考虑到减轻服务器性能方面，应当使用cookie。</p>
-<p>4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
-<p>5、所以个人建议：`</p>
-<p>   将登陆信息等重要信息存放为session</p>
-<p>   其他信息如果需要保留，可以放在cookie中</p>
-<p>Token是在服务端将用户信息经过Base64Url编码过后传给在客户端，每次用户请求的时候都会带上这一段信息，因此服务端拿到此信息进行解密后就知道此用户是谁了，这个方法叫做JWT(JSON Web Token)。  Token类似一个令牌，无状态的，服务端所需的信息被Base64编码后放到Token中，服务器可以直接解码出其中的数据。</p>
-<p>Token相比较于Session的优点在于，当后端系统有多台时，由于是客户端访问时直接带着数据，因此无需做共享数据的操作。</p>
-<p>Token的优点</p>
-<p>简洁：可以通过URL,POST参数或者是在HTTP头参数发送，因为数据量小，传输速度也很快。</p>
-<p>自包含：由于字符串包含了用户所需要的信息，避免了多次查询数据库，因为Token是以JSON的形式保存在客户端的，所以JWT是跨语言的，不需要在服务端保存会话信息，特别适用于分布式微服务。</p>
-<h4 id="67-CORS跨域的原理"><a href="#67-CORS跨域的原理" class="headerlink" title="67.CORS跨域的原理"></a>67.CORS跨域的原理</h4><blockquote>
-<p><code>CORS</code> 全称 <code>Cross-Origin Resource Sharing</code>，即跨域资源共享。</p>
-<p><code>CORS</code> 是一种基于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Header">HTTP Header</a> 的机制，该机制通过允许服务器标示除了它自己以外的其它域。服务器端配合浏览器实现 <code>CORS</code> 机制，可以`突破浏览器对跨域资源访问的限制，实现跨域资源请求。</p>
-</blockquote>
-<p><code>CORS</code> 的验证机制分两种模式：简单请求和预检请求。</p>
-<h5 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h5><p>简单请求模式下浏览器直接发送请求，并在请求头中携带 <code>Origin</code>。 服务器端接到请求后，会根据自己的跨域规则，通过响应头 <code>Access-Control-Allow-Origin</code> 来返回验证结果。</p>
-<p>请求满足以下所有条件即为简单请求：</p>
-<p>请求方法</p>
-<ul>
-<li><p>GET</p>
-</li>
-<li><p>POST</p>
-</li>
-<li><p>HEAD<br>Content-Type 字段值</p>
-</li>
-<li><p>text/plain</p>
-</li>
-<li><p>手动设置的 Header 字段只能为自定义字段和 Fetch 规范定义的 CORS 安全字段。</p>
-</li>
-</ul>
-<h5 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h5><p>需要预检的请求必须首先使用 <code>OPTIONS</code> 方法发起一个预检请求到服务器，服务器基于预检请求的信息来判断是否接受接下来的实际请求。</p>
-<p><strong>预检请求 <code>Header</code>：</strong></p>
-<h4 id="68-什么是MVVM"><a href="#68-什么是MVVM" class="headerlink" title="68.  什么是MVVM"></a>68.  什么是MVVM</h4><p>本质上是MVC的改进，而MVVM就是将其中的View 状态和行为抽象化，viewModel将视图UI和业务逻辑分开，取出model数据同时处理View需要展示内容而设计的业务逻辑</p>
-<p>MVVM采用双向数据绑定，view中数据变化将自动反映到viewmodel上，反之，model中数据变化也将会自动展示在页面上。把Model和View关联起来的就是ViewModel。ViewModel负责把Model的数据同步到View显示出来，还负责把View的修改同步回Model。<br>MVVM核心思想，是关注model的变化，让MVVM框架利用自己的机制自动更新DOM，也就是所谓的数据-视图分离，数据不会影响视图。</p>
-<p>MVVM采用双向数据绑定，view中数据变化将自动反映到</p>
-<p> 2、优点<br>1、Controller简洁清晰<br> ViewModel分离出来大部分的Controller代码，更加清晰和容易维护。</p>
-<p>2、方便测试<br>大部分Bug来自于逻辑处理，由于ViewModel把逻辑分离出来，可对ViewModel构造单元测试。</p>
-<p>3、开发解耦<br>1）一位开发者负责逻辑实现，另一位开发者负责UI实现</p>
-<p>2）敏捷开发中，并非等后端借口提供后再开发，提供前可完成Controller和View的开发工作。</p>
-<p>3、缺点<br>1、代码量比MVC多。</p>
-<p>2、需对每个Controller实现绑定，这是分离不可避免的工作量。</p>
-<h5 id="数据驱动（MVVM"><a href="#数据驱动（MVVM" class="headerlink" title="数据驱动（MVVM)"></a>数据驱动（MVVM)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MVVM`表示的是 `Model-View-ViewModel</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Model：模型层，负责处理业务逻辑以及和服务器端进行交互</li>
-<li>View：视图层：负责将数据模型转化为UI展示出来，可以简单的理解为HTML页面</li>
-<li>ViewModel：视图模型层，用来连接Model和View，是Model和View之间的通信桥梁</li>
-</ul>
-<h4 id="69-说说你对版本管理的理解？常用的版本管理工具有哪些1？"><a href="#69-说说你对版本管理的理解？常用的版本管理工具有哪些1？" class="headerlink" title="69.说说你对版本管理的理解？常用的版本管理工具有哪些1？"></a>69.说说你对版本管理的理解？常用的版本管理工具有哪些1？</h4><p>能供记录项目的开发过程，同步不同人所编辑的项目进度，也可以将项目恢复到之前某一个状态的进度，</p>
-<p>市面上版本控制软件类别：</p>
-<blockquote>
-<p>本地版本控制系统</p>
-<p>集中式版本控制系统</p>
-<p>分布式版本控制系统</p>
-</blockquote>
-<h4 id="本地版本控制系统："><a href="#本地版本控制系统：" class="headerlink" title="本地版本控制系统："></a>本地版本控制系统：</h4><p>优点：</p>
-<ul>
-<li>简单，系统有内置</li>
-<li>适合管理文本，比如系统配置</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>其不支持远程操作，因此并不适合多人版本开发</li>
-</ul>
-<h5 id="集中式版本控制系统"><a href="#集中式版本控制系统" class="headerlink" title="集中式版本控制系统"></a>集中式版本控制系统</h5><p>优点：</p>
-<ul>
-<li>适合多人团队协作开发</li>
-<li>代码集中化管理</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>单点故障</li>
-<li>必须联网，无法单机工作</li>
-</ul>
-<p>代表工具有<code>SVN</code>、<code>CVS</code>：</p>
-<h5 id="分布式版本控制系统"><a href="#分布式版本控制系统" class="headerlink" title="分布式版本控制系统"></a>分布式版本控制系统</h5><p>优点：</p>
-<ul>
-<li>适合多人团队协作开发</li>
-<li>代码集中化管理</li>
-<li>可以离线工作</li>
-<li>每个计算机都是一个完整仓库</li>
-</ul>
-<p>代表工具为<code>Git</code>、<code>HG</code>：</p>
-<h4 id="70-说说你对Git的理解？"><a href="#70-说说你对Git的理解？" class="headerlink" title="70.  说说你对Git的理解？"></a>70.  说说你对Git的理解？</h4><p>git  是一个分布式 版本控制软件， 通过git把代码仓库镜像下来，这样有协同工作用的服务器发生故障，可以用镜像仓库恢复</p>
-<p>让团队协作开发，</p>
-<p>git分为四块存放代码的地方：本地取，暂存区，本地库，远程库</p>
-<h4 id="71-说说Git常用的命令有哪些"><a href="#71-说说Git常用的命令有哪些" class="headerlink" title="71.  说说Git常用的命令有哪些"></a>71.  说说Git常用的命令有哪些</h4><p>git add .</p>
-<p>git commit -m '描述'</p>
-<p>git status  仓库状态</p>
-<p>git push origin master</p>
-<p>git merge </p>
-<p>git fetch -a</p>
-<p>git branch  新分支名称</p>
-<p>git branch -a 展示所有分支</p>
-<p>git checkout  切换分支</p>
-<p>git init  初始化git</p>
-<h4 id="72-说说-git-发生冲突的场景？如何解决？"><a href="#72-说说-git-发生冲突的场景？如何解决？" class="headerlink" title="72.说说 git 发生冲突的场景？如何解决？"></a>72.说说 git 发生冲突的场景？如何解决？</h4><p> 多个分支代码合并到一个分支</p>
-<p>多个分支向一个远端分支推送</p>
-<p>具体情况是，多个分支修改了同一个文件（任何地方）或者多个分支修改了同一个文件的名称，</p>
-<p>如果两个分支分别修改了不同文件中的部分，不会产生冲突，直接合并就可以</p>
-<p>手动解决冲突，告诉我们冲突的文件，或者通过 git status 同样可以看到冲突文件</p>
-<p>接着使用 git add 命令标记冲突已解决，再使用 git commit进行提交</p>
-<h4 id="73-Vue路由实现原理"><a href="#73-Vue路由实现原理" class="headerlink" title="73.Vue路由实现原理"></a>73.Vue路由实现原理</h4><p>vue中路由的实现原理？<br>1、首先需要了解一下Vue路由分为两种，一种是哈希路由，其最明显的特征是URL地址带‘#’号的，其实对地址栏也就不怎么美观一点。其次是history路由也就是URL不带‘#’号的地址，也就是我们比较常见的地址。<br>2、为什么要了解Vue路由的实现原理呢？其实我们都知道Vue 构建的单页面应用，其实根据路由地址的不同渲染不同的组件，在无刷新的前提下进行组件切换，根据路由地址切换不同的组件<br>下面介绍一下简单的例子来了解Vue路由的实现原理<br>3、在介绍vue实现原理之前<br>首先来了解一下Vue中的哈希路由的实现原理，其实根本原理涉及到了BOM中的location对象，其中对象中的location.hash储存的是路由的地址、可以赋值改变其URL的地址。而这会触发hashchange事件，而通过window.addEventListener监听hash值然后去匹配对应的路由、从而渲染页面的组件</p>
-</script></p></blockquote>
     
 
     
@@ -1284,7 +350,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://evacat.top/2022/08/01/基础面试题72/" title="基本面试题" target="_blank">https://evacat.top/2022/08/01/基础面试题72/</a>
+          <a href="https://evacat.top/2021/10/19/Promise.all和Promise.race的区别和使用/" title="Promise.all和Promise.race的区别和使用" target="_blank">https://evacat.top/2021/10/19/Promise.all和Promise.race的区别和使用/</a>
         </li>
         
         <li>
@@ -1308,7 +374,14 @@
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
 						class="js-tag article-tag-list-link color4">
-						面试题
+						vue
+					</a>
+				</li>
+				
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color3">
+						js
 					</a>
 				</li>
 				
@@ -1365,7 +438,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2022/08/01/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872/" alt="微信分享二维码"> -->
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2021/10/19/Promise.all%E5%92%8CPromise.race%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/" alt="微信分享二维码"> -->
     </div>
   </div>
 
@@ -1379,18 +452,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/08/08/vue-table%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/02/10/djangoORM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue-table格式化日期
+          djangoORM基本操作
         
       </div>
     </a>
   
   
-    <a href="/2022/08/01/%E5%BA%94%E8%AF%A5%E7%BD%AE%E9%A1%B6%E7%9A%84%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo 使用</div>
+    <a href="/2021/06/23/var%E3%80%81let%E3%80%81const%20%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">var、let、const 区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -1417,7 +490,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%9872"><span class="toc-number">1.</span> <span class="toc-text">基础面试题72</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 说说你对盒子模型的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-css%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%9F%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. css选择器有哪些？优先级？哪些属性可以继承？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%A6%82%E6%9E%9C%E5%85%83%E7%B4%A0%E4%B8%8D%E5%AE%9A%E5%AE%BD%E9%AB%98%E5%91%A2%EF%BC%9F"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E5%9B%9E%E6%B5%81%E8%B7%9F%E9%87%8D%E7%BB%98%EF%BC%9F%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E4%B8%8B%E4%BC%9A%E8%A7%A6%E5%8F%91%EF%BC%9F"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.怎么理解回流跟重绘？什么场景下会触发？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%EF%BC%9F%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E5%81%9A%EF%BC%9F"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.什么是响应式设计？响应式设计的基本原理是什么？如何做？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%A6%82%E6%9E%9C%E8%A6%81%E5%81%9A%E4%BC%98%E5%8C%96%EF%BC%8CCSS%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.如果要做优化，CSS提高性能的方法有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AF%B9%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%99%E4%B8%AA%E8%81%8C%E4%BD%8D%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%90%86%E8%A7%A3%E7%9A%84%EF%BC%9F%E5%AE%83%E7%9A%84%E5%89%8D%E6%99%AF%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7"><span class="toc-number">1.0.7.</span> <span class="toc-text">7.对前端工程师这个职位是怎么样理解的？它的前景会怎么样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E8%AF%B4%E8%AF%B4JavaScript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F%E5%AD%98%E5%82%A8%E4%B8%8A%E7%9A%84%E5%B7%AE%E5%88%AB%EF%BC%9F"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.说说JavaScript中的数据类型？存储上的差别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-typeof-%E4%B8%8E-instanceof-%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.typeof 与 instanceof 区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9%E9%97%AD%E5%8C%85%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F%E9%97%AD%E5%8C%85%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.0.10.</span> <span class="toc-text">10.说说你对闭包的理解？闭包使用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-bind%E3%80%81call%E3%80%81apply-%E5%8C%BA%E5%88%AB%EF%BC%9F%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAbind"><span class="toc-number">1.0.11.</span> <span class="toc-text">11.bind、call、apply 区别？如何实现一个bind?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.0.12.</span> <span class="toc-text">12.说说你对事件循环的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-DOM%E5%B8%B8%E8%A7%81%E7%9A%84%E6%93%8D%E4%BD%9C%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.0.13.</span> <span class="toc-text">13.DOM常见的操作有哪些</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9BOM%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E5%B8%B8%E8%A7%81%E7%9A%84BOM%E5%AF%B9%E8%B1%A1%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.0.14.</span> <span class="toc-text">14.说说你对BOM的理解，常见的BOM对象你了解哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-Javascript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">1.0.15.</span> <span class="toc-text">15.Javascript本地存储的方式有哪些？区别及应用场景？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E4%BB%80%E4%B9%88%E6%98%AF%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">1.0.16.</span> <span class="toc-text">16.什么是防抖和节流？有什么区别？如何实现？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87JS%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.17.</span> <span class="toc-text">17.如何通过JS判断一个数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E5%AF%B9%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.0.18.</span> <span class="toc-text">18.说说你对作用域链的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.0.18.1.</span> <span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.0.18.2.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.0.18.3.</span> <span class="toc-text">块级作用域</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-JavaScript%E5%8E%9F%E5%9E%8B%EF%BC%8C%E5%8E%9F%E5%9E%8B%E9%93%BE-%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-number">1.0.19.</span> <span class="toc-text">19.JavaScript原型，原型链 ? 有什么特点？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-%E8%AF%B7%E8%A7%A3%E9%87%8A%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86"><span class="toc-number">1.0.20.</span> <span class="toc-text">20.请解释什么是事件代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E8%B0%88%E8%B0%88This%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.0.21.</span> <span class="toc-text">21.谈谈This对象的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-new%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%85%B7%E4%BD%93%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.0.22.</span> <span class="toc-text">22.new操作符具体干了什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-null%EF%BC%8Cundefined-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.23.</span> <span class="toc-text">23.null，undefined 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-javascript-%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E2%80%9Duse-strict%E2%80%9D-%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-number">1.0.24.</span> <span class="toc-text">24.javascript 代码中的”use strict”;是什么意思</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.25.</span> <span class="toc-text">25.  同步和异步的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26-%E8%B0%88%E4%B8%80%E8%B0%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.26.</span> <span class="toc-text">26.谈一谈箭头函数与普通函数的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-JS-%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">1.0.27.</span> <span class="toc-text">27.JS 数组和对象的遍历方式，以及几种方式的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#28-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.28.</span> <span class="toc-text">28.如何解决跨域问题</span></a></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -1441,9 +514,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "基本面试题" -->
+  <!-- id: "Promise.all和Promise.race的区别和使用" -->
   var giteement = new Giteement({
-    id: '20220801172201',
+    id: '20211019161653',
     owner: '',
     repo: '',
     backcall_uri: '',
