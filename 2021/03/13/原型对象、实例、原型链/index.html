@@ -6,47 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://evacat.top">
-  <title>第9章　数据统计分析案例 | 不想</title>
+  <title>js继承 | 不想</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta property="og:type" content="article">
-<meta property="og:title" content="第9章　数据统计分析案例">
-<meta property="og:url" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/index.html">
+<meta property="og:title" content="js继承">
+<meta property="og:url" content="https://evacat.top/2021/03/13/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
 <meta property="og:site_name" content="不想">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091340914.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091429952.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091544403.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091601809.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091624602.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091640229.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091708101.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091740885.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091933203.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092002261.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092041392.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092113806.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092157969.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092249403.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092358482.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092428830.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093258671.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093347266.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093655985.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093722813.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093751243.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093837899.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093902187.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101094004956.png">
-<meta property="og:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101094315925.png">
-<meta property="article:published_time" content="2020-05-15T08:16:53.000Z">
-<meta property="article:modified_time" content="2022-08-16T11:13:24.710Z">
+<meta property="article:published_time" content="2021-03-13T01:15:03.000Z">
+<meta property="article:modified_time" content="2022-08-21T13:07:34.621Z">
 <meta property="article:author" content="不想">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="数据分析">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091340914.png">
   
     <link rel="alternative" href="/atom.xml" title="不想" type="application/atom+xml">
   
@@ -259,14 +232,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-第9章数据统计分析案例" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-原型对象、实例、原型链" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      第9章　数据统计分析案例
+      js继承
     </h1>
   
 
@@ -278,8 +251,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/" class="archive-article-date">
-        <time datetime="2020-05-15T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+<a href="/2021/03/13/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="archive-article-date">
+        <time datetime="2021-03-13T01:15:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
 </a>
 
   
@@ -292,7 +265,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4.2k字</span>
+      <span class="post-count">535字</span>
     </span>
   </span>
 
@@ -301,7 +274,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">14分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -315,83 +288,24 @@
     <br>
 <span id="more"></span>
 
+<h3 id="一、原型对象、实例、原型链"><a href="#一、原型对象、实例、原型链" class="headerlink" title="一、原型对象、实例、原型链"></a>一、原型对象、实例、原型链</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> M = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">&#125;; <span class="comment">//ƒ ()&#123;this.name=&#x27;123&#x27;&#125;</span></span><br><span class="line"><span class="keyword">var</span> a1 = <span class="keyword">new</span> <span class="title function_">M</span>(); <span class="comment">//M &#123;name: &quot;123&quot;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1.<span class="property">name</span>); <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="第9章-数据统计分析案例"><a href="#第9章-数据统计分析案例" class="headerlink" title="第9章　数据统计分析案例"></a>第9章　数据统计分析案例</h1><p>本章以案例为主，通过简单的知识讲解使读者了解数据统计分析中常用的分析方法，如对比分析，同比、定比和环比分析，贡献度分析，差异化分析，相关性分析和时间序列分析的概念。通过典型案例，将数据统计分析方法与前面学习的内容相结合，力求将所学内容应用到实践中。</p>
-<h1 id="9-1-对比分析"><a href="#9-1-对比分析" class="headerlink" title="9.1　对比分析"></a>9.1　对比分析</h1><h2 id="9-1-1-什么是对比分析"><a href="#9-1-1-什么是对比分析" class="headerlink" title="9.1.1　什么是对比分析"></a>9.1.1　什么是对比分析</h2><p>对比分析法是将两个或两个以上的数据进行比较，分析其中的差异，从而揭示这些事物代表的发展变化情况和规律性。<br>特点：非常直观地看出事物某方面的变化或差距，而且可以准确、量化地表示出变化的差距是多少。<br>对比分析法通常是把两个相互联系的指标数据进行比较，从数量上展示和说明研究对象规模的大小、水平的高低、速度的快慢，以及各种关系是否协调。对比分析一般来说有以下几种对比方法：纵向对比、横向对比、标准对比、实际与计划对比。</p>
-<h2 id="9-1-2-案例：对比分析各品牌销量表现TOP10"><a href="#9-1-2-案例：对比分析各品牌销量表现TOP10" class="headerlink" title="9.1.2　案例：对比分析各品牌销量表现TOP10"></a>9.1.2　案例：对比分析各品牌销量表现TOP10</h2><p>案例位置：资源包\MR\Code\09\example\01<br>对比国产各品牌汽车2020年1月销量，效果如图9.1所示。<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091340914.png" alt="image-20211101091340914"></p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091429952.png" alt="image-20211101091429952"></p>
-<p>​                                                                                     图9.1　对比分析各品牌销量表现TOP10</p>
-<h1 id="9-2-同比、定比和环比分析"><a href="#9-2-同比、定比和环比分析" class="headerlink" title="9.2　同比、定比和环比分析"></a>9.2　同比、定比和环比分析</h1><p>在数据分析中，有一个重要的分析方法，叫趋势分析法，即将两期或连续数期报告中某一指标进行对比，确定其增减变动的方向、数额和幅度，以确定该指标的变动趋势。趋势分析法中的指标，有同比分析、定比（定基比）分析和环比分析，以及同比增长率分析、定比（定基比）增长率分析和环比增长率分析。</p>
-<h2 id="9-2-1-同比、定比和环比概述"><a href="#9-2-1-同比、定比和环比概述" class="headerlink" title="9.2.1　同比、定比和环比概述"></a>9.2.1　同比、定比和环比概述</h2><p>首先了解一下同比、定比和环比的概念。　</p>
-<p>同比：本期数据与历史同期数据比较。例如，2021年11月份与2020年11月份相比较。　</p>
-<p>定比：本期数据与特定时期的数据比较。例如，2021年11月与2019年12月份相比较。　</p>
-<p>环比：本期数据与上期数据比较。例如，2021年11月份与2020年11月份相比较。</p>
-<p>同比的好处是可以排除一部分季节因素；环比的好处是可以更直观地表明阶段性的变换，但是会受季节性因素影响；定比常用于财务数据分析。下面来看一个生活中经常出现的场景。　同比：去年这个这时候这条裙子我还能穿，现在穿不进去啦！　定比：年龄，50岁是25岁的两倍。　环比：这个月好像比上个月胖了。<br>下面简单介绍一下同比、定比和环比计算的公式。</p>
-<h3 id="1．同比"><a href="#1．同比" class="headerlink" title="1．同比"></a>1．同比</h3><p>同比的计算公式如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091544403.png" alt="image-20211101091544403"></p>
-<h3 id="2．定比"><a href="#2．定比" class="headerlink" title="2．定比"></a>2．定比</h3><p>定比的计算公式如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091601809.png" alt="image-20211101091601809"></p>
-<h3 id="3．环比"><a href="#3．环比" class="headerlink" title="3．环比"></a>3．环比</h3><p>环比增长率反映本期比上期增长了多少，公式如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091624602.png" alt="image-20211101091624602"></p>
-<p>环比发展速度是本期水平与前一期水平之比，反映前后两期的发展变化情况，公式如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091640229.png" alt="image-20211101091640229"></p>
-<h2 id="9-2-2-案例1：京东电商单品销量同比增长情况分析"><a href="#9-2-2-案例1：京东电商单品销量同比增长情况分析" class="headerlink" title="9.2.2　案例1：京东电商单品销量同比增长情况分析"></a>9.2.2　案例1：京东电商单品销量同比增长情况分析</h2><p>案例位置：资源包\MR\Code\09\example\02\01<br>下面分析2020年2月与2019年2月相比，京东电商《零基础学Python（全彩版）》一书销量同比增长情况，效果如图9.2所示。<br>从分析结果得知：上海、武汉同比增长较小。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091708101.png" alt="image-20211101091708101"></p>
-<p>​                                                                                                              图9.2　同比分析<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091740885.png" alt="image-20211101091740885"></p>
-<h2 id="9-2-3-案例2：单品销量定比分析"><a href="#9-2-3-案例2：单品销量定比分析" class="headerlink" title="9.2.3　案例2：单品销量定比分析"></a>9.2.3　案例2：单品销量定比分析</h2><p>案例位置：资源包\MR\Code\09\example\02\02<br>下面实现京东电商《零基础学Python（全彩版）》一书2019年销量定比分析，以2019年1月为基期，基点为1，效果如图9.3所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101091933203.png" alt="image-20211101091933203"></p>
-<p>​                                                                                                      图9.3　定比分析<br>从图9.3中可以看到，6月开始呈现连续小幅度增长，到11月开始大幅度增长，定比指数较10月提高了3.028个点。<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092002261.png" alt="image-20211101092002261"></p>
-<h2 id="9-2-4-案例3：单品销量环比增长情况分析"><a href="#9-2-4-案例3：单品销量环比增长情况分析" class="headerlink" title="9.2.4　案例3：单品销量环比增长情况分析"></a>9.2.4　案例3：单品销量环比增长情况分析</h2><p>案例位置：资源包\MR\Code\09\example\02\03<br>下面分析京东电商《零基础学Python（全彩版）》一书2019年销量环比增长情况，效果如图9.4所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092041392.png" alt="image-20211101092041392"></p>
-<p>​                                                                                                    图9.4　环比分析<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092113806.png" alt="image-20211101092113806"></p>
-<p>实用技巧<br>在使用Matplotlib绘制图表时，发现了一个警告Warining，如图9.5所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092157969.png" alt="image-20211101092157969"></p>
-<p>​                                                                                                                  图9.5　警告信息<br>完整警告信息如下：<br>MatplotlibDeprecationWarning:<br>Adding an axes using the same arguments as a previous axes currently reuses the earlier instance. In a future version, a new instance will always be created and returned. Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.<br>“Adding an axes using the same arguments as a previous axes “<br>解决方法：<br>出现上述警告，原因是在创建画布fig&#x3D;plt.figure()后就设置了图表标题或坐标轴标签，将图表标题或坐标轴标签相关代码放置在定义子图ax&#x3D;fig.add_subplot(111)代码后就不会出现警告信息了。</p>
-<h1 id="9-3-贡献度分析（帕累托法则）"><a href="#9-3-贡献度分析（帕累托法则）" class="headerlink" title="9.3　贡献度分析（帕累托法则）"></a>9.3　贡献度分析（帕累托法则）</h1><h2 id="9-3-1-什么是贡献度分析"><a href="#9-3-1-什么是贡献度分析" class="headerlink" title="9.3.1　什么是贡献度分析"></a>9.3.1　什么是贡献度分析</h2><p>贡献度分析又称80&#x2F;20法则、二八法则、帕累托法则、帕累托定律、最省力法则或不平衡原则。<br>该法则是由意大利经济学家“帕累托”提出的。80&#x2F;20法则认为：原因和结果、投入和产出、努力和报酬之间本来存在着无法解释的不平衡。例如，一个公司80%的利润常常来自20%的产品，那么使用贡献度分析就可以分析获利最高的20%的产品。<br>下面简单介绍一下贡献率相关算法。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092249403.png" alt="image-20211101092249403"></p>
-<p>通过上述公式得出累计贡献率，当累计贡献率接近80%时（不一定正好是80%)，然后找到该产品在图表中相应的位置并进行标注。说明<br>真正的比例不一定正好是80%:20%。80&#x2F;20法则表明在多数情况下该关系很可能是不平衡的，并且接近于80&#x2F;20。</p>
-<h2 id="9-3-2-案例：产品贡献度分析"><a href="#9-3-2-案例：产品贡献度分析" class="headerlink" title="9.3.2　案例：产品贡献度分析"></a>9.3.2　案例：产品贡献度分析</h2><p>案例位置：资源包\MR\Code\09\example\03<br>下面分析淘宝电商全彩系列图书2018年上半年销售收入占比80%的产品。首先，使用9.3.1节中的公式计算产品累计贡献率，结果如图9.6所示。从图9.6中可以看出，到图书编号B13时，累计贡献率就已达到了0.817665（接近总销售收入的80%），其中共有10种产品，接下来在图表中进行标注，如图9.7所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092358482.png" alt="image-20211101092358482"></p>
-<p>​                                                                                         图9.6　输出累计贡献率</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101092428830.png" alt="image-20211101092428830"></p>
-<p>​                                                                                                   图9.7　产品贡献度分析<br>程序代码如下：</p>
-<p>![</p>
-<p>、](第9章数据统计分析案例.assets&#x2F;image-20211101092455112.png)</p>
-<h1 id="9-4-差异化分析"><a href="#9-4-差异化分析" class="headerlink" title="9.4　差异化分析"></a>9.4　差异化分析</h1><h2 id="9-4-1-差异化概述"><a href="#9-4-1-差异化概述" class="headerlink" title="9.4.1　差异化概述"></a>9.4.1　差异化概述</h2><p>任何事物都存在差异，如同上课听讲，有人津津有味，有人昏昏欲睡。<br>那么，通过差异化分析，比较不同事物之间在某个指标上存在的差异，根据差异定制不同的策略。对于产品而言，差异化分析是指企业在其提供给顾客的产品上，通过各种方法满足顾客的偏好，使顾客能够把它同其他竞争企业提供的同类产品有效地区别开来，从而使企业在市场竞争中占据有利的地位。<br>比较常见的有性别差异、年龄差异。通过差异化分析比较不同性别之间在某个指标上存在的差异，通过分析结果对不同性别定制不同的方案。例如，分析不同性别的同学在学习成绩上的差异，了解男生和女生之间的这些差异，因材施教，定制不同的弥补弱项的方案。对于女生，可以有意识地培养她的思维能力；而对于男生，可以买些书籍，来增强他薄弱的方面。<br>年龄差异化分析，了解不同年龄的需求，投其所好，使企业的利润最大化。例如，网购、自媒体、汽车、旅游等行业，通过年龄差异化分析，找出不同年龄段用户群体的喜好，从而增加产品销量。</p>
-<h2 id="9-4-2-案例：学生成绩性别差异分析"><a href="#9-4-2-案例：学生成绩性别差异分析" class="headerlink" title="9.4.2　案例：学生成绩性别差异分析"></a>9.4.2　案例：学生成绩性别差异分析</h2><p>案例位置：资源包\MR\Code\09\example\04<br>“女孩喜欢毛绒玩具，男孩喜欢车”这大概是天生的。<br>科学研究表明，男孩和女孩的差别在相当程度上是由生理基础决定的。通过高科技扫描就可以发现，男孩和女孩的大脑都会有某些部位比对方相应的部位更发达、更忙碌。<br>随着孩子的成长，这种天生的性别差异就会对孩子的学习有所影响，并且不断强化。而反过来，学习的本身也在改变着大脑的机能发育。因为当孩子玩耍和学习时，相对应的脑细胞就会更加活跃且随时更新，而那些不经常使用的部分将会逐渐退化萎缩。<br>下面我们用数据说话，通过雷达图分析男生、女生各科成绩差异，效果如图9.8所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093258671.png" alt="image-20211101093258671"></p>
-<p>​                                                                                 图9.8　男生、女生各科成绩差异分析<br>从分析结果得知：男生数学和物理高于女生，而女生在英语和语文上略占优势。针对性别差异造成学习成绩的差距，应该采取因材施教，从而提高女生的数学和物理成绩</p>
-<p>男生的语文和英语成绩。<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093347266.png" alt="image-20211101093347266"></p>
-<h1 id="9-5-相关性分析"><a href="#9-5-相关性分析" class="headerlink" title="9.5　相关性分析"></a>9.5　相关性分析</h1><h2 id="9-5-1-相关性概述"><a href="#9-5-1-相关性概述" class="headerlink" title="9.5.1　相关性概述"></a>9.5.1　相关性概述</h2><p>任何事物之间都存在一定的联系。例如，夏天温度的高低与空调的销量就存在相关性。当温度升高时，空调的销量也会相应提高。<br>相关性分析是指对多个具备相关关系的数据进行分析，从而衡量数据之间的相关程度或密切程度。相关性可以应用到所有数据的分析过程中。如果一组数据的改变引发另一组数据朝相同方向变化，那么这两组数据存在正相关性，例如，身高与体重，一般个子高的人体重会重一些，个子矮的人体重会轻一些；如果一组数据的改变引发另一组数据朝相反方向变化，那么这两组数据存在负相关性，例如，运动与体重。</p>
-<h2 id="9-5-2-案例：广告展现量与费用成本相关性分析"><a href="#9-5-2-案例：广告展现量与费用成本相关性分析" class="headerlink" title="9.5.2　案例：广告展现量与费用成本相关性分析"></a>9.5.2　案例：广告展现量与费用成本相关性分析</h2><p>案例位置：资源包\MR\Code\09\example\05<br>为了促进销售，电商营销必然要投入广告，这样就会产生广告展现量和费用成本相关的数据。通常情况下，我们认为费用高，广告效果就好，它们之间必然存在联系，但仅通过主观判断没有说服力，无法证明数据之间关系的真实存在，也无法度量它们之间关系的强弱。因此，我们要通过相关性分析来找出数据之间的关系。<br>下面来看一下费用成本与广告展现量相关数据情况（由于数据太多，只显示部分数据），如图9.9和图9.10所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093655985.png" alt="image-20211101093655985"></p>
-<p>​                                                                                                图9.9　费用成本</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093722813.png" alt="image-20211101093722813"></p>
-<p>​                                                                                                图9.10　广告展现量<br>相关性分析方法很多，简单的相关性分析方法是将数据进行可视化处理，单纯从数据的角度很难发现数据之间的趋势和联系，而将数据绘制成图表后就可以直观地看出数据之间的趋势和联系。<br>下面通过散点图看一看广告展现量与费用成本的相关性，效果如图9.11所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093751243.png" alt="image-20211101093751243"></p>
-<p>​                                                                                                            图9.11　散点图<br>首先对数据进行简单处理，由于“费用.xlsx”表中同一天会产生多个类型的费用，所以需要按天统计费用，然后将“展现量.xlsx”和“费用.xlsx”两张表的数据合并，最后绘制散点图，程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093837899.png" alt="image-20211101093837899"></p>
-<p>虽然图表清晰地展示了广告展现量与费用成本的相关性，但无法判断数据之间有什么关系，相关关系也没有准确地度量，并且数据超过两组时也无法完成各组数据的相关性分析。<br>下面再介绍一种方法——相关系数方法。相关系数是反映数据之间关系密切程度的统计指标，相关系数的取值区间为1～-1。1表示数据之间完全正相关（线性相关）；-1表示数据之间完全负相关；0表示数据之间不相关。数据越接近0表示相关关系越弱，越接近1表示相关关系越强。<br>计算相关系数需要一定的计算公式，而在Python中无须使用烦琐的公式，通过DataFrame对象提供的corr()函数就可以轻松实现，关键代码如下：</p>
-<p>data.corr()<br>运行程序，输出结果如图9.12所示。</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101093902187.png" alt="image-20211101093902187"></p>
-<pre><code>                                                                                             图9.12　各组数据的相关系数
-</code></pre>
-<p>从分析结果得知：“费用”与“费用”自身的相关性是1，与“展现量”“点击量”的相关系数分别是0.856013、0.858597；“展现量”与“展现量”自身的相关性是1，与“点击量”“订单金额”的相关系数分别是0.938554、0.728037。那么，除了“商品关注数”相关系数比较低，其他都很高，可以看出“费用”与“展现量”“点击量”等有一定的正相关性，而且相关性很强。<br>相关系数的优点是可以通过数字对变量的关系进行度量，并且带有方向性，1表示正相关，-1表示负相关，越靠近0相关性越弱。缺点是无法利用这种关系对数据进行预测。</p>
-<h1 id="9-6-时间序列分析"><a href="#9-6-时间序列分析" class="headerlink" title="9.6　时间序列分析"></a>9.6　时间序列分析</h1><h2 id="9-6-1-时间序列概述"><a href="#9-6-1-时间序列概述" class="headerlink" title="9.6.1　时间序列概述"></a>9.6.1　时间序列概述</h2><p>顾名思义，时间序列就是按照时间顺序排列的一组数据序列。时间序列分析就是找出数据变化发展的规律，从而预测未来的走势。<br>时间序列分析有以下几种表现形式。　</p>
-<p>长期趋势变化：受某种因素的影响，数据依据时间变化，按某种规则稳步增长或下降。使用的分析方法有移动平均法、指数平滑法等。　</p>
-<p>季节性周期变化：受季节更替等因素影响，数据依据固定周期规则性的变化。季节性周期变化，不局限于自然季节，还包括月、周等短期周期。例如，空调、羽绒服、冷饮的销售，双十一、双十二流量在一周之内的波动等。采用的方法为季节指数。　</p>
-<p>循环变化：指一种较长时间的上、下起伏周期性波动，一般循环时间为2～15年。　</p>
-<p>随机性变化：由许多不确定因素引起的数据变化，在时间序列中无法预计。</p>
-<h2 id="9-6-2-案例：年增长趋势和季节性波动分析"><a href="#9-6-2-案例：年增长趋势和季节性波动分析" class="headerlink" title="9.6.2　案例：年增长趋势和季节性波动分析"></a>9.6.2　案例：年增长趋势和季节性波动分析</h2><p>案例位置：资源包\MR\Code\09\example\06<br>下面分析淘宝店铺近3年增长趋势和季节性波动，如图9.13所示。从分析结果得出，近3年淘宝店铺收入呈现持续稳定增长趋势，但2019年有所下降，季节性波动比较明显，每年的第4季度是销售“旺季”。<br>程序代码如下：</p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101094004956.png" alt="image-20211101094004956"></p>
-<p><img src="/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/image-20211101094315925.png" alt="image-20211101094315925"></p>
-<p>​                                                                                                             图9.13　年增长趋势和季节性波动</p>
-<h1 id="9-7-小结"><a href="#9-7-小结" class="headerlink" title="9.7　小结"></a>9.7　小结</h1><p>本章通过常用的数据分析方法并结合图表，以案例的形式呈现，每一种分析方法都对应一个恰当的分析案例，一张贴切的图表，力求使读者能够真正理解数据分析，并将其应用到实际数据分析工作中。每一个案例都经过作者反复揣摩，希望能够对读者有所帮助。</p>
+<p><strong>构造函数</strong>：现在 M 就是构造函数。任何一个函数被 new 使用后，就是构造函数，没被 new 使用过的就是普通函数。（new 后面的函数就是构造函数）</p>
+<p><strong>实例对象</strong>：现在 a1 就叫实例 ，js 中，被 new 出来的对象都叫做实例对象，也叫实例，（所以实例都是对象，对象不一定是实例）</p>
+<p><strong>原型对象</strong>：现在 M.protoype 就是原型对象，任何一个函数都有 prototype 属性，这个属性是声明函数时 js 自动加的，prototype 初始时是一个空对象，这个对象就叫原型对象</p>
+<ol>
+<li><p>构造函数：(例子中 M) new 出来的东西就叫实例，<br>prototype 属性就叫原型对象</p>
+</li>
+<li><p>原型对象 (M.prototype) 中的 constructor 等于构造函数，<br><code>M.prototype.constructor===M // true</code></p>
+</li>
+<li><p>实例 （a1）的 <code>__proto__</code> 属性就是 构造函数(M)的 prototype<br><code>a1.__proto__ === M.prototype //ture</code></p>
+</li>
+</ol>
+<p>要查一个实例对象中的值时，首先通过本身的<strong>proto</strong>属性找到他的原型对象，然后再通过他的原型对象的<strong>proto</strong>找到他的原型对象，一直找，递归访问<strong>proto</strong>最终到头，并且值是 null，这个过程从头到结束就叫原型链。找到了就返回值，找不到就返回 undefind</p>
+<p>还有一个比较重要的，不止构造函数有__proto 属性，普通函数也有，因为普通函数是 Function 的实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="variable constant_">M3</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">n</span> = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">M3</span>.<span class="property">__proto__</span>.<span class="property">constructor</span> === <span class="title class_">Function</span>; <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建对象的-3-种方法："><a href="#创建对象的-3-种方法：" class="headerlink" title="创建对象的 3 种方法："></a>创建对象的 3 种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自变量创建，通过原型链指向Object</span></span><br><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">name</span>: <span class="number">123</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="title class_">Object</span>(&#123; <span class="attr">name</span>: <span class="number">123</span> &#125;);</span><br><span class="line"><span class="comment">//构造函数创建</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> M = <span class="keyword">function</span> (<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="title function_">M</span>(<span class="number">123</span>);</span><br><span class="line"><span class="comment">//注意，如果 M 不需要入参可以写成</span></span><br><span class="line"><span class="keyword">var</span> M = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = <span class="number">123</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="title function_">M</span>();</span><br><span class="line"><span class="comment">//object.create()给参数中这个对象，作为一个新对象的原型对象，赋值给o4</span></span><br><span class="line"><span class="keyword">var</span> p = &#123; <span class="attr">name</span>: <span class="number">123</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o4 = object.<span class="title function_">create</span>(p);</span><br></pre></td></tr></table></figure>
 
     
 
@@ -438,7 +352,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://evacat.top/2020/05/15/第9章数据统计分析案例/" title="第9章　数据统计分析案例" target="_blank">https://evacat.top/2020/05/15/第9章数据统计分析案例/</a>
+          <a href="https://evacat.top/2021/03/13/原型对象、实例、原型链/" title="js继承" target="_blank">https://evacat.top/2021/03/13/原型对象、实例、原型链/</a>
         </li>
         
         <li>
@@ -461,15 +375,8 @@
 			
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color2">
-						python
-					</a>
-				</li>
-				
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color5">
-						数据分析
+						class="js-tag article-tag-list-link color3">
+						前端
 					</a>
 				</li>
 				
@@ -526,7 +433,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2020/05/15/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/" alt="微信分享二维码"> -->
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=https://evacat.top/2021/03/13/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/" alt="微信分享二维码"> -->
     </div>
   </div>
 
@@ -540,18 +447,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/05/15/%E7%AC%AC7%E7%AB%A0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8F%AF%E8%A7%86%E5%8C%96%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%9B%BE%E8%A1%A8Pyecharts/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/13/js%E7%BB%A7%E6%89%BF/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          第三方可视化数据分析图表Pyecharts
+          js继承
         
       </div>
     </a>
   
   
-    <a href="/2020/05/15/%E7%AC%AC8%E7%AB%A0%E5%9B%BE%E8%A7%A3%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%9D%97NumPy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第8章图解数组计算模块NumPy</div>
+    <a href="/2020/05/17/OpenCV%E8%BF%9B%E9%98%B6%E7%AF%8701/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenCV进阶篇01</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -578,7 +485,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">第9章　数据统计分析案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-1-%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">9.1　对比分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">9.1.1　什么是对比分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90%E5%90%84%E5%93%81%E7%89%8C%E9%94%80%E9%87%8F%E8%A1%A8%E7%8E%B0TOP10"><span class="toc-number">2.2.</span> <span class="toc-text">9.1.2　案例：对比分析各品牌销量表现TOP10</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-2-%E5%90%8C%E6%AF%94%E3%80%81%E5%AE%9A%E6%AF%94%E5%92%8C%E7%8E%AF%E6%AF%94%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">9.2　同比、定比和环比分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-1-%E5%90%8C%E6%AF%94%E3%80%81%E5%AE%9A%E6%AF%94%E5%92%8C%E7%8E%AF%E6%AF%94%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">9.2.1　同比、定比和环比概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E%E5%90%8C%E6%AF%94"><span class="toc-number">3.1.1.</span> <span class="toc-text">1．同比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8E%E5%AE%9A%E6%AF%94"><span class="toc-number">3.1.2.</span> <span class="toc-text">2．定比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8E%E7%8E%AF%E6%AF%94"><span class="toc-number">3.1.3.</span> <span class="toc-text">3．环比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-2-%E6%A1%88%E4%BE%8B1%EF%BC%9A%E4%BA%AC%E4%B8%9C%E7%94%B5%E5%95%86%E5%8D%95%E5%93%81%E9%94%80%E9%87%8F%E5%90%8C%E6%AF%94%E5%A2%9E%E9%95%BF%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90"><span class="toc-number">3.2.</span> <span class="toc-text">9.2.2　案例1：京东电商单品销量同比增长情况分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-3-%E6%A1%88%E4%BE%8B2%EF%BC%9A%E5%8D%95%E5%93%81%E9%94%80%E9%87%8F%E5%AE%9A%E6%AF%94%E5%88%86%E6%9E%90"><span class="toc-number">3.3.</span> <span class="toc-text">9.2.3　案例2：单品销量定比分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-4-%E6%A1%88%E4%BE%8B3%EF%BC%9A%E5%8D%95%E5%93%81%E9%94%80%E9%87%8F%E7%8E%AF%E6%AF%94%E5%A2%9E%E9%95%BF%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90"><span class="toc-number">3.4.</span> <span class="toc-text">9.2.4　案例3：单品销量环比增长情况分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-3-%E8%B4%A1%E7%8C%AE%E5%BA%A6%E5%88%86%E6%9E%90%EF%BC%88%E5%B8%95%E7%B4%AF%E6%89%98%E6%B3%95%E5%88%99%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">9.3　贡献度分析（帕累托法则）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%A1%E7%8C%AE%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">4.1.</span> <span class="toc-text">9.3.1　什么是贡献度分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E4%BA%A7%E5%93%81%E8%B4%A1%E7%8C%AE%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">4.2.</span> <span class="toc-text">9.3.2　案例：产品贡献度分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-4-%E5%B7%AE%E5%BC%82%E5%8C%96%E5%88%86%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">9.4　差异化分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-4-1-%E5%B7%AE%E5%BC%82%E5%8C%96%E6%A6%82%E8%BF%B0"><span class="toc-number">5.1.</span> <span class="toc-text">9.4.1　差异化概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-4-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%A7%E5%88%AB%E5%B7%AE%E5%BC%82%E5%88%86%E6%9E%90"><span class="toc-number">5.2.</span> <span class="toc-text">9.4.2　案例：学生成绩性别差异分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-5-%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">9.5　相关性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-5-1-%E7%9B%B8%E5%85%B3%E6%80%A7%E6%A6%82%E8%BF%B0"><span class="toc-number">6.1.</span> <span class="toc-text">9.5.1　相关性概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-5-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%B9%BF%E5%91%8A%E5%B1%95%E7%8E%B0%E9%87%8F%E4%B8%8E%E8%B4%B9%E7%94%A8%E6%88%90%E6%9C%AC%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">6.2.</span> <span class="toc-text">9.5.2　案例：广告展现量与费用成本相关性分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-6-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90"><span class="toc-number">7.</span> <span class="toc-text">9.6　时间序列分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-6-1-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A6%82%E8%BF%B0"><span class="toc-number">7.1.</span> <span class="toc-text">9.6.1　时间序列概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-6-2-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%B9%B4%E5%A2%9E%E9%95%BF%E8%B6%8B%E5%8A%BF%E5%92%8C%E5%AD%A3%E8%8A%82%E6%80%A7%E6%B3%A2%E5%8A%A8%E5%88%86%E6%9E%90"><span class="toc-number">7.2.</span> <span class="toc-text">9.6.2　案例：年增长趋势和季节性波动分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-7-%E5%B0%8F%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">9.7　小结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">1.</span> <span class="toc-text">一、原型对象、实例、原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84-3-%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">创建对象的 3 种方法：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -602,9 +509,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "第9章　数据统计分析案例" -->
+  <!-- id: "js继承" -->
   var giteement = new Giteement({
-    id: '20200515161653',
+    id: '20210313091503',
     owner: '',
     repo: '',
     backcall_uri: '',
