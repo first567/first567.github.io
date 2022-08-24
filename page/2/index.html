@@ -102,7 +102,7 @@
 								</ul>
 							</nav>
 							<nav>
-								总文章数 38
+								总文章数 39
 							</nav>
 							<nav class="header-smart-menu">
 								
@@ -241,6 +241,195 @@
   <script>
     Oauthcallback();
   </script>
+
+
+  
+    <article id="page-html/html转义字符" class="article article-type-page  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/" target="_blank">html转义字符</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/" class="archive-article-date">
+        <time datetime="2021-09-13T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>转义字符串的组成</p>
+<p>转义字符串（Escape Sequence），即字符实体（Character Entity）分成三部分：第一部分是一个&amp;符号，英文叫 ampersand；第二部分是实体（Entity）名字或者是#加上实体（Entity）编号；第三部分是一个分号。</p>
+<p>比如，要显示小于号（&lt;），就可以写 &lt; 或者 &amp;#60; 。</p>
+<p>用实体（Entity）名字的好处是比较好理解，一看 lt，大概就猜出是 less than 的意思，但是其劣势在于并不是所有的浏览器都支持最新的 Entity 名字。而实体(Entity)编号，各种浏览器都能处理。</p>
+<p>提示：实体名称（Entity）是区分大小写的。</p>
+<p>备注：同一个符号，可以用“实体名称”和“实体编号”两种方式引用，“实体名称”的优势在于便于记忆，但不能保证所有的浏览器都能顺利识别它，而“实体编号”则没有这种担忧，但它实在不方便记忆。</p>
+<p>如何显示空格？</p>
+<p>通常情况下，HTML 会自动截去多余的空格。不管你加多少空格，都被看做一个空格。比如你在两个字之间加了 10 个空格，HTML 会截去 9 个空格，只保留一个。为了在网页中增加空格，你可以使用&amp;nbsp;表示空格。</p>
+<p>其它空白占位符</p>
+<p>&amp;nbsp;（普通的英文半角空格但不换行），&amp;ensp;（半个中文宽度)，&amp;emsp;（全角空格）</p>
+<p>&amp;#12288; 中文全角空格 （一个中文宽度）其实它就相当于一个空白的汉字。</p>
+<p>HTML 特殊转义字符列表<br>最常用的字符实体<br>Character Entities|<br>|</p>
+<table>
+<thead>
+<tr>
+<th>显示</th>
+<th>说明</th>
+<th>实体名称</th>
+<th>实体编号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>半方大的空白</td>
+<td>&amp;ensp;</td>
+<td>&amp;#8194;</td>
+</tr>
+<tr>
+<td></td>
+<td>全方大的空白</td>
+<td>&amp;emsp;</td>
+<td>&amp;#8195;</td>
+</tr>
+<tr>
+<td></td>
+<td>不断行的空白格</td>
+<td>&amp;nbsp;</td>
+<td>&amp;#160;</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>&lt;</td>
+<td>&amp;#60;</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+<td>&gt;</td>
+<td>&amp;#62;</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>&amp;符号</td>
+<td>&amp;</td>
+<td>&amp;#38;</td>
+</tr>
+<tr>
+<td>“</td>
+<td>双引号</td>
+<td>&quot;</td>
+<td>&amp;#34;</td>
+</tr>
+<tr>
+<td>©</td>
+<td>版权</td>
+<td>&amp;copy;</td>
+<td>&amp;#169;</td>
+</tr>
+<tr>
+<td>®</td>
+<td>已注册商标</td>
+<td>&amp;reg;</td>
+<td>&amp;#174;</td>
+</tr>
+<tr>
+<td>™</td>
+<td>商标（美国）</td>
+<td>™</td>
+<td>&amp;#8482;</td>
+</tr>
+<tr>
+<td>×</td>
+<td>乘号</td>
+<td>&amp;times;</td>
+<td>&amp;#215;</td>
+</tr>
+<tr>
+<td>÷</td>
+<td>除号</td>
+<td>&amp;pide;</td>
+<td>&amp;#247;</td>
+</tr>
+</tbody></table>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color3">
+						前端
+					</a>
+				</li>
+				
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color5">
+						html
+					</a>
+				</li>
+				
+		</ul>
+	</div>
+	
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
 
 
   
@@ -1098,97 +1287,6 @@
 
 
   
-    <article id="post-this对象的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/03/13/this%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/" target="_blank">this对象的理解</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/03/13/this%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2021-03-13T01:15:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <br>
-    
-    <a class="article-more-a" href="/2021/03/13/this%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color3">
-						前端
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/03/13/this%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1400,6 +1498,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

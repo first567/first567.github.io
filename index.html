@@ -102,7 +102,7 @@
 								</ul>
 							</nav>
 							<nav>
-								总文章数 38
+								总文章数 39
 							</nav>
 							<nav class="header-smart-menu">
 								
@@ -1085,7 +1085,7 @@
 
 
   
-    <article id="page-html/html转义字符" class="article article-type-page  article-index" itemscope itemprop="blogPost">
+    <article id="page-css/css使图片自适应的方法" class="article article-type-page  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1093,7 +1093,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/" target="_blank">html转义字符</a>
+	  <a class="article-title" href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank">css使图片自适应</a>
   
     </h1>
   
@@ -1101,8 +1101,8 @@
 
   
   
-<a href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/" class="archive-article-date">
-        <time datetime="2021-09-13T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
+<a href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
+        <time datetime="2021-09-14T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
 </a>
 
   
@@ -1114,98 +1114,51 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>转义字符串的组成</p>
-<p>转义字符串（Escape Sequence），即字符实体（Character Entity）分成三部分：第一部分是一个&amp;符号，英文叫 ampersand；第二部分是实体（Entity）名字或者是#加上实体（Entity）编号；第三部分是一个分号。</p>
-<p>比如，要显示小于号（&lt;），就可以写 &lt; 或者 &amp;#60; 。</p>
-<p>用实体（Entity）名字的好处是比较好理解，一看 lt，大概就猜出是 less than 的意思，但是其劣势在于并不是所有的浏览器都支持最新的 Entity 名字。而实体(Entity)编号，各种浏览器都能处理。</p>
-<p>提示：实体名称（Entity）是区分大小写的。</p>
-<p>备注：同一个符号，可以用“实体名称”和“实体编号”两种方式引用，“实体名称”的优势在于便于记忆，但不能保证所有的浏览器都能顺利识别它，而“实体编号”则没有这种担忧，但它实在不方便记忆。</p>
-<p>如何显示空格？</p>
-<p>通常情况下，HTML 会自动截去多余的空格。不管你加多少空格，都被看做一个空格。比如你在两个字之间加了 10 个空格，HTML 会截去 9 个空格，只保留一个。为了在网页中增加空格，你可以使用&amp;nbsp;表示空格。</p>
-<p>其它空白占位符</p>
-<p>&amp;nbsp;（普通的英文半角空格但不换行），&amp;ensp;（半个中文宽度)，&amp;emsp;（全角空格）</p>
-<p>&amp;#12288; 中文全角空格 （一个中文宽度）其实它就相当于一个空白的汉字。</p>
-<p>HTML 特殊转义字符列表<br>最常用的字符实体<br>Character Entities|<br>|</p>
+    <ol>
+<li>background<br>我们把图片作为背景，然后用 background-size 属性进行调节</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.img-container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: black <span class="built_in">url</span>(<span class="string">&quot;1.png&quot;</span>) no-repeat center center;</span><br><span class="line">  <span class="attribute">background-size</span>: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>object-fit 属性</li>
+</ol>
+<p>设置好图片的宽高，然后设置 object-fit 属性为 contain 就是常见的图片自适应效果</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th>显示</th>
-<th>说明</th>
-<th>实体名称</th>
-<th>实体编号</th>
+<th>值</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td></td>
-<td>半方大的空白</td>
-<td>&amp;ensp;</td>
-<td>&amp;#8194;</td>
+<td>fill</td>
+<td>默认，不保证保持原有的比例，内容拉伸填充整个内容容器。 尝试一下</td>
 </tr>
 <tr>
-<td></td>
-<td>全方大的空白</td>
-<td>&amp;emsp;</td>
-<td>&amp;#8195;</td>
+<td>contain</td>
+<td>保持原有尺寸比例。内容被缩放。 尝试一下</td>
 </tr>
 <tr>
-<td></td>
-<td>不断行的空白格</td>
-<td>&amp;nbsp;</td>
-<td>&amp;#160;</td>
+<td>cover</td>
+<td>保持原有尺寸比例。但部分内容可能被剪切。 尝试一下</td>
 </tr>
 <tr>
-<td>&lt;</td>
-<td>小于</td>
-<td>&lt;</td>
-<td>&amp;#60;</td>
+<td>none</td>
+<td>保留原有元素内容的长度和宽度，也就是说内容不会被重置。 尝试一下</td>
 </tr>
 <tr>
-<td>&gt;</td>
-<td>大于</td>
-<td>&gt;</td>
-<td>&amp;#62;</td>
+<td>scale-down</td>
+<td>保持原有尺寸比例。内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。 尝试一下</td>
 </tr>
 <tr>
-<td>&amp;</td>
-<td>&amp;符号</td>
-<td>&amp;</td>
-<td>&amp;#38;</td>
+<td>initial</td>
+<td>设置为默认值，关于 initial</td>
 </tr>
 <tr>
-<td>“</td>
-<td>双引号</td>
-<td>&quot;</td>
-<td>&amp;#34;</td>
-</tr>
-<tr>
-<td>©</td>
-<td>版权</td>
-<td>&amp;copy;</td>
-<td>&amp;#169;</td>
-</tr>
-<tr>
-<td>®</td>
-<td>已注册商标</td>
-<td>&amp;reg;</td>
-<td>&amp;#174;</td>
-</tr>
-<tr>
-<td>™</td>
-<td>商标（美国）</td>
-<td>™</td>
-<td>&amp;#8482;</td>
-</tr>
-<tr>
-<td>×</td>
-<td>乘号</td>
-<td>&amp;times;</td>
-<td>&amp;#215;</td>
-</tr>
-<tr>
-<td>÷</td>
-<td>除号</td>
-<td>&amp;pide;</td>
-<td>&amp;#247;</td>
+<td>inherit</td>
+<td>从该元素的父元素继承属性。 关于 inherit</td>
 </tr>
 </tbody></table>
 
@@ -1232,8 +1185,8 @@
 				
 				<li class="article-tag-list-item">
 					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color5">
-						html
+						class="js-tag article-tag-list-link color4">
+						css
 					</a>
 				</li>
 				
@@ -1244,7 +1197,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2021/09/13/html/html%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/">展开全文 >></a>
+      <a class="article-more-a" href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
     </p>
     
 
@@ -1485,6 +1438,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
