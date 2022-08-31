@@ -11,6 +11,8 @@ author: evacat # 博主 站长
 language: zh-Hans # 默认语言
 ---
 
+<!--more-->
+
 1. background
    我们把图片作为背景，然后用 background-size 属性进行调节
 
