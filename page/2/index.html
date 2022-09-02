@@ -217,6 +217,150 @@
             
 
   
+    <article id="page-css/css使图片自适应的方法" class="article article-type-page  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank">css使图片自适应</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
+        <time datetime="2021-09-14T08:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <span id="more"></span>
+
+<ol>
+<li>background<br>我们把图片作为背景，然后用 background-size 属性进行调节</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.img-container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: black <span class="built_in">url</span>(<span class="string">&quot;1.png&quot;</span>) no-repeat center center;</span><br><span class="line">  <span class="attribute">background-size</span>: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>object-fit 属性</li>
+</ol>
+<p>设置好图片的宽高，然后设置 object-fit 属性为 contain 就是常见的图片自适应效果</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">object-fit</span>: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fill</td>
+<td>默认，不保证保持原有的比例，内容拉伸填充整个内容容器。 尝试一下</td>
+</tr>
+<tr>
+<td>contain</td>
+<td>保持原有尺寸比例。内容被缩放。 尝试一下</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>保持原有尺寸比例。但部分内容可能被剪切。 尝试一下</td>
+</tr>
+<tr>
+<td>none</td>
+<td>保留原有元素内容的长度和宽度，也就是说内容不会被重置。 尝试一下</td>
+</tr>
+<tr>
+<td>scale-down</td>
+<td>保持原有尺寸比例。内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。 尝试一下</td>
+</tr>
+<tr>
+<td>initial</td>
+<td>设置为默认值，关于 initial</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>从该元素的父元素继承属性。 关于 inherit</td>
+</tr>
+</tbody></table>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color3">
+						前端
+					</a>
+				</li>
+				
+				<li class="article-tag-list-item">
+					<a href="javascript:void(0)"
+						class="js-tag article-tag-list-link color4">
+						css
+					</a>
+				</li>
+				
+		</ul>
+	</div>
+	
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/14/css/css%E4%BD%BF%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="page-html/html转义字符" class="article article-type-page  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1142,97 +1286,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/03/21/css3%E6%96%B0%E7%89%B9%E6%80%A7/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-原型对象、实例、原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/03/20/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/" target="_blank">js继承</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/03/20/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="archive-article-date">
-        <time datetime="2021-03-20T01:15:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <br>
-    
-    <a class="article-more-a" href="/2021/03/20/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				<li class="article-tag-list-item">
-					<a href="javascript:void(0)"
-						class="js-tag article-tag-list-link color3">
-						前端
-					</a>
-				</li>
-				
-		</ul>
-	</div>
-	
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/03/20/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AE%9E%E4%BE%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/">展开全文 >></a>
     </p>
     
 
